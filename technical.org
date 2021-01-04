@@ -1,0 +1,702 @@
+#+STARTUP: overview
+#+HTML_HEAD: <style type="text/css">body{ max-width:50%; }</style>
+#+OPTIONS: \n:t
+* CyTOF
+Normalization (NormalizerR2013b_MacOSX)
+	Make a copy of original data. Rename if the file extension is FCS (all capital) to lower case .fcs
+	Select DVS Beads
+	Gate the beeds ("bright" one of on the right, distinguish from cells)
+	Hit Space, then Enter.
+	Select current file
+	Cutoff = 7
+	The normalized fcs should be in normed folder.
+Debarcode
+	Make copy of normalized fcs.
+	Create barcode key (.csv) accordingly.
+	Select key file with single cell debarcoder
+	Select FCS file.
+	Examine the separation by selecting Single Biaxial plot type and switching positive channels.
+	Save in Directory
+Use FlowJo to identify and export singlets (191Ir1 193Ir1) that were viable (195Pt2).
+Phenograph/cytofkit
+	R code
+		source("https://bioconductor.org/biocLite.R")
+		biocLite("cytofkit")
+		library("cytofkit")
+		cytofkit_GUI()
+	Select Raw FCS Directory, FCS_Files, Markers
+	Result Directory must be Desktop
+	Merge methods choose "min" to use the least number of events across all samples.
+	Transformation Methods "cytofAsinh"
+	Cluster Methods "Rphenograph"
+	visualization method: tSNE,
+	cellular progression: NULL
+	submit
+cytofkitShinyAPP()
+* PCS9 AAV injection
+Target 1x10^11 virus genome/mouse via retro-orbital injection
+stock AAV8-D377Y-mPCSK9
+Lot 171009#24 Vector Biolabs
+Conc 3.2x10^13 genomecopy/ml = 3.2x10^10 gc/ul
+Dilute in sterile MEM based on excel sheet, inject 200 ul per mouse
+* Mouse breeding
+Here are a few recommendations to help combat a colonies potential breeding depression:
+
+1)      Set additional pairs of breeders in the fall (ideally September or October) – this will help offset the potential reduced production from existing breeders.  Even setting them now (in November) can help.  Ideally, throughout the year, you should be rotating breeders so that you always have pairs that are being set up, are at the highest level of production and others that are getting ready to retire so that you are not retiring or starting all of your breeders at the same time.
+2)      Make sure that females are not bred until they are between 6-8 weeks of age and males until 8 weeks of age.  Plan to retire breeders after about 6 months of active breeding, but make sure that you have a new pair that is producing before you retire your old breeders.
+3)      Give your breeders brown paper shred (ask your care tech for some).  This has been shown to help mice build a better, warmer nest for their pups.  Huts are generally not recommended.  The thought is that the female fends off the male from inside a hut thus delaying or stopping breeding.
+4)      Cages should be low on a rack where it’s darkest and there is less traffic.
+5)      Avoiding handling breeding cages as much as possible. Manipulating/handling the cage (even if only to check for the presence of a litter) adds additional stress to those animals and can affect breeding productivity.
+6)      If possible, don’t mix your breeders and experimental cages on the same rack.  The disruption of moving the experimental cages can adversely affect the breeders.  Ideally, breeding cages should only be moved when regular cage changing occurs every two weeks.
+7)      Place breeders on racks as far away as possible from doors, ATS’s, equipment, noise, etc.  Subtle vibrations can cause stress with mice and effect breeding behavior.  There is also additional traffic in those areas.
+8)      Remove male mice for the weekend and replace them on Monday.  A brief separation can make the heart grow fonder.
+9)      Taking the feces from a different male and placing into the breeding cage can often entice the male to breed due to their competitive nature.
+10)   Swapping males between cages.  If they aren’t performing in the current environment, maybe a new one will help.
+11)   Set triad breeders.  Two females and one male will often produce better results.  Just make sure to keep a close eye on them.  The male will need to be removed if a female drops a litter.
+12)   Finally, contact the Breeder Core for assistance.  We give free consultations, we can manage your breeding for you or help on a special request basis.
+OLARbreedingcore@ucdenver.edu
+* ChIP protocol
+Reagents needed
+| Buffer   | Volume/sample (mL) | # samples | total volume (mL) |
+|----------+--------------------+-----------+-------------------|
+| Glycine  |                  1 |       4.5 |               4.5 |
+| 1x PBS   |                 20 |           |               90. |
+| lysis    |                0.5 |           |              2.25 |
+| Dilution |                3.8 |           |              17.1 |
+#+TBLFM: @2$4=$2*@2$3::@3$4=$2*@2$3::@4$4=$2*@2$3::@5$4=$2*@2$3
+** Notes
+   The protocol is optimized for 1.8 million cells in 10cm dish
+** Cross-linking and sonication
+   Add 312.5 ul of 32% formaldehyde in EMEM to every 10ml of cell culture medium
+   incubate at RT for 10 minutes
+   Quench the reaction by adding 1mL of 1.375 M Glycine per 10 mL of medium at room temp for 5 minutes
+   Wash twice with 10mL 1x PBS with protease inhibitors
+   Scrape the cells of the plate in 5ml of 1xPBS, wash the plate with additional 5mL of PBS
+   Pellet by spinning at 800g for 10 minutes
+   Resuspend the pellet with 450ul of SDS lysis buffer with protease inihibitors Incubate on ice for 10 minutes
+   Sonicate at 35% amp for 1 minute with 5 sec pulses and 30 sec rests in between. This ensured around 500bp fragments.
+   Incubate on ice for an additional 15 minute.
+   Centrifuge samples for 10min at 13000 rpm at 4 degree and collect supernatant (400uL), add 3.6mL of ChIP dilution buffer with protease inhibitor.
+   Save 20ul of diluted sample as input control.
+** Chromatin Preclearing and Immunoprecipitation
+   Add 75ul of Protein A Agrarose/Salmon Sperm DNA to sample incubate for 30 min at 4 degree with agitation
+   Centrifuge 1000 rpm, 1min at 4 degree, collect supernatant
+   Aliquote each sample into 2x 2mL (Antibody and Isotype control)
+   Add antibodies into the supernatant incubate at 4 degree overnight with agitation
+| Antibody          | Company | Cat#    | Conc.  | Amount |
+|-------------------+---------+---------+--------+--------|
+| Anti-KAT3B / p300 | Abcam   | ab14984 | 1mg/ml | 2ug    |
+   Next morning, add 60ul of Protein A Agrarose/Salmon Sperm DNA, rotate at 4 degree for 1 hour
+   Centrifuge at 1000 rpm for 1 min at 4 degree, remove supernatant without distrubing the pellet
+** Washes and Elution
+   Wash with the following buffer for 5 minutes
+     1x Low Salt
+     1x High Salt
+     1x LiCl
+     2x TE Buffer
+   Prepare fresh elution buffer (1% SDS, 0.1M NaHCO3)
+   Elute the complex by incubating with 250ul of elution buffer at room temp for 15 min, spin down and repeat 1 more time, combine supernatant
+   Add 20ul of 5M NaCl to the elution (for input control, add 85ul of elution to the tube, then add 4.64 ul of NaCl), incubate at 65 degree for 4 hrs, store samples at -20 after.
+   Thaw samples next morning, add 10uL of 0.5M EDTA, 20uL of 1M TrisHcl PH6.5, 2uL of 10mg/mL Proteinase K to each sample. For input control, add 2.32uL EDTA, 4.64uL Tris-HCl, 0.5uL Proteinase K. Incubate at 45 degree for 1 hour
+   After the last step, IP samples should have about 550 ul of volumn, Input control samples should have 116uL.
+** Recover DNA with phenol/Chloroform extraction
+   Note This part of protocol has not yet been fully tested with an actual experiment.
+   Add one volume (550 uL/116 uL) of phenol:chloroform:isoamyl alcohol to the sample. Vortex
+   for 20 sec
+   Centrifuge at RT 5min, 16000 g.
+   Transfer upper aqueous phase (~500uL/100uL) to fresh tube
+   Add 1/10 (50/10 uL) volume of 3M sodium acetate (pH 5.0), 1uL of glycogen to samples
+   Add 2 (1000uL/200uL) volume of 100% Ethanol
+   Mix and freeze overnight at -20 degree (or 2hours at -80c)
+   Centrifuge at 16000 g for 30 min at 4 degree
+   Aspirate supernatant taking care with pellet.
+   Add 1 ml 70% ethanol and spin at 16000 g for 15‟.
+   Aspirate ethanol and remove remaining ethanol by pipet.
+   Remove supernatant and repeat the last step with 150uL Ethanol wash
+   Remove supernatant and dry the pellet with lid open at RT for 10-15 min
+   Resuspend DNA in 30uL of H2O
+** Alternative Proceed with PCR purification kit (PB buffer needed 2750 ul and 580 uL)
+   Currently having issue with the column that little DNA can be recovered
+   calculator for volume needed
+| Sample number | volume for input | volume for IP | Total volume |
+|---------------+------------------+---------------+--------------|
+|             7 |              580 |          2750 |       24975. |
+#+TBLFM: $4=$3 * ($1 + 0.5) + $2 * ($1 + 0.5)
+* Methylation PCR
+# Protocol optimized for 1.8 million cell input from 1 10cm dish, use half volume for 6 well
+** Buffers
+*** Hypotonic buffer
+Tris-HCl (1M pH 8.0) 100uL
+NaCl (5M) 20uL
+MgCl2 (1M) 25 uL
+H2O to 10mL
+*** Nuclear Lysis
+Tris-HCl (1M pH 8.0) 500uL
+EDTA (0.5M pH 8.0) 200uL
+SDS (10%) 1mL
+H2O to 10mL (8.3mL)
+** Protocol
+*** DNA extraction
+Trypsinize the cells.
+Wash with Cold PBS twice.
+Resuspend pellet in 1mL of Hypotonic Buffer, incubate on ice for 5min
+Centrifuge at 1700 g for 10 min
+Remove supernatant
+Resuspend in 0.5mL of Nuclear lysis buffer. Snap freeze and thaw.
+Incubate at RT for 10 min with vortex.
+Add 10uL of 0.5M EDTA, 20 uL of Tris-Hcl (1M, pH 6.5), 2 uL of proteinase K (10mg/mL), 2 uL of RNase A. Incubate at 45 degree for 1 hour
+Add 530 uL of phenol:chloroform to the sample.Vortex for 20 sec
+Centrifuge at 16000g for 5 min, carefully collect the upper aqueous phase
+Add 1/10 volume of 3M sodium acetate
+Add 2-3 volume of 100% Ethanol
+Mix and freeze ON in -20
+Centrifuge at top speed for 30 min at 3 degree
+Decant supernatant
+Wash pellet with 70% ethanol
+Air dry on bench top for 15 min
+Resuspend in 150uL of nuclease free water
+* EdU
+Carbosynth,  cat#: NE08701
+Dissolve in saline on the day of use (don't store) 5 mg/ml
+Calculate amount Mouse * 2 * 250ul
+Inject 50 mg/kg (1.25mg/mouse, 250ul) IP the day before harvest at 5pm
+Inject 50 mg /kg IP 8am (1hour before harvest)
+Harvest 9am
+
+Additional reagents:
+Alexa Fluor™ 594 Azide:  Catalog number:  A10270
+Click-iT® Cell Reaction Buffer Kit Catalog no. C10269
+* Tamoxifen
+Recipe
+ 0.5ml 100% EtOH
+ 9.5ml Oil
+ 100mg/10ml (1l)
+Use 100ul (1mg)/mouse/day for 5 days (Myh11)
+Use 125ul for 12 days for Gli1 mice
+* AngII
+Target 1uM (relooked literature, 100nM might be more widely used)
+25mg/ml (25g/L)
+MW 1046.19
+25g/L = 0.023896 Mol/L =23.896mM
+To reach 100uM, 1:238.96 dilution
+3+716.88
+1:1000 for final dose
+* PDGF-BB
+  Millipore GF149
+  Note some lots were coming already reconstituted.
+  Reconstitute in 50ul sterile MQ to make 0.2mg/ml stock solution
+  Add 450ul 100mM Acetic Acid with 0.1% BSA to make 20ug/ml (1000x)
+  working solution.
+  For the solvent:
+   57.5 uL of glacial acetic acid in 10mL of MQ, Add 10 mg BSA
+
+* 5aza
+1:25 diultion (2+48ul) for 1000x working solution
+Typical treatment scheme.
+Plate in full serum 24 hrs.
+Low serum for 24 hrs
+5aza Pretreatment for 24 hrs
+PDGF+5aza redosing for 24 hrs
+* JQ1
+** In vitro dosing 1uM
+Note, cells do not tolerate JQ1 well with 0.1% serum, therefore 1% was used.
+Normal time line
+*** Seed cells (afternoon day1)
+*** switch to 1% serum (morning day2)
+*** JQ1 dosing (Noon day3)
+*** JQ1 2nd dosing + Treatment (POGF) (Noon day4)
+*** If doing ChIP, cells were harvested 24 hours later
+* DAPI
+  Invitrogen D1306
+  Stock solution (-20 degree): 1 mg/mL in DI/MQ water
+  100x Working solution (Fridge): 1 ug/mL in DI/MQ water
+* CA injury
+Use #6 strand for ligation.
+Do a single knot first, follow by one double knot
+When suturing, do double knots so it is not too tight.
+** Rimadyl
+Stock: 50mg/ml, 50ug/ul
+Working conc. 5mg/kg
+Assuming 20g mice, need 100ug per mouse.
+Desired concentration: 100ug/100ul, 1ug/ul, diluted 50x
+* Cell culture
+** Rat Aortic Fibroblasts
+*** Cell Biologics
+*** Cat# RA-6075
+*** 1x10^6 P1
+* processing OCT tissue for IHC
+** thaw at rt for 15 minutes
+** DI water 5 minutes
+** PBC 5 minutes
+** 100% methanol 10 minutes
+** 0.3% H2O2 in methanol 10 minutes
+** 0.05% tween-20/PBS 5 minute
+** PBS wash 5 minutes
+** block with 3% serum
+** antibody incubation overnight
+* Immunofluorescence on coverslip
+Plate HepG2 in 24 well plate (put cover slip in wells) 0.18million/well. Let grow overnight
+After treatment (8hr), wash the cells with 500ul 1xPBS/well for two times.
+Fix the cells with 4% paraformaldehyde (15 min, room temperature)
+Wash with PBS 1x
+Methanol 10 min
+Permeabilize the cells with 0.5% tween (in PBS) for 5min at room temperature.
+Block the cells with 3% horse serum for 1 hour at room temperature.
+Dilute primary antibody in blocking buffer
+
+Prepare petri dish with water-soaked filter papers (provide humidity) covered by a layer of parafilm
+
+Pipet 50ul of diluted antibody on the parafilm and cover the coverslip onto the liquid drop. Incubate at 4 degree overnight.
+
+Wash with TBST three times (10min room temperature shaking can use the initial 24 well plate)
+
+Incubate secondary antibody (1:300 dilution with 1% BSA, 50ul/coverslip). Incubate 1hour at room temperature.
+
+Wash with TBST 3 times (10minutes)
+
+Mount and leave at 4 degree for 2 hours.
+
+Take pictures.
+* Immunofluorescence for OCT sections
+  Thaw slides at RT for 15 min
+  Rehydrate with dH2O, 5 min
+  Post-Fix permeabilize
+    100% MeOH 10 min
+    0.05% Tween-20 in PBS 5 min
+    PBS wash 5 min
+  Block with 3% Horse serum in PBS 30 min
+  Add anti GFP-FITC 1:200 in blocking buffer (300uL per slide)
+
+* flow cytometry processing for cultured cells
+Trypsinize to detach the cells
+Wash the cells twice with cold FA3 buffer
+Permeabilize with IC Fixation Buffer
+* Flow cytometry processing for tissue digest
+** Note
+*** The protocol assumes staining in the format of a u-bottom 96 well plate.
+*** After supernatant decant, about 50 uL volume is left in the wells
+** Buffer preparation
+*** FA3 buffer
+    For surface staining and final FACS analysis,(sorting buffer)
+    1x PBS (Ca/Mg++ free), 1mM EDTA, 25mM HEPES pH 7.0, 1% FBS.
+*** Intracellular Fixation & Permeabilization Buffer Set (cat. no. 88-8824)
+    IC Fixation Buffer is at 1x and ready to use.
+    Prepare a 1X working solution of Permeabilization Buffer by mixing 1 part
+    10X concentrate with 9 parts distilled water.
+** Blocking
+   a. Have each samples (controls/samples) in 50 uL of FA3 buffer after single
+      cell suspension preparation.
+   b. Block the cells with anti CD16/CD32 (Fc block, Invitrogen, Cat# 14-0161-85,
+      100x) for 10 min at RT. Note Fc block should not be used with beeds.
+   c. Proceed with staining without washing/spinning down.
+** Surface staining and viability dye
+   a. Prepare staining solutions by adding 1uL of antibody/Aqua viablity dye to
+      50 uL volume for each sample (e.g. if performing a 5 antibody staining
+      for 3 samples, add 3 uL of each antibody + 3 uL of Aqua + 3 uL FC block
+      in 129 uL of FA3 buffer)
+      Note: I usually add 0.5 to the sample number to compensate any
+      pipetting errors.
+   b. Prepare staining solution for control (isotype/compensation)
+      accordingly
+   c. Add 50 uL staining solution to the 50 uL sample from blocking step
+   d. Incubate at RT for 30 minutes (Protect from light).
+   e. Spin down at 300 g for 5 minutes, wash twice with FA3 buffer
+   f. Vortex the sample to fully dissociate the pellet after supernatant decant.
+** Fixing the cells
+   a. Fix the cells by adding 200 µL of IC Fixation Buffer to each well.
+   b. Incubate at 4 degre for 1 hour, protect from light
+   c. Centrifuge at 600 g for 5 min.Discard the supernatant.
+   d. Wash with 200 uL of 1X Permeabilization Buffer
+   e. Spin and discard supernatant
+** intracellular (cytoplasmic) staining
+   a. Prepare the staining solution similar as surface staining but with 1x
+      Permeabilization Buffer
+   b. Incubate the cell at 4 degree for 2 hours, protect from light
+   c.  Spin down and wash with FA3 buffer twice.
+   d. Resuspend the samples in 300 uL of FA3 buffer for FACS analysis
+
+* Tissue digestion for AO and CA
+Solutions
+Digestion solution: 3.2mg/ml collagenase II, 0.75mg/ml elastase (Worthington), 0.2mg/ml soybean trypsin inhibitor (sigma) in Hank's buffered saline solution (HBSS), pH7.5. Serile filer with 0.2um syringe filter.
+FA buffer: 0.1% FCS in 1X PBS, sterile filer with .2um syringe filter.
+FA3 buffer (sorting buffer): 1x PBS (Ca/Mg++ free), 1mM EDTA, 25mM HEPES pH 7.0, 1% FBS or BSA (For 50ml solution: 5ml 10X PBS, 100ul 0.5M EDTA, 1.25ml 1M HEPES, 500ul FBS), sterile filer with 0.2um syringe filter.
+
+Procedure:
+If doing matrigel, thaw aliquots on ice in fridge in the morning.
+Isolate aortas, carotid arteries from mouse. Wash the artery with HBSS once to remove serum from the medium.
+Tissues are minced with blade and transferred to digestion solution (tissue from 1 mouse need about 1ml) and incubate at 37oC in the incubator for 1 hr (do not exceed 1.5hr). Pipet mix every 10 min.
+Wash once with FA buffer (centrifugation: 1100 RPM, 12 min, 4oC, take care to remove all the fatty tissues at the surface of the supernatant).
+Pass the single cell suspensions through a 70um filter, pellet the cells again at the same setting.
+Antibody incubation: resuspend the cells in 100ul of FA buffer , add 3ul of Sca1APC antibody, and incubate on ice for 1 hour (minimum 45min).
+If doing matrigel injection, freeze some P1000 tips and Eppendorf tubes in -20.
+Spin down the cells and resuspend in 1ml of FA3 buffer.
+DAPI is used for staining cells (add right before sorting at flow core).
+Flow cytometry core is on the 4th floor, RC1 south.
+
+Heparin 30IU/ml (stock 20kU/ml, sigmaH3393, 666.666X, for 700ul matrigel need 1.05ul)
+VEGF 100ng/ml  (stock 50 µg/mL  in PBS R&D systems 493-MV/CF, 500x, for 700ul matrigel need 1.4ul)
+FGF2 500ng/ml (stock 100 μg/mL in PBS R&D systems 3139-FB-025/CF, 200x, for 700ul matrigel need 3.5ul)
+Note VEGF and FGF2 are ordered carrier free (BSA free) to prevent immune reaction from the host.
+* Mouse eye bleeding
+  heparinize eppendorf tubes and capillary tubes
+  Dilute 20kU/mL Heparin 200x to 0.1u/uL
+  Add 20uL of heparin into eppendorf tube. Run heparin through the capillary
+  About 200uL whole blood will be needed for both TG and CHOL
+* Mouse fibroblast culture from ear snip
+** Digestion mix prep
+*** 6.25 mg/ml Collagenase, Type 4 (worthington LS004188) in HBSS
+Need 0.5 mL per mouse
+** Tissue Harvest
+*** Clean the ear area with iodine swab
+*** Remove ear snip
+*** Rinse the tissue in 70% ethanol
+*** Rinse the tissue in 1x PenStrep in PBS
+** Tissue Digest
+*** Mince the tissue into smaller pieces
+*** Add 0.5 mL collagenase digestion buffer
+*** Incubate at 37c for 25 minutes
+*** Spin down for 5min at 1000 rpm with a countertop centrifuge
+*** Discard supernatant
+*** Wash once with 1 mL of HBSS and spin down
+*** Add 0.5 mL 0.25% trypsin
+*** Incubate at 37c for 20 minutes
+*** Centrifuge and discard supernatant
+*** Resuspend in 0.5 mL DMEM full medium
+*** Triturate to break up cell aggregates and transfer into a 6-well plate
+*** Add 2 mL of medium and place in the incubator.
+* recombinant Shh
+3.5ug/mL for 48 hours to test Gli2/Gli1 protein expression
+use PDGF as control (should also induce Gli2)
+* scRNA-seq data analysis from GEO
+CreateSeuratObject takes an expression matrix (sparse or dense) where the
+columns are cells/samples and the rows are features/genes. While we don't
+ have a function for reading directly from GEO, as long as you can get an
+expression matrix for the data you're interested in and read it into R (see
+ readMM, read.table, or other functions for reading data into R), you can
+pass that to CreateSeuratObject
+* scRNA-seq workshop with Lior Pachter and Sina Booeshaghi
+kb-python
+kallisto (small memory than cell ranger)  bustools
+triming? not necessary for scRNA-seq (package is robust enough
+BUS file
+adata dataset information
+knee plot (x-axis UMI counts, Y-axis Set of Barcodes/ x low (junk)
+scRNAseq always 3' read? advantage? poly-A. Smart-seq random priming
+Mito content (depennds on cell type)
+library saturation (linear = good)
+How many reads per cell (a couple hundred? thousands?
+Malat1 always high (have a poly-a or something)
+
+* Buffers and recipe
+** 10x TBS
+For 1 L:
+24 g Tris-HCl (formula weight: 157.6 g)
+5.6 g Tris base (formula weight: 121.1 g)
+88 g NaCl (formula weight: 58.4 g)
+Dissolve in 900 mL distilled water
+Adjust to pH 7.6 with HCl or NaOH
+Adjust to 1L volume
+** 10x transfer buffer
+Tris (free base)	30.4 g
+Glycine	144.2 g
+Ultra pure water to 1 L
+** Proteinase K
+solvent: 0.5mL 1M Tris-HCl(pH 8.0), 0.5mL 0.5M EDTA (pH 8.0), 4mL H2O
+Conc. 10 mg/mL
+** 37% Formaldehyde
+prepare 1N NaOH
+Weigh 1.84g paraformaldehyde
+mix with 5 mL H2O and 175 uL of 1N NaOH
+Dissolve by incubating on the 60 degree heatblock.
+Cool the solution to RT
+Filter through a 0.45-μm syringe filter.
+Keep at RT for up to 1 week.
+* ImageJ
+** Overlay two images manually
+Load the two images
+On first image, Image|Overlay|Add image… to add second image with X=Y=0, Opacity 33%
+Image|Overlay|To ROI manager…, select second image name in ROI manager window
+Select most any tool, e.g. segmented line tool, can then drag image2 over image1 to align
+Select None then causes the tool to do its drawing operation rather than dragging image2
+Deselect image in ROI Manager window, then click on its name in ROI mgr, causes tool to again drag image2
+* Microscope
+** SHG
+1. Deparafinize: 3X for 5 min in Xylene
+2. Washes:
+Rehydrate with ethanol washes for 3 min each:
+100% ethanol
+100% ethanol
+90% ethanol
+70% ethanol
+PBS
+PBS
+3. Mount with no Dapi Vecta mount
+4. Confocoal:
+Cube: C051 in position1, mirror in position2
+SL_SHG
+SL_SHG GFP for cotaininig with GFP
+BS SMP760
+Laser Mai Tai on 800nm, 3% 700 gain
+* Paper review
+** intro
+unoriginal, irrelevant, advance the field?
+** Methods
+design approproaite for the question
+better way to address the question?
+ethical standard?
+Controls!!
+stat editors
+** Ask for more data if needed
+**
+** Familiar with the field, technique, appreciate the limitations
+controls and statistics.
+keep Sketical about the data, alternative way to explain the findings?
+** literature review (similar pubs before?)
+** significance
+** impact factor
+** origninality
+** strength and weakness
+** good review
+brief summary and the author's conlcusions.
+Identify the strength.critically identify the flaws.
+Major comments
+minor comments
+controls? additional experiments (e.g. time course? dose reponse?)
+** Does the abstract stand alone?
+** Does the intro provide enough rationale? Gaps in knowledge important
+** Methods
+sufficient details to reproduce the results?
+sex differences in animals?
+Should not just reference previous papers
+** Results
+data reliable? proper control? IgG
+Data same as described in text
+Technical replicates (qPCR wells)
+Biological replicates (repeat the experiments)
+Biologically significant?
+Figure quality
+Figure legends (details, self contained, numbers of animal, sex, stat methods, scale bar, p value)
+** Discussion
+clean up discussion. not rehashing results.
+** References approproiate
+** Quality of writing with examples
+** Always be constructive
+** Comments to the editor
+don't skip. consistant with comments to the authors
+Make decisions to the editor (not novel enough for circ. res.)
+Conflict of interest (decline review)
+Confidentiality
+* Cholesterol E kit (FUJIFILM/WAKO)
+# Scaled down from the manual for 96 well plate format
+Dissolve color reagent in buffer solution (lasts 3 weeks at 4 degree)
+Create serial dilution for standard
+200 mg/dL, 100 mg/dL, 50mg/dL, 25mg/dL in MilliQ
+Dilute Plasma 1:8 for assay
+Mix 2ul of sample/standard with 200uL of color reagent
+Incubate at 37 degree for 5 minutes
+Measure abs at 600 nm (and 700 nm)
+* Mouse CM isolation (Langendorff-Free)
+** Buffer preparations
+   Note 1: all buffers should be sterile filtered and good for 2 weeks at
+   4 degree protected from light
+   1. EDTA buffer (30 mL per mouse)
+| Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
+|-------------+---------------+----------------+----------------|
+| NaCl        |           113 |           4.52 |             5. |
+| KCl         |             5 |              2 |            0.5 |
+| NaH2PO4     |           0.5 |            0.5 |            0.2 |
+| HEPES       |            10 |              1 |              2 |
+| EDTA        |             5 |            0.5 |             2. |
+|-------------+---------------+----------------+----------------|
+| Component   | TargConc (mM) |             MW |    Weight (mg) |
+|-------------+---------------+----------------+----------------|
+| Glucose     |            10 |         180.16 |         360.32 |
+| BDM         |            10 |         101.11 |         202.22 |
+| Taurine     |            10 |         125.15 |          250.3 |
+|-------------+---------------+----------------+----------------|
+| TargVol(mL) |           200 |            H2O |          189.3 |
+| Ph to 7.8   |        approx |        1N NaOH |              1 |
+#+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
+
+   2. Perfusion buffer (90 mL per mouse, accounting for Col and STOP)
+| Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
+|-------------+---------------+----------------+----------------|
+| NaCl        |           113 |           4.52 |            10. |
+| KCl         |             5 |              2 |              1 |
+| NaH2PO4     |           0.5 |            0.5 |            0.4 |
+| HEPES       |            10 |              1 |              4 |
+| MgCl2       |             1 |              1 |            0.4 |
+|-------------+---------------+----------------+----------------|
+| Component   | TargConc (mM) |             MW |    Weight (mg) |
+|-------------+---------------+----------------+----------------|
+| Glucose     |            10 |         180.16 |         720.64 |
+| BDM         |            10 |         101.11 |         404.44 |
+| Taurine     |            10 |         125.15 |          500.6 |
+|-------------+---------------+----------------+----------------|
+| TargVol(mL) |           400 |            H2O |          382.2 |
+| Ph to 7.8   |        approx |        1N NaOH |              2 |
+#+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
+   3. Collagenase buffer (60 mL per mouse) in perfusion buffer
+      Prepare right before procedure, warm to 37 degree
+| Component     | TargConc (mg/mL) | Weight (mg)    |
+|---------------+------------------+----------------|
+| Collagenase 2 |              0.5 |           125. |
+| Collagenase 4 |              0.5 |           125. |
+| Protease XIV  |             0.05 |           12.5 |
+| Volume (mL)   |              250 |                |
+#+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=$2 * @5$2
+   4. Stop buffer (10 mL per mouse)
+| Component             | TargConc (%) | volumn |
+|-----------------------+--------------+--------|
+| FBS                   |            5 |      2 |
+| perfusion Buffer (mL) |           40 |     38 |
+#+TBLFM: @2$3=@2$2*@3$2/100::@3$3=@3$2 - @2$3
+** Mouse Pre-treatments
+   One hour prior to tissue harvest, mice were IP injected heparin
+   (1,000 units/ml, 200ul per mouse)
+** Prepare the equipment (use 27 G needle)
+   1. 20 mL EDTA buffer, 10 mL perfusion buffer, 50 mL Collagenase Buffer in
+      Syringes, keep the collagenase buffer warm with heatpad
+   2. Prepare 3 60mm dishes with 10 mL of each buffer
+** Tissue harvest
+   Induce and maintain anaesthesia with isoflurane
+   Open chest and expose heart
+   Move left lung and Cut inferior vena cava and decending AO
+   Perfuse from right ventricle with 7 ml of EDTA buffer in 1 min
+   Clamp Aorta with hemostat and cut to extract heart
+   Proceed to tissue digestion in a 10cm dish with EDTA buffer
+** Tissue digest
+   1. Perfuse from the left ventricle with EDTA buffer (10mL in 6 min).
+      Apply only enough pressure to the syringe to keep the heart fully
+      inflated. Move heart to perfusion buffer
+   2. Using the same perforation, perfuse the heart with 3 ml
+      Perfusion buffer to clear out EDTA. Transfer heart to plate with digestion
+      Buffer
+   3. Perfuse with eyzyme digest cocktail (apply minimum pressure needed to
+      keep heart full inflated, ~2 ml/min)
+      Full digestion can be achieve with 25 mL to 60 mL depending on the
+      condition of tissue/mouse. "Signs of complete digestion include a
+      noticeable reduction in resistance to injection pressure, loss of shape
+      and rigidity, holes and/or extensive pale and fluffy appearance at the
+      heart surface, and ejection of myocytes into the effluent buffer, which
+      are just visible to the naked eye."
+   4. Remove clamp. Physically dissociate cardiac tissue in a new 10cm dish with
+      5 mL volume trituration with a 1000 µL pipette(cut tip).
+   5. Bring the volume up to 15 mL with stop buffer
+   6. Pass the cell suspension through a 250 µM mesh filter
+   7. Centrifuge at 50 g for 1min, remove supernatant and repeat 3 times
+   8. Collect supernatant, and pass through 70 um filter.
+      Centrifuge supernatant at 400 g for 5 minutes to pellet non-myocytes
+      non-myocytes will be subject to antibody labeling.
+   9. Combine the CM pellets and resuspend in 5 mL of Perfusion buffer three
+      rounds of sequential gravity settling for 10 min. Combine pellet
+* Mouse CM isolation (based on Pinto Alexander 2016 Circ Res paper)
+** Buffer preparations
+   Note 1: all buffers should be sterile filtered and good for 2 weeks at
+   4 degree protected from light
+   1. EDTA buffer (20 mL per mouse)
+| Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
+|-------------+---------------+----------------+----------------|
+| NaCl        |           113 |           4.52 |           3.75 |
+| KCl         |             5 |              2 |          0.375 |
+| NaH2PO4     |           0.5 |            0.5 |           0.15 |
+| HEPES       |            10 |              1 |            1.5 |
+| EDTA        |             5 |            0.5 |            1.5 |
+|-------------+---------------+----------------+----------------|
+| Component   | TargConc (mM) |             MW |    Weight (mg) |
+|-------------+---------------+----------------+----------------|
+| Glucose     |            10 |         180.16 |         270.24 |
+| BDM         |            10 |         101.11 |        151.665 |
+| Taurine     |            10 |         125.15 |        187.725 |
+|-------------+---------------+----------------+----------------|
+| TargVol(mL) |           150 |            H2O |        141.975 |
+| Ph to 7.8   |        approx |        1N NaOH |           0.75 |
+#+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
+
+   2. Perfusion buffer (20 mL per mouse, accounting for Col and STOP)
+| Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
+|-------------+---------------+----------------+----------------|
+| NaCl        |           113 |           4.52 |           3.75 |
+| KCl         |             5 |              2 |          0.375 |
+| NaH2PO4     |           0.5 |            0.5 |           0.15 |
+| HEPES       |            10 |              1 |            1.5 |
+| MgCl2       |             1 |              1 |           0.15 |
+|-------------+---------------+----------------+----------------|
+| Component   | TargConc (mM) |             MW |    Weight (mg) |
+|-------------+---------------+----------------+----------------|
+| Glucose     |            10 |         180.16 |         270.24 |
+| BDM         |            10 |         101.11 |        151.665 |
+| Taurine     |            10 |         125.15 |        187.725 |
+|-------------+---------------+----------------+----------------|
+| TargVol(mL) |           150 |            H2O |        143.325 |
+| Ph to 7.8   |        approx |        1N NaOH |           0.75 |
+#+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
+   3. Collagenase buffer (10 mL per mouse) in perfusion buffer
+      Prepare right before procedure, warm to 37 degree
+| Component                | TargConc (mg/mL) | Weight (mg) |
+|--------------------------+------------------+-------------|
+| Collagenase 2            |              3.2 |       147.2 |
+| Soybean Trysin Inhibitor |              0.2 |         9.2 |
+| Elastase suspension (uL) |             0.75 |   1337.2093 |
+| Volume (mL)              |               46 |             |
+#+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 25.8) * 1000
+   4. Stop buffer (5 mL per mouse)
+| Component             | TargConc (%) | volumn |
+|-----------------------+--------------+--------|
+| FBS                   |            5 |      1 |
+| perfusion Buffer (mL) |           20 |     19 |
+#+TBLFM: @2$3=@2$2*@3$2/100::@3$3=@3$2 - @2$3
+** ** Mouse Pre-treatments
+   One hour prior to tissue harvest, mice were IP injected heparin
+** Prepare equipment
+   20 mL EDATA buffer, 5 mL of perfusion buffer, 10 mL of digestion mix
+   per mouse
+   Prefill the syringes with 27 G needle
+** Tissue harvest (~ 20 min/mouse)
+   Euthanize with isoflurane
+   Open chest and expose heart
+   Move left lung and Cut inferior vena cava and decending AO.
+   Perfuse from right ventricle with 7 ml of EDTA buffer in 1 min.
+   Clamp Aorta and perfuse the left ventricle with 10 mL of EDTA buffer followed
+   by 3 mL of perfusion buffer (try to use the same perforation).
+
+** Tissue digest (~ 1 hour 40 min)
+   Dissect the heart separate ventricle from atrium.
+   Mince the tissue into 1-2 mm pieces and transfer to 10mL of digestion mix.
+   Incubate at 37 degree for 50-60 minutes, trituration every 10 minutes.
+   Filter the suspension through 250 uM filter to remove large debris
+   Pellet the cells at 1100 RPM for 12 min, discard supernatant
+   Resuspend the pellet in 10 mL of FA3 buffer, pass through 70 um filter
+   Pellet the cells again and resuspend in 5 mL of FA3 buffer
+   Pellet and remove supernatant. Resuspend the cells in 300 uL of FA buffer
+   for antibody labeling
+** Staining and flow cytometry (~ 1 hour 20 min)
+   Add 3uL of anti-CD31-APC antibody to the cell suspension
+   Mix well and incubate at 4 degree for 1 hour, protect from light.
+   Add 1 mL of FA3 buffer, spin down and resuspend in 1 mL of FA3 buffer
+   Add DAPI to the final concentration of 1 ug/mL (100x working solution)
+   Sort back CD31 + population and CD31 - population
+   Use 1x PBS (calcium and magnesium free) containing 2% FBS as collection
+   buffer
+** Preparation for scRNA-seq submission
+*** Buffer
+    1X PBS (calcium and magnesium free) containing 2% FBS.
+    target concentration 900 cells/ul
+*** Cell counting
+    Load both sides for the hemocytometer, count 4 sets of 16 corners on each
+    side. Optimal concentration for cell counting is about 500-900/uL.
+    Mix endothelial cells population with non-endo cells at the ratio of 1:9.
+    Spin down and resuspend the cells at 900/uL (between 700 and 1200 / uL)
+    in 1xPBS with 2% FBS.
+
+* Transfection
+** 293
+   24 well plate
+|    well |  6.5 |           |
+|---------+------+-----------|
+| Plasmid | DMEM | turbofect |
+|---------+------+-----------|
+|    1.07 |  100 |         2 |
+|   6.955 | 650. |       13. |
+#+TBLFM: @4$1=@1$2*@3$1::@4$2=@1$2*@3$2::@4$3=@1$2*@3$3
+protein related analysis done 48 hours post, RNA related can be done 24 post
