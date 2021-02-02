@@ -83,9 +83,11 @@ Reagents needed
    Centrifuge 1000 rpm, 1min at 4 degree, collect supernatant
    Aliquote each sample into 2x 2mL (Antibody and Isotype control)
    Add antibodies into the supernatant incubate at 4 degree overnight with agitation
-| Antibody          | Company | Cat#    | Conc.  | Amount |
-|-------------------+---------+---------+--------+--------|
-| Anti-KAT3B / p300 | Abcam   | ab14984 | 1mg/ml | 2ug    |
+| Antibody          | Company   | Cat#    | Conc.   | Amount |
+|-------------------+-----------+---------+---------+--------|
+| Anti-KAT3B / p300 | Abcam     | ab14984 | 1mg/ml  | 2ug    |
+| Anti-H3K4Me2      | Millipore | 05-1338 | 1 mg/ml | 2ug    |
+
    Next morning, add 60ul of Protein A Agrarose/Salmon Sperm DNA, rotate at 4 degree for 1 hour
    Centrifuge at 1000 rpm for 1 min at 4 degree, remove supernatant without distrubing the pellet
 ** Washes and Elution
@@ -112,7 +114,6 @@ Reagents needed
    Aspirate supernatant taking care with pellet.
    Add 1 ml 70% ethanol and spin at 16000 g for 15‟.
    Aspirate ethanol and remove remaining ethanol by pipet.
-   Remove supernatant and repeat the last step with 150uL Ethanol wash
    Remove supernatant and dry the pellet with lid open at RT for 10-15 min
    Resuspend DNA in 30uL of H2O
 ** Alternative Proceed with PCR purification kit (PB buffer needed 2750 ul and 580 uL)
