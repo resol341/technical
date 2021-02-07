@@ -207,6 +207,13 @@ Normal time line
 *** JQ1 dosing (Noon day3)
 *** JQ1 2nd dosing + Treatment (POGF) (Noon day4)
 *** If doing ChIP, cells were harvested 24 hours later
+* Simvastatin
+  Activation procedure (M. Sadeghi, et al., J. Immunol., 165, 2712-2718 (2000)
+** 25 mg of simvastatin is dissolved in 500 μl of ethanol.
+** Then 750 μl of 0.1 N NaOH was added to the solution and subsequently incubated at 50 °C for 2 hours.
+** The pH was brought to 7.0 by 1M HCl, and the final concentration of the stock solution was adjusted to 10mM by adding 4.647 mL TC water. The stock solution will be aliquoted and frozen at -80 degree.
+** Target concentration 1 uM (dilute stock 1:100 and use as 100x solution).
+** Note prepare solvent control.
 * DAPI
   Invitrogen D1306
   Stock solution (-20 degree): 1 mg/mL in DI/MQ water
@@ -636,10 +643,10 @@ Measure abs at 600 nm (and 700 nm)
       Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |       147.2 |
-| Soybean Trysin Inhibitor |              0.2 |         9.2 |
-| Elastase suspension (uL) |             0.75 |   1337.2093 |
-| Volume (mL)              |               46 |             |
+| Collagenase 2            |              3.2 |       118.4 |
+| Soybean Trysin Inhibitor |              0.2 |         7.4 |
+| Elastase suspension (uL) |             0.75 |   1075.5814 |
+| Volume (mL)              |               37 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 25.8) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
