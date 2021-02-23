@@ -60,7 +60,7 @@ Reagents needed
 | Buffer   | Volume/sample (mL) | # samples | total volume (mL) |
 |----------+--------------------+-----------+-------------------|
 | Glycine  |                  1 |       4.5 |               4.5 |
-| 1x PBS   |                 20 |           |               90. |
+| 1x PBS   |                 25 |           |             112.5 |
 | lysis    |                0.5 |           |              2.25 |
 | Dilution |                3.8 |           |              17.1 |
 #+TBLFM: @2$4=$2*@2$3::@3$4=$2*@2$3::@4$4=$2*@2$3::@5$4=$2*@2$3
@@ -83,10 +83,11 @@ Reagents needed
    Centrifuge 1000 rpm, 1min at 4 degree, collect supernatant
    Aliquote each sample into 2x 2mL (Antibody and Isotype control)
    Add antibodies into the supernatant incubate at 4 degree overnight with agitation
-| Antibody          | Company   | Cat#    | Conc.   | Amount |
+| Antibody          | Company   |    Cat# | Conc.   | Amount |
 |-------------------+-----------+---------+---------+--------|
 | Anti-KAT3B / p300 | Abcam     | ab14984 | 1mg/ml  | 2ug    |
 | Anti-H3K4Me2      | Millipore | 05-1338 | 1 mg/ml | 2ug    |
+| Anti-H3K9Ac       | Millipore |  06-942 | 1 mg/ml | 3ug    |
 
    Next morning, add 60ul of Protein A Agrarose/Salmon Sperm DNA, rotate at 4 degree for 1 hour
    Centrifuge at 1000 rpm for 1 min at 4 degree, remove supernatant without distrubing the pellet
@@ -211,8 +212,8 @@ Normal time line
   Activation procedure (M. Sadeghi, et al., J. Immunol., 165, 2712-2718 (2000)
 ** 25 mg of simvastatin is dissolved in 500 μl of ethanol.
 ** Then 750 μl of 0.1 N NaOH was added to the solution and subsequently incubated at 50 °C for 2 hours.
-** The pH was brought to 7.0 by 1M HCl, and the final concentration of the stock solution was adjusted to 10mM by adding 4.647 mL TC water. The stock solution will be aliquoted and frozen at -80 degree.
-** Target concentration 1 uM (dilute stock 1:100 and use as 100x solution).
+** The pH was brought to 7.0 by 1M HCl (need about 80 uL), and the final concentration of the stock solution was adjusted to 10mM by adding 4.642 mL HBSS. The stock solution will be aliquoted and frozen at -80 degree.
+** Target concentration 1 uM (dilute stock 1:10 and use as 1000x solution).
 ** Note prepare solvent control.
 * DAPI
   Invitrogen D1306
