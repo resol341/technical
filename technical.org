@@ -83,11 +83,13 @@ Reagents needed
    Centrifuge 1000 rpm, 1min at 4 degree, collect supernatant
    Aliquote each sample into 2x 2mL (Antibody and Isotype control)
    Add antibodies into the supernatant incubate at 4 degree overnight with agitation
-| Antibody          | Company   |    Cat# | Conc.   | Amount |
-|-------------------+-----------+---------+---------+--------|
-| Anti-KAT3B / p300 | Abcam     | ab14984 | 1mg/ml  | 2ug    |
-| Anti-H3K4Me2      | Millipore | 05-1338 | 1 mg/ml | 2ug    |
-| Anti-H3K9Ac       | Millipore |  06-942 | 1 mg/ml | 3ug    |
+| Antibody          | Company   |    Cat# | Conc.            | Amount |
+|-------------------+-----------+---------+------------------+--------|
+| Anti-KAT3B / p300 | Abcam     | ab14984 | 1mg/ml           | 2ug    |
+| Anti-H3K4Me2      | Millipore | 05-1338 | 1 mg/ml          | 2ug    |
+| Anti-H3K9Ac       | Millipore |  06-942 | 1 mg/ml          | 3ug    |
+| Anti-H4Ac         | Millipore |  06-866 | unpurified serum | 4uL    |
+|                   |           |         |                  |        |
 
    Next morning, add 60ul of Protein A Agrarose/Salmon Sperm DNA, rotate at 4 degree for 1 hour
    Centrifuge at 1000 rpm for 1 min at 4 degree, remove supernatant without distrubing the pellet
@@ -103,7 +105,6 @@ Reagents needed
    Thaw samples next morning, add 10uL of 0.5M EDTA, 20uL of 1M TrisHcl PH6.5, 2uL of 10mg/mL Proteinase K to each sample. For input control, add 2.32uL EDTA, 4.64uL Tris-HCl, 0.5uL Proteinase K. Incubate at 45 degree for 1 hour
    After the last step, IP samples should have about 550 ul of volumn, Input control samples should have 116uL.
 ** Recover DNA with phenol/Chloroform extraction
-   Note This part of protocol has not yet been fully tested with an actual experiment.
    Add one volume (550 uL/116 uL) of phenol:chloroform:isoamyl alcohol to the sample. Vortex
    for 20 sec
    Centrifuge at RT 5min, 16000 g.
@@ -561,7 +562,7 @@ Measure abs at 600 nm (and 700 nm)
 | perfusion Buffer (mL) |           40 |     38 |
 #+TBLFM: @2$3=@2$2*@3$2/100::@3$3=@3$2 - @2$3
 ** Mouse Pre-treatments
-   One hour prior to tissue harvest, mice were IP injected heparin
+   One hour prior to tissue harvest, mice were IP injected heparin (200uL of 1,000 units/ml solution)
    (1,000 units/ml, 200ul per mouse)
 ** Prepare the equipment (use 27 G needle)
    1. 20 mL EDTA buffer, 10 mL perfusion buffer, 50 mL Collagenase Buffer in
@@ -606,48 +607,48 @@ Measure abs at 600 nm (and 700 nm)
    1. EDTA buffer (20 mL per mouse)
 | Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
 |-------------+---------------+----------------+----------------|
-| NaCl        |           113 |           4.52 |           3.75 |
-| KCl         |             5 |              2 |          0.375 |
-| NaH2PO4     |           0.5 |            0.5 |           0.15 |
-| HEPES       |            10 |              1 |            1.5 |
-| EDTA        |             5 |            0.5 |            1.5 |
+| NaCl        |           113 |           4.52 |           6.25 |
+| KCl         |             5 |              2 |          0.625 |
+| NaH2PO4     |           0.5 |            0.5 |           0.25 |
+| HEPES       |            10 |              1 |            2.5 |
+| EDTA        |             5 |            0.5 |            2.5 |
 |-------------+---------------+----------------+----------------|
 | Component   | TargConc (mM) |             MW |    Weight (mg) |
 |-------------+---------------+----------------+----------------|
-| Glucose     |            10 |         180.16 |         270.24 |
-| BDM         |            10 |         101.11 |        151.665 |
-| Taurine     |            10 |         125.15 |        187.725 |
+| Glucose     |            10 |         180.16 |          450.4 |
+| BDM         |            10 |         101.11 |        252.775 |
+| Taurine     |            10 |         125.15 |        312.875 |
 |-------------+---------------+----------------+----------------|
-| TargVol(mL) |           150 |            H2O |        141.975 |
-| Ph to 7.8   |        approx |        1N NaOH |           0.75 |
+| TargVol(mL) |           250 |            H2O |        241.975 |
+| Ph to 7.8   |        approx |        1N NaOH |           1.25 |
 #+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
 
    2. Perfusion buffer (20 mL per mouse, accounting for Col and STOP)
 | Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
 |-------------+---------------+----------------+----------------|
-| NaCl        |           113 |           4.52 |           3.75 |
-| KCl         |             5 |              2 |          0.375 |
-| NaH2PO4     |           0.5 |            0.5 |           0.15 |
-| HEPES       |            10 |              1 |            1.5 |
-| MgCl2       |             1 |              1 |           0.15 |
+| NaCl        |           113 |           4.52 |           6.25 |
+| KCl         |             5 |              2 |          0.625 |
+| NaH2PO4     |           0.5 |            0.5 |           0.25 |
+| HEPES       |            10 |              1 |            2.5 |
+| MgCl2       |             1 |              1 |           0.25 |
 |-------------+---------------+----------------+----------------|
 | Component   | TargConc (mM) |             MW |    Weight (mg) |
 |-------------+---------------+----------------+----------------|
-| Glucose     |            10 |         180.16 |         270.24 |
-| BDM         |            10 |         101.11 |        151.665 |
-| Taurine     |            10 |         125.15 |        187.725 |
+| Glucose     |            10 |         180.16 |          450.4 |
+| BDM         |            10 |         101.11 |        252.775 |
+| Taurine     |            10 |         125.15 |        312.875 |
 |-------------+---------------+----------------+----------------|
-| TargVol(mL) |           150 |            H2O |        143.325 |
-| Ph to 7.8   |        approx |        1N NaOH |           0.75 |
+| TargVol(mL) |           250 |            H2O |        243.325 |
+| Ph to 7.8   |        approx |        1N NaOH |           1.25 |
 #+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer
       Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |       118.4 |
-| Soybean Trysin Inhibitor |              0.2 |         7.4 |
-| Elastase suspension (uL) |             0.75 |   1075.5814 |
-| Volume (mL)              |               37 |             |
+| Collagenase 2            |              3.2 |        192. |
+| Soybean Trysin Inhibitor |              0.2 |         12. |
+| Elastase suspension (uL) |             0.75 |   1744.1860 |
+| Volume (mL)              |               60 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 25.8) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
@@ -656,7 +657,7 @@ Measure abs at 600 nm (and 700 nm)
 | perfusion Buffer (mL) |           20 |     19 |
 #+TBLFM: @2$3=@2$2*@3$2/100::@3$3=@3$2 - @2$3
 ** ** Mouse Pre-treatments
-   One hour prior to tissue harvest, mice were IP injected heparin
+   One hour prior to tissue harvest, mice were IP injected heparin (200uL of 1,000 units/ml solution)
 ** Prepare equipment
    20 mL EDATA buffer, 5 mL of perfusion buffer, 10 mL of digestion mix
    per mouse
