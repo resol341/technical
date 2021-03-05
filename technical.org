@@ -647,9 +647,9 @@ Measure abs at 600 nm (and 700 nm)
 |--------------------------+------------------+-------------|
 | Collagenase 2            |              3.2 |        192. |
 | Soybean Trysin Inhibitor |              0.2 |         12. |
-| Elastase suspension (uL) |             0.75 |   1744.1860 |
+| Elastase suspension (uL) |             0.75 |   1698.1132 |
 | Volume (mL)              |               60 |             |
-#+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 25.8) * 1000
+#+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
 |-----------------------+--------------+--------|
@@ -698,6 +698,21 @@ Measure abs at 600 nm (and 700 nm)
     Mix endothelial cells population with non-endo cells at the ratio of 1:9.
     Spin down and resuspend the cells at 900/uL (between 700 and 1200 / uL)
     in 1xPBS with 2% FBS.
+
+* Lung single cell suspension preparation
+** Tissue dissection
+*** Perfuse left and right ventricle with 7 mL of PBS Hep.
+*** Dissect lung tissue.
+*** Mince the tissue with blade/scissor
+*** Digest the tissue in regular digestion buffer with HBSS (1 lobe requires 10 mL of digestion buffer)
+*** Filter with 250 uM filter
+*** pellet and resuspend in 10 mL of FA3, Filter through 70 uM filter
+*** Prepare Ficoll by diluting the 10mM stock 1:10 with MQ and 1:1000 with FA3
+*** Layer cell prep on top of 3 mL of Ficoll
+*** Spin 500g for 10 min at room temp.  no acceleration, no brake.
+*** Collect buffer, interface + upper ficoll
+*** Mix and spin down, wash with FA3 buffer one more time.
+*** Pellet and proceed with staining
 
 * Transfection
 ** 293
