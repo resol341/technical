@@ -739,10 +739,11 @@ protein related analysis done 48 hours post, RNA related can be done 24 post
 *** 20% MSC qualified FBS
 *** 2x Penicillin Streptomycin
 *** 1ng/mL murine basic fibroblast growth factor
-# R&D SYSTEMS # 3139-FB. Resuspend in steril PBS w 0.1% BSA at 100ug/mL, 5uL needed per 500 mL media.
+R&D SYSTEMS # 3139-FB. Resuspend in steril PBS w 0.1% BSA at 100ug/mL, 5uL needed per 500 mL media.
 *** 5ng/mL murine epidermal growth factor
-# R&D SYSTEMS # 2028-EG. Resuspend in steril PBS at 200ug/mL, 12.5 uL needed per 500 mL media.
+R&D SYSTEMS # 2028-EG. Resuspend in steril PBS at 200ug/mL, 12.5 uL needed per 500 mL media.
 *** rShhN (try 4ug/mL, 400ng/mL, 40ng/mL, 4ng/mL, 0ng/mL)
+
 ** Gelatin coating
 *** Dilute the 2% Gelatin to 0.1% with TC grade water (2.5 mL + 47.5 mL H2O)
 *** Add 1.0 mL of 0.1% Gelatin Solution per 10 cm2 of culture surface area (e.g., 350 uL per well if using a 12-well plate).
