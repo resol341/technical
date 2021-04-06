@@ -725,6 +725,17 @@ Measure abs at 600 nm (and 700 nm)
 |   6.955 | 650. |       13. |
 #+TBLFM: @4$1=@1$2*@3$1::@4$2=@1$2*@3$2::@4$3=@1$2*@3$3
 protein related analysis done 48 hours post, RNA related can be done 24 post
+** Cos-7
+10 cm dish
+| plate         |                     1 |                |           |           |
+|---------------+-----------------------+----------------+-----------+-----------|
+| construct     | concentration (ng/uL) | Plasmid volume | DMEM (uL) | Turbofect |
+|---------------+-----------------------+----------------+-----------+-----------|
+| pCDNA3.1-ShhN |               1547.95 |      3.8760942 |       600 |        12 |
+| linearized    |                 939.6 |      6.3856960 |       600 |        12 |
+#+TBLFM: @3$3=6*1000/@3$2::@4$3=6*1000/@4$2
+for linearizing, 6.5 uL of plasmid (10ug) + 5 uL of NEBuffer3.1 + 10 uL of BglII (NEB R0144S) + 28.5 H2O. Digest at 37c for 2 hours
+Column purify after.
 * Creation of Stable Cell Lines
 ** Determining antibiotic sensitivity
 *** Plate cells at 0.1 million/well in 6-well plate.
@@ -739,14 +750,21 @@ protein related analysis done 48 hours post, RNA related can be done 24 post
 *** 20% MSC qualified FBS
 *** 2x Penicillin Streptomycin
 *** 1ng/mL murine basic fibroblast growth factor
-R&D SYSTEMS # 3139-FB. Resuspend in steril PBS w 0.1% BSA at 100ug/mL, 5uL needed per 500 mL media.
+R&D SYSTEMS # 3139-FB. Resuspend in sterile PBS w 0.1% BSA at 100ug/mL, 5uL needed per 500 mL media.
 *** 5ng/mL murine epidermal growth factor
-R&D SYSTEMS # 2028-EG. Resuspend in steril PBS at 200ug/mL, 12.5 uL needed per 500 mL media.
+R&D SYSTEMS # 2028-EG. Resuspend in sterile PBS at 200ug/mL, 12.5 uL needed per 500 mL media.
 *** rShhN (try 4ug/mL, 400ng/mL, 40ng/mL, 4ng/mL, 0ng/mL)
-
+R&D SYSTEMS # 461-SH.  Resuspend in sterile PBS w 0.1% BSA at 100ug/mL. (20 ul aliquots made)aa
 ** Gelatin coating
 *** Dilute the 2% Gelatin to 0.1% with TC grade water (2.5 mL + 47.5 mL H2O)
 *** Add 1.0 mL of 0.1% Gelatin Solution per 10 cm2 of culture surface area (e.g., 350 uL per well if using a 12-well plate).
+| plate   | Volume of Gelatin per well(uL) |
+|---------+--------------------------------|
+| 24-well |                            300 |
+| 12-well |                            350 |
+| 6-well  |                            960 |
+| 60mm    |                           2150 |
+| 100mm   |                           5670 |
 *** Rock culture flask to coat surface; place in a 37°C incubator (with or without 5% CO2) for at least 30 minutes, and up to overnight.
 *** Aspirate the excess gelatin solution from the culture flasks using sterile technique.
 *** Add 5.0 mL of complete growth medium per 25 cm2 of culture surface area (e.g., 700 uL per well if using a 12-well plate).
