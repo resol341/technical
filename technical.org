@@ -78,6 +78,7 @@ Reagents needed
    Incubate on ice for an additional 15 minute.
    Centrifuge samples for 10min at 13000 rpm at 4 degree and collect supernatant (400uL), add 3.6mL of ChIP dilution buffer with protease inhibitor.
    Save 20ul of diluted sample as input control.
+*** For sorted cells, cross-linking was done in 1mL of FA3 with everything scaled accordingly.
 ** Chromatin Preclearing and Immunoprecipitation
    Add 75ul of Protein A Agrarose/Salmon Sperm DNA to sample incubate for 30 min at 4 degree with agitation
    Centrifuge 1000 rpm, 1min at 4 degree, collect supernatant
@@ -125,6 +126,78 @@ Reagents needed
 |---------------+------------------+---------------+--------------|
 |             7 |              580 |          2750 |       24975. |
 #+TBLFM: $4=$3 * ($1 + 0.5) + $2 * ($1 + 0.5)
+* Western blotting
+** Gel casting with Bio-rad
+*** Recipes for the gels
+    |                            | Stacking | Resolving 7.5% | Resolving 10% | Resolving 12% |
+    |----------------------------+----------+----------------+---------------+---------------|
+    | 30% Acrylamide/bis (mL)    |      1.3 |              5 |           6.6 |             8 |
+    | 0.5M Tris-HCl, pH 6.8 (mL) |      2.5 |              0 |             0 |             0 |
+    | 1.5M Tris-HCl, pH 8.8 (mL) |        0 |              5 |             5 |             5 |
+    | 10% SDS (uL)               |      100 |            200 |           200 |           200 |
+    | H2O (mL)                   |      6.1 |            9.8 |           8.2 |           6.8 |
+    | TEMED (uL)                 |       10 |             20 |            20 |            20 |
+    | 10% APS (uL)               |      100 |             64 |            64 |            64 |
+*** Recipes for 10x transfer buffer
+    | Reagents | Conc   | Weight |
+    |----------+--------+--------|
+    | glycine  | 192 mM | 72g    |
+    | Tris     | 25 mM  | 15.15g |
+    | H2O      |        | 500 mL |
+**** Ph should be ~8.3, Do not add acid or base to adjust PH.
+**** For 1x buffer, add 100uL of 10x, 200 uL of Methanol to 700 mL of H2O
+*** Recipes for TBS and wash buffers
+**** 10x TBS
+     | Reagents | Weight |
+     |----------+--------|
+     | Tris-HCl | 24g    |
+     | Tris     | 5.6g   |
+     | NaCl     | 88g    |
+     | H2O      | to 1L  |
+***** PH should be around 7.6
+***** Add Tween-20 to 0.2% and 0.1% in 1x TBS for the wash buffers
+*** Blocking buffer
+     5% BSA in TBST
+*** Antibody buffer
+    Dilute blocking buffer 1:10 in TBST
+*** Antibody concentrations
+| Antibody            | Company       | Cat#        | Host  | Clone | MW     | Dilution | notes                  |
+|---------------------+---------------+-------------+-------+-------+--------+----------+------------------------|
+| Goat Anti-Mouse HRP | jacksonimmuno | 115-035-003 | Goat  |       |        |  1:10000 | Can try lower dilution |
+| Anti-Smad7          | Santa Cruz    | sc-365846   | Mouse | B-8   | 46 kDa |    1:100 |                        |
+|                     |               |             |       |       |        |          |                        |
+** Step by step guide
+*** Pour gels
+**** Allow ~30min for gels to polymerize
+*** Measure protein concentrations
+**** Use standards from 2ug/uL to 0.25 ug/mL. Use lysis buffer (mPER) as control
+*** Sample preparation
+**** +DTT and loading buffer, incubate at 100 c for 5 min
+**** 1.5mm gel with 10-wells allows ~40uL per well
+*** Running gel
+**** Start at 80v until the samples cross the stacking/separation interface.
+**** Run samples at 120 v
+*** Transfer
+**** Soak PVDF membrane in 100% methanol for 10 min, move to transfer buffer
+**** remove gel and equilibrate in transfer buffer for 10 min.
+**** assemble the transfer: bottom to top: thick blot paper, PVDF, gel, thick blot paper
+**** semi-dry transfer: 15v 30min. Can be extended for larger proteins
+*** Blocking
+**** move PVDF to TBST and wash for 10 min
+**** Block with 5% BSA in TBST for 1 hour
+*** Primary antibody incubation
+**** 6mL of TBST with 0.5% BSA is used, but can be reduced for smaller membrane/lower antibody amount
+**** Use plastic pouch and heat seal
+**** incubate overnight on rocker
+*** Washes and secondary antibody incubation
+**** Wash twice with TBST for 10min
+**** Secondary antibody incubation: 1 hour room temp
+*** Washes and ECL
+**** Wash twice with TBST for 10 min
+**** Wash twice with TBS for 5 min
+**** Move membrane to cassette and add ECL on top
+**** Incubate for 1min
+**** Remove excessive ECL and expose films.
 * Methylation PCR
 # Protocol optimized for 1.8 million cell input from 1 10cm dish, use half volume for 6 well
 ** Buffers
@@ -209,6 +282,12 @@ Normal time line
 *** JQ1 dosing (Noon day3)
 *** JQ1 2nd dosing + Treatment (POGF) (Noon day4)
 *** If doing ChIP, cells were harvested 24 hours later
+* ITF2357
+** Stock: 1mM in DMSO
+** Target conc 500 nM, Add 1:2000 directly to media in plate
+* TGFb (#7666-MB R&D Systems)
+** Stock conc. 50ug/mL in 4mM HCL with 0.1% BSA
+** Target conc. 5ng/mL, dilute 1:10 with media and use as 1000x
 * Simvastatin
   Activation procedure (M. Sadeghi, et al., J. Immunol., 165, 2712-2718 (2000)
 ** 25 mg of simvastatin is dissolved in 500 μl of ethanol.
@@ -234,6 +313,11 @@ Desired concentration: 100ug/100ul, 1ug/ul, diluted 50x
 *** Cell Biologics
 *** Cat# RA-6075
 *** 1x10^6 P1
+** Preparation Conditioned Media from Cos7 cells
+*** Expand Cos7 stably transfected with ShhN to 4x T175 flask.
+*** Wash the cells 2x with HBSS and replace with 20 mL SM cell media + 0.1% FBS
+*** Filter the conditioned media through 0.45μm syringe filter.
+*** Aliquot the media and store at -80.
 * processing OCT tissue for IHC
 ** thaw at rt for 15 minutes
 ** DI water 5 minutes
@@ -645,10 +729,10 @@ Measure abs at 600 nm (and 700 nm)
       Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        192. |
-| Soybean Trysin Inhibitor |              0.2 |         12. |
-| Elastase suspension (uL) |             0.75 |   1698.1132 |
-| Volume (mL)              |               60 |             |
+| Collagenase 2            |              3.2 |        240. |
+| Soybean Trysin Inhibitor |              0.2 |         15. |
+| Elastase suspension (uL) |             0.75 |   2122.6415 |
+| Volume (mL)              |               75 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
@@ -747,14 +831,17 @@ Column purify after.
 * Ex vivo culture of AdvSca1-SM cells
 ** Culture media
 *** alpha MEM (with GlutaMAX)
-*** 20% MSC qualified FBS
-*** 2x Penicillin Streptomycin
+*** 10% MSC qualified FBS
+**** Freshly sorted cells were maintained in 20% FBS until ready to pass.
+**** After P1 the FBS is reduced to 10%
+*** 1x Penicillin Streptomycin
+**** Freshly sorted cells were maintained in 2x PS for the first 3 days.
 *** 1ng/mL murine basic fibroblast growth factor
-R&D SYSTEMS # 3139-FB. Resuspend in sterile PBS w 0.1% BSA at 100ug/mL, 5uL needed per 500 mL media.
+**** R&D SYSTEMS # 3139-FB. Resuspend in sterile PBS w 0.1% BSA at 100ug/mL, 5uL needed per 500 mL media.
 *** 5ng/mL murine epidermal growth factor
-R&D SYSTEMS # 2028-EG. Resuspend in sterile PBS at 200ug/mL, 12.5 uL needed per 500 mL media.
+**** R&D SYSTEMS # 2028-EG. Resuspend in sterile PBS at 200ug/mL, 12.5 uL needed per 500 mL media.
 *** rShhN (try 4ug/mL, 400ng/mL, 40ng/mL, 4ng/mL, 0ng/mL)
-R&D SYSTEMS # 461-SH.  Resuspend in sterile PBS w 0.1% BSA at 100ug/mL. (20 ul aliquots made)aa
+**** R&D SYSTEMS # 461-SH.  Resuspend in sterile PBS w 0.1% BSA at 100ug/mL. (20 ul aliquots made). Note, no rShhN is used at the moment.
 ** Gelatin coating
 *** Dilute the 2% Gelatin to 0.1% with TC grade water (2.5 mL + 47.5 mL H2O)
 *** Add 1.0 mL of 0.1% Gelatin Solution per 10 cm2 of culture surface area (e.g., 350 uL per well if using a 12-well plate).
@@ -767,6 +854,5 @@ R&D SYSTEMS # 461-SH.  Resuspend in sterile PBS w 0.1% BSA at 100ug/mL. (20 ul a
 | 100mm   |                           5670 |
 *** Rock culture flask to coat surface; place in a 37°C incubator (with or without 5% CO2) for at least 30 minutes, and up to overnight.
 *** Aspirate the excess gelatin solution from the culture flasks using sterile technique.
-*** Add 5.0 mL of complete growth medium per 25 cm2 of culture surface area (e.g., 700 uL per well if using a 12-well plate).
-*** Place the gelatin-coated flasks in a 37°C, 5% CO2 incubator for at least one hour to equilibrate before inoculating with the cell suspension.
+*** For freshly sorted cells, add 5.0 mL of complete growth medium per 25 cm2 of culture surface area (e.g., 700 uL per well if using a 12-well plate). Place the gelatin-coated flasks in a 37°C, 5% CO2 incubator for at least one hour to equilibrate before inoculating with the cell suspension.
 *** [[https://www.atcc.org/products/all/PCS-999-027.aspx#cultureconditions][Ref]]
