@@ -126,6 +126,45 @@ Reagents needed
 |---------------+------------------+---------------+--------------|
 |             7 |              580 |          2750 |       24975. |
 #+TBLFM: $4=$3 * ($1 + 0.5) + $2 * ($1 + 0.5)
+* RNA immunoprecipitation
+** Notes:
+*** The protocol is optimized for whole cell lysates (including nuclear protein)
+*** All steps should be performed on ice.
+*** Cells seeded on T175 culture dishes at 70 – 90% confluency has been tested
+** Buffers (prepare with nuclease free water)
+
+*** hypotonic buffer
+| Component        | TargConc (mM) | Stock Conc (M) | Stock Vol (uL) |
+|------------------+---------------+----------------+----------------|
+| Tris-HCl (pH7.5) |            10 |              1 |             50 |
+| NaCl             |            10 |              1 |             50 |
+| MgCl2            |           2.5 |              1 |           12.5 |
+|------------------+---------------+----------------+----------------|
+| TargVol(mL)      |             5 |            H2O |         4.8875 |
+#+TBLFM: @2$4=(@5$2*@2$2)/(@2$3)::@3$4=(@5$2*@3$2)/(@3$3)::@4$4=(@5$2*@4$2)/(@4$3)::@5$4=@5$2-vsum(@2..@4)/1000
+*** RIP buffer
+| Component        | TargConc (mM) | Stock Conc (M) | Stock Vol (uL) |
+|------------------+---------------+----------------+----------------|
+| Tris-HCl (pH7.5) |            50 |              1 |            250 |
+| NaCl             |           150 |              1 |            750 |
+| MgCl2            |             1 |              1 |              5 |
+| IGEPAL CA-630    |          0.5% |           100% |           250. |
+| EDTA             |             5 |            0.5 |            50. |
+| DTT              |             1 |              1 |              5 |
+| RNaseOUT (u/mL)  |           200 |          40000 |             25 |
+|------------------+---------------+----------------+----------------|
+| TargVol(mL)      |             5 |            H2O |          3.665 |
+#+TBLFM: @2$4=(@9$2*@2$2)/(@2$3)::@3$4=(@9$2*@3$2)/(@3$3)::@4$4=(@9$2*@4$2)/(@4$3)::@5$4=(@9$2*10000*@5$2)/(@5$3)::@6$4=(@9$2*@6$2)/(@6$3)::@7$4=(@9$2*@7$2)/(@7$3)::@8$4=(@9$2*1000*@8$2)/(@8$3)::@9$4=@9$2-vsum(@2..@8)/1000
+*** NT2 buffer (make fresh each day)
+| Component        | TargConc (mM) | Stock Conc (M) | Stock Vol (uL) |
+|------------------+---------------+----------------+----------------|
+| Tris-HCl (pH7.5) |            50 |              1 |            250 |
+| NaCl             |           150 |              1 |            750 |
+| MgCl2            |             1 |              1 |              5 |
+| IGEPAL CA-630    |         0.05% |           100% |            2.5 |
+|------------------+---------------+----------------+----------------|
+| TargVol(mL)      |             5 |       H2O (mL) |         3.9925 |
+#+TBLFM: @2$4=(@6$2*@2$2)/(@2$3)::@3$4=(@6$2*@3$2)/(@3$3)::@4$4=(@6$2*@4$2)/(@4$3)::@5$4=(@6$2*1000*@5$2)/(@5$3)::@6$4=@6$2-vsum(@2..@5)/1000
 * Western blotting
 ** Gel casting with Bio-rad
 *** Recipes for the gels
@@ -161,11 +200,16 @@ Reagents needed
 *** Antibody buffer
     Dilute blocking buffer 1:10 in TBST
 *** Antibody concentrations
-| Antibody            | Company       | Cat#        | Host  | Clone | MW     | Dilution | notes                  |
-|---------------------+---------------+-------------+-------+-------+--------+----------+------------------------|
-| Goat Anti-Mouse HRP | jacksonimmuno | 115-035-003 | Goat  |       |        |  1:10000 | Can try lower dilution |
-| Anti-Smad7          | Santa Cruz    | sc-365846   | Mouse | B-8   | 46 kDa |    1:100 |                        |
-|                     |               |             |       |       |        |          |                        |
+| Antibody             | Company        | Cat#        | Host   | Clone | MW         | Dilution | notes                         |   |
+|----------------------+----------------+-------------+--------+-------+------------+----------+-------------------------------+---|
+| Goat Anti-Mouse HRP  | jacksonimmuno  | 115-035-003 | Goat   |       |            |  1:10000 | Can try lower dilution        |   |
+| Goat Anti-rabbit HRP | Cell Signaling | #7074       | Goat   |       |            |   1:2000 |                               |   |
+| Donkey Anti-Goat HRP | Novex          | A16005      | Donkey |       |            |   1:5000 |                               |   |
+| Anti-β-Actin         | Sigma          | A5441       | Mouse  | AC-15 | 42 kDa     |  1:60000 |                               |   |
+| Phospho-Smad2/3      | Cell Signaling | #8828       | Rabbit | D27F4 | 52, 60 kDa |   1:1000 |                               |   |
+| Anti-Smad7           | Santa Cruz     | sc-365846   | Mouse  | B-8   | 46 kDa     |    1:600 |                               |   |
+| Anti-KLF4            | R&D Systems    | AF3158      | Goat   |       | 55 kda     |   1:2000 | Some strong nonspecific bands |   |
+| Anti-Klf4            | Santa Cruz     | sc-393462 x | Mouse  | B-8   | 55 kda     |   1:6000 |                               |   |
 ** Step by step guide
 *** Pour gels
 **** Allow ~30min for gels to polymerize
@@ -289,12 +333,16 @@ Normal time line
 ** Stock conc. 50ug/mL in 4mM HCL with 0.1% BSA
 ** Target conc. 5ng/mL, dilute 1:10 with media and use as 1000x
 * Simvastatin
-  Activation procedure (M. Sadeghi, et al., J. Immunol., 165, 2712-2718 (2000)
-** 25 mg of simvastatin is dissolved in 500 μl of ethanol.
-** Then 750 μl of 0.1 N NaOH was added to the solution and subsequently incubated at 50 °C for 2 hours.
-** The pH was brought to 7.0 by 1M HCl (need about 80 uL), and the final concentration of the stock solution was adjusted to 10mM by adding 4.642 mL HBSS. The stock solution will be aliquoted and frozen at -80 degree.
-** Target concentration 1 uM (dilute stock 1:10 and use as 1000x solution).
-** Note prepare solvent control.
+** With NaOH activation.  Activation procedure (M. Sadeghi, et al., J. Immunol., 165, 2712-2718 (2000)
+*** 25 mg of simvastatin is dissolved in 500 μl of ethanol.
+*** Then 750 μl of 0.1 N NaOH was added to the solution and subsequently incubated at 50 °C for 2 hours.
+*** The pH was brought to 7.0 by 1M HCl (need about 80 uL), and the final concentration of the stock solution was adjusted to 10mM by adding 4.642 mL HBSS. The stock solution will be aliquoted and frozen at -80 degree.
+*** Target concentration 1 uM (dilute stock 1:10 and use as 1000x solution).
+*** Note prepare solvent control.
+** DMSO
+*** dissolve at 100 mM concentration in DMSO (100,000x stock)
+*** Dilute 1:100 in media with 0.1% FBS and use as 1000x stock.
+*** The 1000x stock might be cloudy.
 * DAPI
   Invitrogen D1306
   Stock solution (-20 degree): 1 mg/mL in DI/MQ water
@@ -852,6 +900,8 @@ Column purify after.
 | 6-well  |                            960 |
 | 60mm    |                           2150 |
 | 100mm   |                           5670 |
+| T175    |                          17500 |
+
 *** Rock culture flask to coat surface; place in a 37°C incubator (with or without 5% CO2) for at least 30 minutes, and up to overnight.
 *** Aspirate the excess gelatin solution from the culture flasks using sterile technique.
 *** For freshly sorted cells, add 5.0 mL of complete growth medium per 25 cm2 of culture surface area (e.g., 700 uL per well if using a 12-well plate). Place the gelatin-coated flasks in a 37°C, 5% CO2 incubator for at least one hour to equilibrate before inoculating with the cell suspension.
