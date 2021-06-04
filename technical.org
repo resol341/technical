@@ -130,19 +130,18 @@ Reagents needed
 ** Notes:
 *** The protocol is optimized for whole cell lysates (including nuclear protein)
 *** All steps should be performed on ice.
-*** Cells seeded on T175 culture dishes at 70 – 90% confluency has been tested
+*** Cells seeded on T175 culture dishes at 70 – 90% confluency has been tested.
 ** Buffers (prepare with nuclease free water)
-
-*** hypotonic buffer
+*** hypotonic buffer (5mL per sample)
 | Component        | TargConc (mM) | Stock Conc (M) | Stock Vol (uL) |
 |------------------+---------------+----------------+----------------|
-| Tris-HCl (pH7.5) |            10 |              1 |             50 |
-| NaCl             |            10 |              1 |             50 |
-| MgCl2            |           2.5 |              1 |           12.5 |
+| Tris-HCl (pH7.5) |            10 |              1 |            250 |
+| NaCl             |            10 |              1 |            250 |
+| MgCl2            |           2.5 |              1 |           62.5 |
 |------------------+---------------+----------------+----------------|
-| TargVol(mL)      |             5 |            H2O |         4.8875 |
+| TargVol(mL)      |            25 |            H2O |        24.4375 |
 #+TBLFM: @2$4=(@5$2*@2$2)/(@2$3)::@3$4=(@5$2*@3$2)/(@3$3)::@4$4=(@5$2*@4$2)/(@4$3)::@5$4=@5$2-vsum(@2..@4)/1000
-*** RIP buffer
+*** RIP buffer (1mL per sample)
 | Component        | TargConc (mM) | Stock Conc (M) | Stock Vol (uL) |
 |------------------+---------------+----------------+----------------|
 | Tris-HCl (pH7.5) |            50 |              1 |            250 |
@@ -155,16 +154,46 @@ Reagents needed
 |------------------+---------------+----------------+----------------|
 | TargVol(mL)      |             5 |            H2O |          3.665 |
 #+TBLFM: @2$4=(@9$2*@2$2)/(@2$3)::@3$4=(@9$2*@3$2)/(@3$3)::@4$4=(@9$2*@4$2)/(@4$3)::@5$4=(@9$2*10000*@5$2)/(@5$3)::@6$4=(@9$2*@6$2)/(@6$3)::@7$4=(@9$2*@7$2)/(@7$3)::@8$4=(@9$2*1000*@8$2)/(@8$3)::@9$4=@9$2-vsum(@2..@8)/1000
-*** NT2 buffer (make fresh each day)
+*** NT2 buffer (6 mL per sample(times two for IgG control and IP, day1 needs 1mL/sample, day2 needs 5.5 mL/sample), make fresh each day)
 | Component        | TargConc (mM) | Stock Conc (M) | Stock Vol (uL) |
 |------------------+---------------+----------------+----------------|
 | Tris-HCl (pH7.5) |            50 |              1 |            250 |
 | NaCl             |           150 |              1 |            750 |
 | MgCl2            |             1 |              1 |              5 |
 | IGEPAL CA-630    |         0.05% |           100% |            2.5 |
+| EDTA             |             5 |            0.5 |            50. |
+| DTT              |             1 |              1 |              5 |
+| RNaseOUT (u/mL)  |           200 |          40000 |             25 |
 |------------------+---------------+----------------+----------------|
-| TargVol(mL)      |             5 |       H2O (mL) |         3.9925 |
-#+TBLFM: @2$4=(@6$2*@2$2)/(@2$3)::@3$4=(@6$2*@3$2)/(@3$3)::@4$4=(@6$2*@4$2)/(@4$3)::@5$4=(@6$2*1000*@5$2)/(@5$3)::@6$4=@6$2-vsum(@2..@5)/1000
+| TargVol(mL)      |             5 |       H2O (mL) |         3.9125 |
+#+TBLFM: @2$4=(@9$2*@2$2)/(@2$3)::@3$4=(@9$2*@3$2)/(@3$3)::@4$4=(@9$2*@4$2)/(@4$3)::@5$4=(@9$2*1000*@5$2)/(@5$3)::@6$4=(@9$2*@6$2)/(@6$3)::@7$4=(@9$2*@7$2)/(@7$3)::@8$4=(@9$2*1000*@8$2)/(@8$3)::@9$4=@9$2-vsum(@2..@8)/1000
+
+** Step by step guide
+*** trypsinze the cultured cells after treatment.
+*** Wash cells with cold 1x PBS twice and pellet at 300g for 5 min.
+*** Resuspend the pellet in 5mL of hypotonic buffer with protease inhibitor (1:500). Incubate on ice for 15 min with periodic mixing.
+*** Pellet nuclei by centrifugation at 2500g for 15 min at 4 degree.
+*** Resuspend nuclei pellet in 1mL of RIP buffer with protease inhibitor (1:100),and passed through 26.5 G syringe 5 times. Centrifugation (counter top) at 13000 rpm for 15 min at 4ºC.Collect supernatant and divide into two 500 uL samples (IP and IgG control). Take 10 ul Aliquot of lysate for western blot.
+*** To each sample, add 30 µl DNaseI (1 units/µl). Incubate the samples at 37°C for 10 minutes, with periodic mixing (via gentle tapping of the tube).
+*** Mix the beeds well, transfer 50 uL into a Ep tube, pellet at 200g for 1 min, wash twice with 200 uL of NT2 buffer, remove supernatant
+*** Add the protein lysates to the washed beads, incubate for 30 min at 4 degree with rotation, centrifuge at 13000 RPM and collect supernatant (cleared lysate)
+*** Add antibody to the cleared lysate and incubate overnight at 4 degree.
+| Antibody         | Company      | Cat#        | Conc.  | Amount |
+|------------------+--------------+-------------+--------+--------|
+| Anti-Klf4        | Santa Cruz   | sc-393462 X | 2mg/ml | 10ug   |
+| Normal Mouse IgG | emdmillipore | 12-371      | 1mg/ml | 10ug   |
+*** Add 100 uL of washed beed to the lysate and incubate at 4 degree for 2 hours.
+*** Pellet the mix at 200g/1min, discard supernatnat, wash with 1mL of NT2 buffer for a total of 5 times.
+*** During the final wash, save 10 uL of the beeds for western blot analysis.
+*** After final spin, remove supernatant and add 100 uL of NT2 buffer. Add 1mL of TRIzol to the mix, resuspend and mix , incubate at RT for 5 min
+*** Add 200 ul of choloroform to the mix, vortex mix for 15 min, incubate at RT for 3 min.
+*** Centrifuge at 12000g for 15min at 4 degree.
+*** Collect top aqueous phase into a new tube, add 0.5 mL isopropanol and 1.5ul of Glyco Blue. Mix and incubate at RT for 10 min.
+*** Centrifuge at 12000g for 10 min at 4 degree.
+*** Discard supernatant, wash the pellet with 1mL of 75% ethanol. Mix and centrifuge at 7500 g for 5 min at 4 degree.
+*** Discard supernatant, dry the RNA with lid open for 10 min.
+*** Resuspend the RNA in nuclease free water, incubate at 60 degree for 10 min with occasional pipet mix
+
 * Western blotting
 ** Gel casting with Bio-rad
 *** Recipes for the gels
@@ -509,26 +538,6 @@ Need 0.5 mL per mouse
 * recombinant Shh
 3.5ug/mL for 48 hours to test Gli2/Gli1 protein expression
 use PDGF as control (should also induce Gli2)
-* scRNA-seq data analysis from GEO
-CreateSeuratObject takes an expression matrix (sparse or dense) where the
-columns are cells/samples and the rows are features/genes. While we don't
- have a function for reading directly from GEO, as long as you can get an
-expression matrix for the data you're interested in and read it into R (see
- readMM, read.table, or other functions for reading data into R), you can
-pass that to CreateSeuratObject
-* scRNA-seq workshop with Lior Pachter and Sina Booeshaghi
-kb-python
-kallisto (small memory than cell ranger)  bustools
-triming? not necessary for scRNA-seq (package is robust enough
-BUS file
-adata dataset information
-knee plot (x-axis UMI counts, Y-axis Set of Barcodes/ x low (junk)
-scRNAseq always 3' read? advantage? poly-A. Smart-seq random priming
-Mito content (depennds on cell type)
-library saturation (linear = good)
-How many reads per cell (a couple hundred? thousands?
-Malat1 always high (have a poly-a or something)
-
 * Buffers and recipe
 ** 10x TBS
 For 1 L:
