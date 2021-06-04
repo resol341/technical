@@ -128,7 +128,7 @@ Reagents needed
 #+TBLFM: $4=$3 * ($1 + 0.5) + $2 * ($1 + 0.5)
 * RNA immunoprecipitation
 ** Notes:
-*** The protocol is optimized for whole cell lysates (including nuclear protein)
+*** The protocol is optimized for detection of protein-RNA interaction in the nuclei.
 *** All steps should be performed on ice.
 *** Cells seeded on T175 culture dishes at 70 – 90% confluency has been tested.
 ** Buffers (prepare with nuclease free water)
