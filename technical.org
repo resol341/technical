@@ -457,55 +457,6 @@ SL_SHG
 SL_SHG GFP for cotaininig with GFP
 BS SMP760
 Laser Mai Tai on 800nm, 3% 700 gain
-* Paper review
-** intro
-unoriginal, irrelevant, advance the field?
-** Methods
-design approproaite for the question
-better way to address the question?
-ethical standard?
-Controls!!
-stat editors
-** Ask for more data if needed
-**
-** Familiar with the field, technique, appreciate the limitations
-controls and statistics.
-keep Sketical about the data, alternative way to explain the findings?
-** literature review (similar pubs before?)
-** significance
-** impact factor
-** origninality
-** strength and weakness
-** good review
-brief summary and the author's conlcusions.
-Identify the strength.critically identify the flaws.
-Major comments
-minor comments
-controls? additional experiments (e.g. time course? dose reponse?)
-** Does the abstract stand alone?
-** Does the intro provide enough rationale? Gaps in knowledge important
-** Methods
-sufficient details to reproduce the results?
-sex differences in animals?
-Should not just reference previous papers
-** Results
-data reliable? proper control? IgG
-Data same as described in text
-Technical replicates (qPCR wells)
-Biological replicates (repeat the experiments)
-Biologically significant?
-Figure quality
-Figure legends (details, self contained, numbers of animal, sex, stat methods, scale bar, p value)
-** Discussion
-clean up discussion. not rehashing results.
-** References approproiate
-** Quality of writing with examples
-** Always be constructive
-** Comments to the editor
-don't skip. consistant with comments to the authors
-Make decisions to the editor (not novel enough for circ. res.)
-Conflict of interest (decline review)
-Confidentiality
 * Cholesterol E kit (FUJIFILM/WAKO)
 # Scaled down from the manual for 96 well plate format
 Dissolve color reagent in buffer solution (lasts 3 weeks at 4 degree)
