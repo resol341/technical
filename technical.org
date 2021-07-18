@@ -255,6 +255,78 @@ Reagents needed
 | Anti-Klf4            | Santa Cruz     | sc-393462 x | Mouse  | B-8   | 55 kda     |   1:6000 |                               |   |
 | Anti-aSMA            | Abcam          | ab5694      | Rabbit |       | 42 kDa     |  1:60000 |                               |   |
 | Anti-HDAC1           | Cell Signaling | #34589      | Rabbit | D5C6U | 62 kDa     |   1:1000 |                               |   |
+* Drug Concentrations
+** EdU
+Carbosynth,  cat#: NE08701
+Dissolve in saline on the day of use (don't store) 5 mg/ml
+Calculate amount Mouse * 2 * 250ul
+Inject 50 mg/kg (1.25mg/mouse, 250ul) IP the day before harvest at 5pm
+Inject 50 mg /kg IP 8am (1hour before harvest)
+Harvest 9am
+
+Additional reagents:
+Alexa Fluor™ 594 Azide:  Catalog number:  A10270
+Click-iT® Cell Reaction Buffer Kit Catalog no. C10269
+** Tamoxifen
+Recipe
+ 0.5ml 100% EtOH
+ 9.5ml Oil
+ 100mg/10ml (1l)
+Use 100ul (1mg)/mouse/day for 5 days (Myh11)
+Use 125ul for 12 days for Gli1 mice
+** AngII
+Target 1uM (relooked literature, 100nM might be more widely used)
+25mg/ml (25g/L)
+MW 1046.19
+25g/L = 0.023896 Mol/L =23.896mM
+To reach 100uM, 1:238.96 dilution
+3+716.88
+1:1000 for final dose
+** PDGF-BB
+  Millipore GF149
+  Note some lots were coming already reconstituted.
+  Reconstitute in 50ul sterile MQ to make 0.2mg/ml stock solution
+  Add 450ul 100mM Acetic Acid with 0.1% BSA to make 20ug/ml (1000x)
+  working solution.
+ For the solvent:
+   57.5 uL of glacial acetic acid in 10mL of MQ, Add 10 mg BSA
+** 5aza
+1:25 diultion (2+48ul) for 1000x working solution
+Typical treatment scheme.
+Plate in full serum 24 hrs.
+Low serum for 24 hrs
+5aza Pretreatment for 24 hrs
+PDGF+5aza redosing for 24 hrs
+** JQ1
+*** In vitro dosing 1uM
+Note, cells do not tolerate JQ1 well with 0.1% serum, therefore 1% was used.
+Normal time line
+**** Seed cells (afternoon day1)
+**** switch to 1% serum (morning day2)
+**** JQ1 dosing (Noon day3)
+**** JQ1 2nd dosing + Treatment (POGF) (Noon day4)
+**** If doing ChIP, cells were harvested 24 hours later
+** ITF2357
+*** Stock: 1mM in DMSO
+*** Target conc 500 nM, Add 1:2000 directly to media in plate
+** TGFb (#7666-MB R&D Systems)
+*** Stock conc. 50ug/mL in 4mM HCL with 0.1% BSA
+*** Target conc. 5ng/mL, dilute 1:10 with media and use as 1000x
+** Simvastatin
+*** With NaOH activation.  Activation procedure (M. Sadeghi, et al., J. Immunol., 165, 2712-2718 (2000)
+*** 25 mg of simvastatin is dissolved in 500 μl of ethanol.
+*** Then 750 μl of 0.1 N NaOH was added to the solution and subsequently incubated at 50 °C for 2 hours.
+*** The pH was brought to 7.0 by 1M HCl (need about 80 uL), and the final concentration of the stock solution was adjusted to 10mM by adding 4.642 mL HBSS. The stock solution will be aliquoted and frozen at -80 degree.
+*** Target concentration 1 uM (dilute stock 1:10 and use as 1000x solution).
+*** Note prepare solvent control.
+*** DMSO
+*** dissolve at 100 mM concentration in DMSO (100,000x stock)
+*** Dilute 1:100 in media with 0.1% FBS and use as 1000x stock.
+*** The 1000x stock might be cloudy.
+** DAPI
+  Invitrogen D1306
+  Stock solution (-20 degree): 1 mg/mL in DI/MQ water
+  100x Working solution (Fridge): 1 ug/mL in DI/MQ water
 * CA injury
 Use #6 strand for ligation.
 Do a single knot first, follow by one double knot
@@ -732,5 +804,10 @@ Column purify after.
 
 *** Rock culture flask to coat surface; place in a 37°C incubator (with or without 5% CO2) for at least 30 minutes, and up to overnight.
 *** Aspirate the excess gelatin solution from the culture flasks using sterile technique.
-*** For freshly sorted cells, add 5.0 mL of complete growth medium per 25 cm2 of culture surface area (e.g., 700 uL per well if using a 12-well plate). Place the gelatin-coated flasks in a 37°C, 5% CO2 incubator for at least one hour to equilibrate before inoculating with the cell suspension.
+*** For freshly sorted cells, add 5.0 mL of complete growth medium per 25 cm2 of culture surface area (e.g., 700 uL per well if using a 12-well plate, 1.5 mL per well in 6-well plate). Place the gelatin-coated flasks in a 37°C, 5% CO2 incubator for at least one hour to equilibrate before inoculating with the cell suspension.
+*** Cells were seeded at the density of ~20,000/cm2.
+*** Primary culture (P0) will be maintained in AdvSca1-SM media (MEM α (with GlutaMAX) with 20% MSC qualified FBS, 2x Penicillin Streptomycin, 1ng/mL murine basic fibroblast growth factor, 5ng/mL murine epidermal growth factor) to reach confluency.
+*** The cells will be expanded and maintained with full AdvSca1-SM media with reduced FBS (10%) and Penicillin Streptomycin (1x).
+*** Generally, a confluent 6-well well can be passed into 2x 100mm dishes (P1), and then to 6x 100mm dishes (P2).
+*** One confluent 100cm dishe can be divided into two cryovials for long term storage.
 *** [[https://www.atcc.org/products/all/PCS-999-027.aspx#cultureconditions][Ref]]
