@@ -808,6 +808,6 @@ Column purify after.
 *** Cells were seeded at the density of ~20,000/cm2.
 *** Primary culture (P0) will be maintained in AdvSca1-SM media (MEM α (with GlutaMAX) with 20% MSC qualified FBS, 2x Penicillin Streptomycin, 1ng/mL murine basic fibroblast growth factor, 5ng/mL murine epidermal growth factor) to reach confluency.
 *** The cells will be expanded and maintained with full AdvSca1-SM media with reduced FBS (10%) and Penicillin Streptomycin (1x).
-*** Generally, a confluent 6-well well can be passed into 2x 100mm dishes (P1), and then to 6x 100mm dishes (P2).
+*** Generally, a confluent 6-well well can be passed into 1x 100mm dishes (P1), and then to 6x 100mm dishes (P2).
 *** One confluent 100cm dishe can be divided into two cryovials for long term storage.
 *** [[https://www.atcc.org/products/all/PCS-999-027.aspx#cultureconditions][Ref]]
