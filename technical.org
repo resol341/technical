@@ -1,6 +1,7 @@
 #+STARTUP: overview
 #+HTML_HEAD: <style type="text/css">body{ max-width:50%; }</style>
 #+OPTIONS: \n:t
+#+OPTIONS: toc:nil
 * CyTOF
 Normalization (NormalizerR2013b_MacOSX)
 	Make a copy of original data. Rename if the file extension is FCS (all capital) to lower case .fcs
@@ -56,7 +57,8 @@ Here are a few recommendations to help combat a colonies potential breeding depr
 12)   Finally, contact the Breeder Core for assistance.  We give free consultations, we can manage your breeding for you or help on a special request basis.
 OLARbreedingcore@ucdenver.edu
 * ChIP protocol
-Reagents needed
+** Reagents needed
+*** Buffers
 | Buffer   | Volume/sample (mL) | # samples | total volume (mL) |
 |----------+--------------------+-----------+-------------------|
 | Glycine  |                  1 |       4.5 |               4.5 |
@@ -64,6 +66,11 @@ Reagents needed
 | lysis    |                0.5 |           |              2.25 |
 | Dilution |                3.8 |           |              17.1 |
 #+TBLFM: @2$4=$2*@2$3::@3$4=$2*@2$3::@4$4=$2*@2$3::@5$4=$2*@2$3
+*** Protease inhibitors (store in -80)
+**** 100 mM PMSF: 174 mg in 10 mL Isopropanol, use as 100x
+**** 10mg/mL aprotinin: 10mg in 1mL H2O, use as 10000x
+**** 1mg/mL pepstatin A: 10mg in 10mL of DMSO, use as 1000x
+
 ** Notes
    The protocol is optimized for 1.8 million cells in 10cm dish
 ** Cross-linking and sonication
@@ -84,13 +91,13 @@ Reagents needed
    Centrifuge 1000 rpm, 1min at 4 degree, collect supernatant
    Aliquote each sample into 2x 2mL (Antibody and Isotype control)
    Add antibodies into the supernatant incubate at 4 degree overnight with agitation
-| Antibody          | Company   |    Cat# | Conc.            | Amount |
-|-------------------+-----------+---------+------------------+--------|
-| Anti-KAT3B / p300 | Abcam     | ab14984 | 1mg/ml           | 2ug    |
-| Anti-H3K4Me2      | Millipore | 05-1338 | 1 mg/ml          | 2ug    |
-| Anti-H3K9Ac       | Millipore |  06-942 | 1 mg/ml          | 3ug    |
-| Anti-H4Ac         | Millipore |  06-866 | unpurified serum | 4uL    |
-|                   |           |         |                  |        |
+| Antibody           | Company   |    Cat# | Conc.            | Amount |
+|--------------------+-----------+---------+------------------+--------|
+| Anti-KAT3B / p300  | Abcam     | ab14984 | 1mg/ml           | 2ug    |
+| Anti-H3K4Me2       | Millipore | 05-1338 | 1 mg/ml          | 2ug    |
+| Anti-H3K9Ac        | Millipore |  06-942 | 1 mg/ml          | 3ug    |
+| Anti-H4Ac          | Millipore |  06-866 | unpurified serum | 4uL    |
+| Anti-acetyl Lysine | Abcam     | ab21623 |                  | 2ug    |
 
    Next morning, add 60ul of Protein A Agrarose/Salmon Sperm DNA, rotate at 4 degree for 1 hour
    Centrifuge at 1000 rpm for 1 min at 4 degree, remove supernatant without distrubing the pellet
@@ -249,6 +256,7 @@ Reagents needed
 | Goat Anti-rabbit HRP | Cell Signaling | #7074       | Goat   |       |            |   1:2000 |                               |   |
 | Donkey Anti-Goat HRP | Novex          | A16005      | Donkey |       |            |   1:5000 |                               |   |
 | Anti-β-Actin         | Sigma          | A5441       | Mouse  | AC-15 | 42 kDa     |  1:60000 |                               |   |
+| Anti-GAPDH           | millipore      | MAB374      | Mouse  | 6C5   | 38 kDa     |   1:4000 |                               |   |
 | Phospho-Smad2/3      | Cell Signaling | #8828       | Rabbit | D27F4 | 52, 60 kDa |   1:1000 |                               |   |
 | Anti-Smad7           | Santa Cruz     | sc-365846   | Mouse  | B-8   | 46 kDa     |    1:600 |                               |   |
 | Anti-KLF4            | R&D Systems    | AF3158      | Goat   |       | 55 kda     |   1:2000 | Some strong nonspecific bands |   |
@@ -320,13 +328,17 @@ Normal time line
 *** Target concentration 1 uM (dilute stock 1:10 and use as 1000x solution).
 *** Note prepare solvent control.
 *** DMSO
-*** dissolve at 100 mM concentration in DMSO (100,000x stock)
-*** Dilute 1:100 in media with 0.1% FBS and use as 1000x stock.
+*** dissolve at 100 mM concentration in DMSO (200,000x stock)
+*** Dilute 1:200 in media with 0.1% FBS and use as 1000x stock.
 *** The 1000x stock might be cloudy.
 ** DAPI
   Invitrogen D1306
   Stock solution (-20 degree): 1 mg/mL in DI/MQ water
   100x Working solution (Fridge): 1 ug/mL in DI/MQ water
+** Propidium iodide (PI)
+   Invitrogen P1304MP
+   Stock solution (store at 4 degree, stable for 6 months): 1 mg/mL in DI/MQ water
+   Use at 1ug/mL for flow cytometry (1:1000 dilution)
 * CA injury
 Use #6 strand for ligation.
 Do a single knot first, follow by one double knot
@@ -436,6 +448,34 @@ Permeabilize with IC Fixation Buffer
    b. Incubate the cell at 4 degree for 2 hours, protect from light
    c.  Spin down and wash with FA3 buffer twice.
    d. Resuspend the samples in 300 uL of FA3 buffer for FACS analysis
+* Cell sorting with Sony MA900
+** System Startup
+*** Turn on compressed air supply
+*** Turn on hood
+*** Turn on the power using the POWER/STANDBY button on the front panel of the main unit. The LCD should say "standby"
+*** clean the deflection plate, wipe down everything with Ethanol
+*** Launch the sofware MA
+*** Select maintenance
+*** Select Ethanol Priming (NOT ethanol cleaning)
+*** Follow onscreen instructions.
+    Note: DI water bottle is filled with MQ in room 4208
+    Note: 70% ethanol: 490mL 200 proof ethanol fill up to 700 mL
+    Note: Find cleaning chip from the drawer, load with label on top facing you.
+*** login with lab account:
+    Username: WeiserEvansM
+    Password: password1
+*** Scan sorting chip with pop-up camera.
+*** Store the cleaning chip back to the bag
+*** Load the sorting chip with 100u mark on top facing you.
+*** Select standard configuration
+*** Sheath Filter Debubble
+*** Run Automatic Calibration
+    Note: always select sort calibration if sorting
+*** Load 1 ml or more of undiluted, automatic setup beads in a sample tube
+    Note: automatic setup beads is in cold room. Vortex to mix, should be blue in color.
+*** Always select “Targeted”.
+*** Fill in spreadsheet to record the start up readouts.
+***
 
 * Tissue digestion for AO and CA
 Solutions
@@ -486,6 +526,22 @@ Need 0.5 mL per mouse
 *** Resuspend in 0.5 mL DMEM full medium
 *** Triturate to break up cell aggregates and transfer into a 6-well plate
 *** Add 2 mL of medium and place in the incubator.
+* Mouse Tissue Harvest
+** Heart
+*** Perfuse from RV with 10 mL of 1.1% KCl to keep the cardiac tissue in dialated state for better morphology.
+* Mouse Tissue processing
+** Paraffin embedding
+*** Ideally, Tissues should be in Formalin for 48 hours and 4 hours of 70% ETOH
+*** Select program "Kidney Overnight"
+*** Check reagents, level should be between Max and Min
+*** Insert samples in the basket, best to use the middle rack.
+*** Clean level sensor with a wipe
+*** Hit Yes!
+*** Next morning, check the tissue embedder is on and melted
+*** Silent alarm
+*** Press OK
+*** Clean sensor
+*** Standard cleaning
 * recombinant Shh
 3.5ug/mL for 48 hours to test Gli2/Gli1 protein expression
 use PDGF as control (should also induce Gli2)
@@ -640,47 +696,47 @@ Measure abs at 600 nm (and 700 nm)
    1. EDTA buffer (20 mL per mouse)
 | Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
 |-------------+---------------+----------------+----------------|
-| NaCl        |           113 |           4.52 |           3.75 |
-| KCl         |             5 |              2 |          0.375 |
-| NaH2PO4     |           0.5 |            0.5 |           0.15 |
-| HEPES       |            10 |              1 |            1.5 |
-| EDTA        |             5 |            0.5 |            1.5 |
+| NaCl        |           113 |           4.52 |           1.25 |
+| KCl         |             5 |              2 |          0.125 |
+| NaH2PO4     |           0.5 |            0.5 |           0.05 |
+| HEPES       |            10 |              1 |            0.5 |
+| EDTA        |             5 |            0.5 |            0.5 |
 |-------------+---------------+----------------+----------------|
 | Component   | TargConc (mM) |             MW |    Weight (mg) |
 |-------------+---------------+----------------+----------------|
-| Glucose     |            10 |         180.16 |         270.24 |
-| BDM         |            10 |         101.11 |        151.665 |
-| Taurine     |            10 |         125.15 |        187.725 |
+| Glucose     |            10 |         180.16 |          90.08 |
+| BDM         |            10 |         101.11 |         50.555 |
+| Taurine     |            10 |         125.15 |         62.575 |
 |-------------+---------------+----------------+----------------|
-| TargVol(mL) |           150 |            H2O |        136.625 |
-| Ph to 7.8   |        approx |        1N NaOH |           0.75 |
+| TargVol(mL) |            50 |            H2O |         41.975 |
+| Ph to 7.8   |        approx |        1N NaOH |           0.25 |
 #+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
 
    2. Perfusion buffer (20 mL per mouse, accounting for Col and STOP)
 | Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
 |-------------+---------------+----------------+----------------|
-| NaCl        |           113 |           4.52 |           3.75 |
-| KCl         |             5 |              2 |          0.375 |
-| NaH2PO4     |           0.5 |            0.5 |           0.15 |
-| HEPES       |            10 |              1 |            1.5 |
-| MgCl2       |             1 |              1 |           0.15 |
+| NaCl        |           113 |           4.52 |           1.25 |
+| KCl         |             5 |              2 |          0.125 |
+| NaH2PO4     |           0.5 |            0.5 |           0.05 |
+| HEPES       |            10 |              1 |            0.5 |
+| MgCl2       |             1 |              1 |           0.05 |
 |-------------+---------------+----------------+----------------|
 | Component   | TargConc (mM) |             MW |    Weight (mg) |
 |-------------+---------------+----------------+----------------|
-| Glucose     |            10 |         180.16 |         270.24 |
-| BDM         |            10 |         101.11 |        151.665 |
-| Taurine     |            10 |         125.15 |        187.725 |
+| Glucose     |            10 |         180.16 |          90.08 |
+| BDM         |            10 |         101.11 |         50.555 |
+| Taurine     |            10 |         125.15 |         62.575 |
 |-------------+---------------+----------------+----------------|
-| TargVol(mL) |           150 |            H2O |        138.875 |
-| Ph to 7.8   |        approx |        1N NaOH |           0.75 |
+| TargVol(mL) |            50 |            H2O |         43.325 |
+| Ph to 7.8   |        approx |        1N NaOH |           0.25 |
 #+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        208. |
-| Soybean Trysin Inhibitor |              0.2 |         13. |
-| Elastase suspension (uL) |             0.75 |   1839.6226 |
-| Volume (mL)              |              65  |             |
+| Collagenase 2            |              3.2 |        160. |
+| Soybean Trysin Inhibitor |              0.2 |         10. |
+| Elastase suspension (uL) |             0.75 |   1415.0943 |
+| Volume (mL)              |               50 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
@@ -803,7 +859,7 @@ Column purify after.
 | T175    |                          17500 |
 
 *** Rock culture flask to coat surface; place in a 37°C incubator (with or without 5% CO2) for at least 30 minutes, and up to overnight.
-*** Aspirate the excess gelatin solution from the culture flasks using sterile technique.
+*** Aspirate the excess gelatin solution from the culture flasks using sterile technique. Wash the plate with HBSS.
 *** For freshly sorted cells, add 5.0 mL of complete growth medium per 25 cm2 of culture surface area (e.g., 700 uL per well if using a 12-well plate, 1.5 mL per well in 6-well plate). Place the gelatin-coated flasks in a 37°C, 5% CO2 incubator for at least one hour to equilibrate before inoculating with the cell suspension.
 *** Cells were seeded at the density of ~20,000/cm2.
 *** Primary culture (P0) will be maintained in AdvSca1-SM media (MEM α (with GlutaMAX) with 20% MSC qualified FBS, 2x Penicillin Streptomycin, 1ng/mL murine basic fibroblast growth factor, 5ng/mL murine epidermal growth factor) to reach confluency.
