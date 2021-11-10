@@ -319,17 +319,18 @@ Normal time line
 *** Target conc 500 nM, Add 1:2000 directly to media in plate
 ** TGFb (#7666-MB R&D Systems)
 *** Stock conc. 50ug/mL in 4mM HCL with 0.1% BSA
+    4uL of 12N HCl, 12mg BSA in 12 mL of MQ, sterile filter.
 *** Target conc. 5ng/mL, dilute 1:10 with media and use as 1000x
 ** Simvastatin
 *** With NaOH activation.  Activation procedure (M. Sadeghi, et al., J. Immunol., 165, 2712-2718 (2000)
 *** 25 mg of simvastatin is dissolved in 500 μl of ethanol.
 *** Then 750 μl of 0.1 N NaOH was added to the solution and subsequently incubated at 50 °C for 2 hours.
 *** The pH was brought to 7.0 by 1M HCl (need about 80 uL), and the final concentration of the stock solution was adjusted to 10mM by adding 4.642 mL HBSS. The stock solution will be aliquoted and frozen at -80 degree.
-*** Target concentration 1 uM (dilute stock 1:10 and use as 1000x solution).
+*** Target concentration 0.5 uM (dilute stock 1:10 and use as 1000x solution).
 *** Note prepare solvent control.
 *** DMSO
 *** dissolve at 100 mM concentration in DMSO (200,000x stock)
-*** Dilute 1:200 in media with 0.1% FBS and use as 1000x stock.
+*** Dilute 1:200 in media with 0.1% FBS and use as 1000x stock (0.5 uM final concentration).
 *** The 1000x stock might be cloudy.
 ** DAPI
   Invitrogen D1306
@@ -339,6 +340,27 @@ Normal time line
    Invitrogen P1304MP
    Stock solution (store at 4 degree, stable for 6 months): 1 mg/mL in DI/MQ water
    Use at 1ug/mL for flow cytometry (1:1000 dilution)
+* HMG-CoA Reductase Assay (Sigma CS1090)
+** Reagents preparation
+*** 1x Assay Buffer (190 uL per sample)
+    Dilute 5x stock with MQ water
+*** NADPH reconstituation (4 uL per sample)
+    Reconstitute in 1.5 mL, aliquot and store in -80.
+** Sample preparation
+*** Lysis buffer (for 60mm dish, try 100 uL per plate)
+| Component        | TargConc (mM) | Stock Conc (M) | Stock Vol (uL) |
+|------------------+---------------+----------------+----------------|
+| Tris-HCl (pH7.5) |            50 |              1 |            100 |
+| NaCl             |           150 |              1 |            300 |
+| MgCl2            |             1 |              1 |              2 |
+| IGEPAL CA-630    |          0.5% |            10% |           100. |
+| EDTA             |             5 |            0.5 |            20. |
+| PIC              |             1 |            100 |             20 |
+|------------------+---------------+----------------+----------------|
+| TargVol(mL)      |             2 |            H2O |          1.458 |
+#+TBLFM: @2$4=(@8$2*@2$2)/(@2$3)::@3$4=(@8$2*@3$2)/(@3$3)::@4$4=(@8$2*@4$2)/(@4$3)::@5$4=(@8$2*1000*@5$2)/(@5$3)::@6$4=(@8$2*@6$2)/(@6$3)::@7$4=(@8$2*1000*@7$2)/(@7$3)::@8$4=@8$2-vsum(@2..@7)/1000
+*** Measure lysate concentration and calculate the maximum amount input
+***
 * CA injury
 Use #6 strand for ligation.
 Do a single knot first, follow by one double knot
@@ -452,31 +474,99 @@ Permeabilize with IC Fixation Buffer
 ** System Startup
 *** Turn on compressed air supply
 *** Turn on hood
+*** clean and wiping
+**** Screw off the deflection plates, clean with kimwipe with 70% EtOH (never dry clean)
+**** clean the interior of the sample collection, top to bottom, clean the door last.
+**** Reinstall the deflection plates, hand tight, make sure it is stable.
 *** Turn on the power using the POWER/STANDBY button on the front panel of the main unit. The LCD should say "standby"
-*** clean the deflection plate, wipe down everything with Ethanol
 *** Launch the sofware MA
 *** Select maintenance
 *** Select Ethanol Priming (NOT ethanol cleaning)
 *** Follow onscreen instructions.
-    Note: DI water bottle is filled with MQ in room 4208
-    Note: 70% ethanol: 490mL 200 proof ethanol fill up to 700 mL
-    Note: Find cleaning chip from the drawer, load with label on top facing you.
+**** Ethanol priming
+***** Check the liquid volumes.
+     Note: DI water bottle is filled with MQ in room 4208
+     Note: 70% ethanol: 490mL 200 proof ethanol fill up to 700 mL
+     Note: Find cleaning chip from the drawer, load with label on top facing you.
+***** Connect two tube from the slide wall together to bypass sheeth filter.
+***** Connect blue line from sheath to A
+***** Connect DI water line to B
+***** Insert cleaning chip, leave packaging on the side in the chamber
+***** Click next and start (takes ~5-8 min)
+**** DI water rinse
+***** Switch DI water line back from B to DI
+***** start (takes 5-8 min)
+**** Sheath rinse
+***** reconnect sheath filter to original position
+***** switch sheath line from A to sheath tank
+***** start
+***** account login page should show up once done.
 *** login with lab account:
     Username: WeiserEvansM
     Password: password1
 *** Scan sorting chip with pop-up camera.
-*** Store the cleaning chip back to the bag
+**** For our experiment, use 100 micron targeted mode (same for plate sort)
+*** Store the cleaning chip back to the bag and into the drawer
 *** Load the sorting chip with 100u mark on top facing you.
+*** Select all lasers
 *** Select standard configuration
-*** Sheath Filter Debubble
+*** Sheath Filter Debubble during the process. Check sample probe and make sure sheath fluid is dripping from the tip
 *** Run Automatic Calibration
     Note: always select sort calibration if sorting
-*** Load 1 ml or more of undiluted, automatic setup beads in a sample tube
-    Note: automatic setup beads is in cold room. Vortex to mix, should be blue in color.
-*** Always select “Targeted”.
+*** Load 1 ml or more of undiluted, automatic setup beads in a sample tube, start a timer to record the calibration time.
+    Note: automatic setup beads is in cold room 4213. Vortex to mix, should be blue in color. Make sure it has at least 1mL volume. If not refill from the stock (one poping is the one in use).
+*** Always select “Targeted”. 4k eps max
 *** Fill in spreadsheet to record the start up readouts.
-***
-
+*** When finished,put the automatic setup beads back to cold room.
+*** Turn on lights and temperature under cytometer tab.
+*** Run probe wash and record the time to recover from blinking to solid green and record in excel.
+*** Sorter should be ready now.
+** Sorting samples
+*** Important notes:
+**** Never close the software window with x unless done
+*** Running analysis before sorting
+**** Prepare about 10 mL of 10% bleach and 12 mL DI water  for shutdown.
+**** login with lab account:
+     Username: WeiserEvansM
+     Password: password1
+**** Select a previous experiment (left panel at the bottom).
+**** Name the experiment
+**** Click create new experiment (right, bottom).
+**** Check fluid levels (bottom right or on the LED panel)
+**** Double click the tube info to name the sample being sorted
+**** Press the sample loader door button to open.
+**** Remove cap and load sample tube with suitable adapter.
+**** Press the button to close the sample loader door.
+**** Sample stop condition (sorting or none)
+**** recording stop condition (none)
+**** Click start, Click record.
+**** Click pause after accumulating some events
+**** Adjust gate and compensation as necessary
+*** Sorting
+**** Note: never open the collection door during sorting
+**** Place collection tubes into holder
+**** Put the holder into the collection stage, close door
+**** Click Load collection in the sorting control panel
+***** select auto record, 5mL tubes, Normal.
+***** Sort settings (gates and stop count)
+**** Resume data acquisition
+**** Sort Start, click stop once done.
+**** Unload collection tubes.
+**** Create a new tube and name the sample.
+**** Run a bit of FA3/PBS between samples
+**** start sorting the next sample
+**** Print PDF by clicking the open area in the graphs, print PDF should show up on the ribbon.
+**** After all samples done, export database.
+** Shutting down
+*** Shutdown --> Software and Hardware
+*** Start
+*** Bleach cleaning: Normal cleaning
+    use the 10 mL bleach prepared, should have 6 mL left after.
+*** DI water rise: Normal cleaning, keep DI inside the sample probe
+    should have 6mL left after.
+*** Shutdown ok
+*** Wipe down the sample loader, collection area and collection stage with EtOH.
+*** Refill sheath fluid, discard waster, shutoff compressor and hood.
 * Tissue digestion for AO and CA
 Solutions
 Digestion solution: 3.2mg/ml collagenase II, 0.75mg/ml elastase (Worthington), 0.2mg/ml soybean trypsin inhibitor (sigma) in Hank's buffered saline solution (HBSS), pH7.5. Serile filer with 0.2um syringe filter.
@@ -696,47 +786,47 @@ Measure abs at 600 nm (and 700 nm)
    1. EDTA buffer (20 mL per mouse)
 | Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
 |-------------+---------------+----------------+----------------|
-| NaCl        |           113 |           4.52 |           1.25 |
-| KCl         |             5 |              2 |          0.125 |
-| NaH2PO4     |           0.5 |            0.5 |           0.05 |
-| HEPES       |            10 |              1 |            0.5 |
-| EDTA        |             5 |            0.5 |            0.5 |
+| NaCl        |           113 |           4.52 |             4. |
+| KCl         |             5 |              2 |            0.4 |
+| NaH2PO4     |           0.5 |            0.5 |           0.16 |
+| HEPES       |            10 |              1 |            1.6 |
+| EDTA        |             5 |            0.5 |            1.6 |
 |-------------+---------------+----------------+----------------|
 | Component   | TargConc (mM) |             MW |    Weight (mg) |
 |-------------+---------------+----------------+----------------|
-| Glucose     |            10 |         180.16 |          90.08 |
-| BDM         |            10 |         101.11 |         50.555 |
-| Taurine     |            10 |         125.15 |         62.575 |
+| Glucose     |            10 |         180.16 |        288.256 |
+| BDM         |            10 |         101.11 |        161.776 |
+| Taurine     |            10 |         125.15 |         200.24 |
 |-------------+---------------+----------------+----------------|
-| TargVol(mL) |            50 |            H2O |         41.975 |
-| Ph to 7.8   |        approx |        1N NaOH |           0.25 |
+| TargVol(mL) |           160 |            H2O |         151.44 |
+| Ph to 7.8   |        approx |        1N NaOH |            0.8 |
 #+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
 
    2. Perfusion buffer (20 mL per mouse, accounting for Col and STOP)
 | Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
 |-------------+---------------+----------------+----------------|
-| NaCl        |           113 |           4.52 |           1.25 |
-| KCl         |             5 |              2 |          0.125 |
-| NaH2PO4     |           0.5 |            0.5 |           0.05 |
-| HEPES       |            10 |              1 |            0.5 |
-| MgCl2       |             1 |              1 |           0.05 |
+| NaCl        |           113 |           4.52 |             4. |
+| KCl         |             5 |              2 |            0.4 |
+| NaH2PO4     |           0.5 |            0.5 |           0.16 |
+| HEPES       |            10 |              1 |            1.6 |
+| MgCl2       |             1 |              1 |           0.16 |
 |-------------+---------------+----------------+----------------|
 | Component   | TargConc (mM) |             MW |    Weight (mg) |
 |-------------+---------------+----------------+----------------|
-| Glucose     |            10 |         180.16 |          90.08 |
-| BDM         |            10 |         101.11 |         50.555 |
-| Taurine     |            10 |         125.15 |         62.575 |
+| Glucose     |            10 |         180.16 |        288.256 |
+| BDM         |            10 |         101.11 |        161.776 |
+| Taurine     |            10 |         125.15 |         200.24 |
 |-------------+---------------+----------------+----------------|
-| TargVol(mL) |            50 |            H2O |         43.325 |
-| Ph to 7.8   |        approx |        1N NaOH |           0.25 |
+| TargVol(mL) |           160 |            H2O |         152.88 |
+| Ph to 7.8   |        approx |        1N NaOH |            0.8 |
 #+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        160. |
-| Soybean Trysin Inhibitor |              0.2 |         10. |
-| Elastase suspension (uL) |             0.75 |   1415.0943 |
-| Volume (mL)              |               50 |             |
+| Collagenase 2            |              3.2 |        128. |
+| Soybean Trysin Inhibitor |              0.2 |          8. |
+| Elastase suspension (uL) |             0.75 |   1132.0755 |
+| Volume (mL)              |               40 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
