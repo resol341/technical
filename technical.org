@@ -91,13 +91,15 @@ OLARbreedingcore@ucdenver.edu
    Centrifuge 1000 rpm, 1min at 4 degree, collect supernatant
    Aliquote each sample into 2x 2mL (Antibody and Isotype control)
    Add antibodies into the supernatant incubate at 4 degree overnight with agitation
-| Antibody           | Company   |    Cat# | Conc.            | Amount |
-|--------------------+-----------+---------+------------------+--------|
-| Anti-KAT3B / p300  | Abcam     | ab14984 | 1mg/ml           | 2ug    |
-| Anti-H3K4Me2       | Millipore | 05-1338 | 1 mg/ml          | 2ug    |
-| Anti-H3K9Ac        | Millipore |  06-942 | 1 mg/ml          | 3ug    |
-| Anti-H4Ac          | Millipore |  06-866 | unpurified serum | 4uL    |
-| Anti-acetyl Lysine | Abcam     | ab21623 |                  | 2ug    |
+| Antibody           | Company    | Cat#      | Conc.            | Amount |
+|--------------------+------------+-----------+------------------+--------|
+| Anti-KAT3B / p300  | Abcam      | ab14984   | 1mg/ml           | 2ug    |
+| Anti-H3K4Me2       | Millipore  | 05-1338   | 1 mg/ml          | 2ug    |
+| Anti-H3K9Ac        | Millipore  | 06-942    | 1 mg/ml          | 3ug    |
+| Anti-H4Ac          | Millipore  | 06-866    | unpurified serum | 4uL    |
+| Anti-acetyl Lysine | Abcam      | ab21623   |                  | 2ug    |
+| Anti-Klf4          | rndsystems | AF3158    | 0.2 mg/ml        | 5ug    |
+| Anti-Klf4          | Santa Cruz | sc-166238 | 2 mg/ml          | 2ug    |
 
    Next morning, add 60ul of Protein A Agrarose/Salmon Sperm DNA, rotate at 4 degree for 1 hour
    Centrifuge at 1000 rpm for 1 min at 4 degree, remove supernatant without distrubing the pellet
@@ -250,19 +252,22 @@ OLARbreedingcore@ucdenver.edu
 *** Antibody buffer
     Dilute blocking buffer 1:10 in TBST
 *** Antibody concentrations
-| Antibody             | Company        | Cat#        | Host   | Clone | MW         | Dilution | notes                         |   |
-|----------------------+----------------+-------------+--------+-------+------------+----------+-------------------------------+---|
-| Goat Anti-Mouse HRP  | jacksonimmuno  | 115-035-003 | Goat   |       |            |  1:10000 | Can try lower dilution        |   |
-| Goat Anti-rabbit HRP | Cell Signaling | #7074       | Goat   |       |            |   1:2000 |                               |   |
-| Donkey Anti-Goat HRP | Novex          | A16005      | Donkey |       |            |   1:5000 |                               |   |
-| Anti-β-Actin         | Sigma          | A5441       | Mouse  | AC-15 | 42 kDa     |  1:60000 |                               |   |
-| Anti-GAPDH           | millipore      | MAB374      | Mouse  | 6C5   | 38 kDa     |   1:4000 |                               |   |
-| Phospho-Smad2/3      | Cell Signaling | #8828       | Rabbit | D27F4 | 52, 60 kDa |   1:1000 |                               |   |
-| Anti-Smad7           | Santa Cruz     | sc-365846   | Mouse  | B-8   | 46 kDa     |    1:600 |                               |   |
-| Anti-KLF4            | R&D Systems    | AF3158      | Goat   |       | 55 kda     |   1:2000 | Some strong nonspecific bands |   |
-| Anti-Klf4            | Santa Cruz     | sc-393462 x | Mouse  | B-8   | 55 kda     |   1:6000 |                               |   |
-| Anti-aSMA            | Abcam          | ab5694      | Rabbit |       | 42 kDa     |  1:60000 |                               |   |
-| Anti-HDAC1           | Cell Signaling | #34589      | Rabbit | D5C6U | 62 kDa     |   1:1000 |                               |   |
+| Antibody             | Company        | Cat#        | Host   | Clone      | MW         | Dilution | notes                         |   |
+|----------------------+----------------+-------------+--------+------------+------------+----------+-------------------------------+---|
+| Goat Anti-Mouse HRP  | jacksonimmuno  | 115-035-003 | Goat   |            |            |  1:10000 | Can try lower dilution        |   |
+| Goat Anti-rabbit HRP | Cell Signaling | #7074       | Goat   |            |            |   1:2000 |                               |   |
+| Donkey Anti-Goat HRP | Novex          | A16005      | Donkey |            |            |   1:5000 |                               |   |
+| Anti-β-Actin         | Sigma          | A5441       | Mouse  | AC-15      | 42 kDa     |  1:60000 |                               |   |
+| Anti-GAPDH           | millipore      | MAB374      | Mouse  | 6C5        | 38 kDa     |   1:4000 |                               |   |
+| Phospho-Smad2/3      | Cell Signaling | #8828       | Rabbit | D27F4      | 52, 60 kDa |   1:1000 |                               |   |
+| Anti-Smad7           | Santa Cruz     | sc-365846   | Mouse  | B-8        | 46 kDa     |    1:600 |                               |   |
+| Anti-KLF4            | R&D Systems    | AF3158      | Goat   |            | 55 kda     |   1:2000 | Some strong nonspecific bands |   |
+| Anti-Klf4            | Santa Cruz     | sc-393462 x | Mouse  | B-8        | 55 kda     |   1:6000 | Some strong nonspecific bands |   |
+| Anti-Klf4            | Santa Cruz     | sc-166238 x | Mouse  | F-8        | 55 kda     |   1:6000 |                               |   |
+| Anti-Klf4            | Invitrogen     | PA5-27440   | Rabbit | Polyclonal | 55 kda     |   1:1000 | no diff between KO WT         |   |
+| Anti-aSMA            | Abcam          | ab5694      | Rabbit |            | 42 kDa     |  1:60000 |                               |   |
+| Anti-HDAC1           | Cell Signaling | #34589      | Rabbit | D5C6U      | 62 kDa     |   1:1000 |                               |   |
+|                      |                |             |        |            |            |          |                               |   |
 * Drug Concentrations
 ** EdU
 Carbosynth,  cat#: NE08701
@@ -422,7 +427,12 @@ Take pictures.
     PBS wash 5 min
   Block with 3% Horse serum in PBS 30 min
   Add anti GFP-FITC 1:200 in blocking buffer (300uL per slide)
-
+** antibody dilutions
+| Antibody                    | Company    | Cat#        | Host   | Clone      | Specificity | conjugation | Stock Conc(mg/ml) | Work Conc(ug/ml) | Dilution |
+| Anti-Klf4                   | Santa Cruz | sc-166238 x | Mouse  | F-8        | HMR         | none        |                 2 |                2 |   1:1000 |
+| Anti-Actin, α-Smooth Muscle | Sigma      | C6198       | mouse  | 1A4        | HMR         | Cy3         |                   |                  |   1:2000 |
+| Anti-GFP antibody           | Abcam      | AB290       | Rabbit | Polyclonal | N/A         | none        |                 5 |                  |    1:200 |
+|                             |            |             |        |            |             |             |                   |                  |          |
 * flow cytometry processing for cultured cells
 Trypsinize to detach the cells
 Wash the cells twice with cold FA3 buffer
@@ -557,6 +567,7 @@ Permeabilize with IC Fixation Buffer
 **** start sorting the next sample
 **** Print PDF by clicking the open area in the graphs, print PDF should show up on the ribbon.
 **** After all samples done, export database.
+     save database under C:\FCS\WeiserEvans
 ** Shutting down
 *** Shutdown --> Software and Hardware
 *** Start
@@ -632,6 +643,14 @@ Need 0.5 mL per mouse
 *** Press OK
 *** Clean sensor
 *** Standard cleaning
+** Tissue processing for spatial transcriptomics
+*** cryoprotect with 10% DMSO in 1x PBS heparin
+**** Perfuse the cardiac tissue with 1x PBS heparin with cold 10% DMSO
+     use regular perfusion protocol for heart.
+     3 mL through RV, 2 mL through LV, clamp AO, 5 mL through LV.
+**** Keep at 4 °C for 10 min
+**** Dry the excess liquid and proceed with fresh frozen protocol by 10x
+
 * recombinant Shh
 3.5ug/mL for 48 hours to test Gli2/Gli1 protein expression
 use PDGF as control (should also induce Gli2)
@@ -823,10 +842,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        128. |
-| Soybean Trysin Inhibitor |              0.2 |          8. |
-| Elastase suspension (uL) |             0.75 |   1132.0755 |
-| Volume (mL)              |               40 |             |
+| Collagenase 2            |              3.2 |        160. |
+| Soybean Trysin Inhibitor |              0.2 |         10. |
+| Elastase suspension (uL) |             0.75 |   1415.0943 |
+| Volume (mL)              |               50 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
