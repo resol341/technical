@@ -130,7 +130,7 @@ OLARbreedingcore@ucdenver.edu
    Resuspend DNA in 30uL of H2O
 ** Alternative Proceed with PCR purification kit (PB buffer needed 2750 ul and 580 uL)
    Currently having issue with the column that little DNA can be recovered
-   calculator for volume needed
+   calculator for volume needed.
 | Sample number | volume for input | volume for IP | Total volume |
 |---------------+------------------+---------------+--------------|
 |             7 |              580 |          2750 |       24975. |
