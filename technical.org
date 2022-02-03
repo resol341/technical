@@ -85,7 +85,11 @@ OLARbreedingcore@ucdenver.edu
    Incubate on ice for an additional 15 minute.
    Centrifuge samples for 10min at 13000 rpm at 4 degree and collect supernatant (400uL), add 3.6mL of ChIP dilution buffer with protease inhibitor.
    Save 20ul of diluted sample as input control.
-*** For sorted cells, cross-linking was done in 1mL of FA3 with everything scaled accordingly.
+*** Cross-linking for sorted cells
+**** cross-linking was done in sorted back cell mix (32% PFS volume = cell volume/32)
+**** After adding glycine, spin at 800 G for 10 min at 4 degree
+**** Wash once with 1xPBS with inhibitors, pellet
+**** Resuspend in 450 uL lysis buffer with inhibitors and continue the protocl as above.
 ** Chromatin Preclearing and Immunoprecipitation
    Add 75ul of Protein A Agrarose/Salmon Sperm DNA to sample incubate for 30 min at 4 degree with agitation
    Centrifuge 1000 rpm, 1min at 4 degree, collect supernatant
