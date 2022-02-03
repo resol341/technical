@@ -88,7 +88,9 @@ OLARbreedingcore@ucdenver.edu
 *** Resuspend the pellet with 450ul of SDS lysis buffer with protease inihibitors Incubate on ice for 10 minutes
 *** Sonicate at 35% amp for 1 minute with 5 sec pulses and 30 sec rests in between. This ensured around 500bp fragments.
 *** Incubate on ice for an additional 15 minute.
-*** Centrifuge samples for 10min at 13000 rpm at 4 degree and collect supernatant (400uL), add 3.6mL of ChIP dilution buffer with protease inhibitor.
+*** Centrifuge samples for 10min at 13000 rpm at 4 degree.
+*** Collect supernatant (400uL). Lysate can be saved at -80 at this step after snap freezing.
+*** If continuing protocol add 3.6mL of ChIP dilution buffer with protease inhibitor.
 *** Save 20ul of diluted sample as input control.
 ** Chromatin Preclearing and Immunoprecipitation
    Add 75ul of Protein A Agrarose/Salmon Sperm DNA to sample incubate for 30 min at 4 degree with agitation
