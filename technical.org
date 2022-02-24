@@ -982,3 +982,46 @@ Column purify after.
 *** Generally, a confluent 6-well well can be passed into 1x 100mm dishes (P1), and then to 6x 100mm dishes (P2).
 *** One confluent 100cm dishe can be divided into two cryovials for long term storage.
 *** [[https://www.atcc.org/products/all/PCS-999-027.aspx#cultureconditions][Ref]]
+* Kidney and Cardiac tissue for spatial transcriptomics
+** Note: this is just a overview of the 10x protocol, follow the original protocol for more details.
+** Fixation, staining and imaging
+*** Prepare the following items before start
+**** 40 mL Methanol in 50 mL tube, chill to -20c (1 hour?)
+**** Place a thermocycler adaptor on a thermal cyccler set at 37oc (5min)
+**** Prepare 2x blocking as listed in the protocol
+**** Prepare 3x ssc
+***** If not coverslipping, only 50 ml of 3x SSC will be needed
+      | 3x SSC    | Stock | final | 50mL | 550ml |
+      |-----------+-------+-------+------+-------|
+      | ssc stock | 20x   | 3x    |  7.5 |  82.5 |
+      | Water     | -     | -     | 42.5 | 467.5 |
+#+TBLFM: @2$4=50*3/20::@2$5=550*3/20::@3$4=50-@2$4::@3$5=550-@2$5
+**** Mounting medium
+**** Have a box of dry ice ready for transfer
+*** Procedures
+**** Remove slide from -80 and place on dry ice in a sealed container
+**** Place the slide on the thermocyler adaptor with active surface facing up. Incubate 5min
+**** Wipe excess lipid on the back of the slide
+**** Move slide to chilled methanol, close cap. Incubate 30 min at -20
+**** During the incubation prepare the following (see protocol for details)
+***** 1x blocking buffer (vortex)
+***** wash buffer
+***** Antibody solution (if doing one step staining, goto 1.4, if require 2ndary ab, use 1.3)
+****** Note Recommended DAPI is at 1 mg/mL, we have the same in -20
+**** Place the slide in the slide cassette, active surface facing well
+**** Add 70ul of 1x blocking buffer to each well, incubate 5min RT
+**** Remove blocking buffer, add 50uL of antibody solution to each well, incubate 30min RT
+**** Remove antibody solution.
+**** Wash each well with 100 ul wash buffer, total of five washes
+**** If mounting
+***** Remove the slide from cassette
+***** Dunk the slide 20x in 3x SSC in 50 mL tube
+***** Wipe excess liquid from the back of the slide, don't touch active surface
+***** Add 200 uL mounting medium each slide. Apply cover slip. Drain excess
+***** Proceed to imaging
+***** After imaging, unmount the coverslip with 3x ssc
+***** Place the slide in clean slide cassette
+***** Add 50 uL of wash buffer to the wells
+***** Proceed to Gene Expression
+**** If not mounting (for permeabilization optimization)
+***** leave the last wash in the well, proceed to Tissue optimization
