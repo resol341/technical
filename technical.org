@@ -848,10 +848,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        160. |
-| Soybean Trysin Inhibitor |              0.2 |         10. |
-| Elastase suspension (uL) |             0.75 |   1415.0943 |
-| Volume (mL)              |               50 |             |
+| Collagenase 2            |              3.2 |        112. |
+| Soybean Trysin Inhibitor |              0.2 |          7. |
+| Elastase suspension (uL) |             0.75 |   990.56604 |
+| Volume (mL)              |               35 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
@@ -939,6 +939,36 @@ protein related analysis done 48 hours post, RNA related can be done 24 post
 #+TBLFM: @3$3=6*1000/@3$2::@4$3=6*1000/@4$2
 for linearizing, 6.5 uL of plasmid (10ug) + 5 uL of NEBuffer3.1 + 10 uL of BglII (NEB R0144S) + 28.5 H2O. Digest at 37c for 2 hours
 Column purify after.
+* Lentiviral packaging and infection
+** Note, the protocol is for packaging pCDH-puro with pCMV delta R8.2 and pCMV-VSV-G
+** Day 1
+*** Plate 7 x 10^5 293T cells in 4mL DMEM/10%FBS on a 60mm dish. Prepare one 60mm dish for each dish of target cells to be infected.
+** Day 2
+*** Begin transfection ~24h later.  For each transfection, place 200 uL sterile 150 mM NaCl into a 1.5 mL Eppendorf tube.
+*** pCMV delta R8.2 1 μg
+*** pCMV-VSV-G 0.2 μg
+*** Target plasmid 1 μg
+*** Add 16 uL TurboFect (Fermentas R0531).  Gently mix and incubate at RT for 15 min.
+*** Add to 293T cells by gently dripping into the media.  Incubate at 37°C overnight.
+** Day 3
+*** In the morning, aspirate media from the 293T cells and replace with 4 mL appropriate target cell media (e.g., RPMI/10% for A549 cells).  Be careful not to disturb the 293T cells as they are loosely adherent.
+*** Plate target cells for infection the following day
+**** AdvSca1-SM cells 1*10^6 cells/10cm dish
+** Day 4
+*** Prior to infection, pretreat target cells with polybrene (Sigma H9268).  500X stock (4 mg/mL) prepared in sterile water is stored at 4°C in deli case.  Add 2 L of 500X stock per mL of target cell media (final concentration 8 g/mL).  Return to incubator for 30-60 minutes.
+*** Pipet viral media from the 293T cells into 15 mL conical tubes.
+*** Add 2 uL 500X polybrene stock per mL viral media.  Filter through 0.45 um syringe filter.
+*** Aspirate media from target cells and replace with 4 mL viral media.
+*** Incubate at 37°C overnight.
+** Day 5
+*** Repeat day 4
+** Day 6
+*** Aspirate target cell media and replace with fresh media containing 2 ug/mL puromycin to begin positive selection of infected cells.  (May need to perform kill curve with puromycin for different cell lines).
+** Days 7-13
+*** Observe and expand resistant colonies as necessary
+*** Validate overexpression
+*** Create stock
+
 * Creation of Stable Cell Lines
 ** Determining antibiotic sensitivity
 *** Plate cells at 0.1 million/well in 6-well plate.
@@ -1000,7 +1030,7 @@ Column purify after.
 **** Have a box of dry ice ready for transfer
 *** Procedures
 **** Remove slide from -80 and place on dry ice in a sealed container
-**** Place the slide on the thermocyler adaptor with active surface facing up. Incubate 5min
+**** Place the slide on the thermocyler adaptor with active surface facing up. Incubate 1 min
 **** Wipe excess lipid on the back of the slide
 **** Move slide to chilled methanol, close cap. Incubate 30 min at -20
 **** During the incubation prepare the following (see protocol for details)
@@ -1019,9 +1049,14 @@ Column purify after.
 ***** Wipe excess liquid from the back of the slide, don't touch active surface
 ***** Add 200 uL mounting medium each slide. Apply cover slip. Drain excess
 ***** Proceed to imaging
+
 ***** After imaging, unmount the coverslip with 3x ssc
 ***** Place the slide in clean slide cassette
 ***** Add 50 uL of wash buffer to the wells
 ***** Proceed to Gene Expression
 **** If not mounting (for permeabilization optimization)
 ***** leave the last wash in the well, proceed to Tissue optimization
+** permeabilization
+*** Prepare the following
+**** Resuspend permeabilization enzyme in 1.2 mL HCl.
+**** Put the Permeabilization Enzyme at 37 degree (equilibrate for 15 min, no longer than 20min).
