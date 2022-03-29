@@ -955,7 +955,7 @@ Column purify after.
 *** Plate target cells for infection the following day
 **** AdvSca1-SM cells 1*10^6 cells/10cm dish
 ** Day 4
-*** Prior to infection, pretreat target cells with polybrene (Sigma H9268).  500X stock (4 mg/mL) prepared in sterile water is stored at 4°C in deli case.  Add 2 L of 500X stock per mL of target cell media (final concentration 8 g/mL).  Return to incubator for 30-60 minutes.
+*** Prior to infection, pretreat target cells with polybrene (Sigma H9268).  500X stock (4 mg/mL) prepared in sterile water is stored at 4°C in deli case.  Add 2 uL of 500X stock per mL of target cell media (final concentration 8 ug/mL).  Return to incubator for 30-60 minutes.
 *** Pipet viral media from the 293T cells into 15 mL conical tubes.
 *** Add 2 uL 500X polybrene stock per mL viral media.  Filter through 0.45 um syringe filter.
 *** Aspirate media from target cells and replace with 4 mL viral media.
