@@ -355,6 +355,7 @@ Normal time line
 *** Reconstitute at 100 μg/mL in PBS containing 0.1% BSA
 **** 100 uL for 10ug
 **** 7 uL alliquots
+**** Target conc. 25ng/mL, dilute 1:4 with media and use as 1000x
 * HMG-CoA Reductase Assay (Sigma CS1090)
 ** Reagents preparation
 *** 1x Assay Buffer (190 uL per sample)
