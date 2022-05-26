@@ -351,6 +351,10 @@ Normal time line
    Invitrogen P1304MP
    Stock solution (store at 4 degree, stable for 6 months): 1 mg/mL in DI/MQ water
    Use at 1ug/mL for flow cytometry (1:1000 dilution)
+** Recombinant Mouse Dkk-2
+*** Reconstitute at 100 μg/mL in PBS containing 0.1% BSA
+**** 100 uL for 10ug
+**** 7 uL alliquots
 * HMG-CoA Reductase Assay (Sigma CS1090)
 ** Reagents preparation
 *** 1x Assay Buffer (190 uL per sample)
@@ -850,9 +854,9 @@ Measure abs at 600 nm (and 700 nm)
 |--------------------------+------------------+-------------|
 | Collagenase 2            |              3.2 |        112. |
 | Soybean Trysin Inhibitor |              0.2 |          7. |
-| Elastase suspension (uL) |             0.75 |   990.56604 |
+| Elastase suspension (uL) |             0.75 |   998.09886 |
 | Volume (mL)              |               35 |             |
-#+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.5) * 1000
+#+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
 |-----------------------+--------------+--------|
@@ -910,10 +914,6 @@ Measure abs at 600 nm (and 700 nm)
 *** Digest the tissue in regular digestion buffer with HBSS (1 lobe requires 10 mL of digestion buffer)
 *** Filter with 250 uM filter
 *** pellet and resuspend in 10 mL of FA3, Filter through 70 uM filter
-*** Prepare Ficoll by diluting the 10mM stock 1:10 with MQ and 1:1000 with FA3
-*** Layer cell prep on top of 3 mL of Ficoll
-*** Spin 500g for 10 min at room temp.  no acceleration, no brake.
-*** Collect buffer, interface + upper ficoll
 *** Mix and spin down, wash with FA3 buffer one more time.
 *** Pellet and proceed with staining
 
