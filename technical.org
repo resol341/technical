@@ -577,6 +577,7 @@ Permeabilize with IC Fixation Buffer
 **** Run a bit of FA3/PBS between samples
 **** start sorting the next sample
 **** Print PDF by clicking the open area in the graphs, print PDF should show up on the ribbon.
+**** run PBS at highest pressure. Probe wash
 **** After all samples done, export database.
      save database under C:\FCS\WeiserEvans
 ** Shutting down
@@ -679,6 +680,17 @@ Dissolve by incubating on the 60 degree heatblock.
 Cool the solution to RT
 Filter through a 0.45-μm syringe filter.
 Keep at RT for up to 1 week.
+** FA3 sorting buffer
+| Component    | Target Conc (mM) | Stock Conc (mM) | Stock Vol(ml) |
+|--------------+------------------+-----------------+---------------|
+| PBS          |               1x |             10x |            20 |
+| EDTA         |                1 |             500 |           0.4 |
+| HEPES(PH7.0) |               25 |            1000 |             5 |
+| FBS          |             100% |              1% |             2 |
+|--------------+------------------+-----------------+---------------|
+| H2O          |            172.6 |       Total Vol |           200 |
+
+#+TBLFM: @2$4=@6$4 / 10::@3$4=@6$4 * @3$2 / @3$3::@4$4=@6$4 * @4$2 / @4$3::@5$4=@6$4 / 100::@6$2=@6$4 - vsum(@2$4..@5$4)
 * ImageJ
 ** Overlay two images manually
 Load the two images
@@ -853,10 +865,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        112. |
-| Soybean Trysin Inhibitor |              0.2 |          7. |
-| Elastase suspension (uL) |             0.75 |   998.09886 |
-| Volume (mL)              |               35 |             |
+| Collagenase 2            |              3.2 |        176. |
+| Soybean Trysin Inhibitor |              0.2 |         11. |
+| Elastase suspension (uL) |             0.75 |   1568.4411 |
+| Volume (mL)              |               55 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
