@@ -963,13 +963,14 @@ Column purify after.
 *** pCMV-VSV-G 0.2 μg
 *** Target plasmid 1 μg
 *** Add 8 uL TurboFect (Fermentas R0531).  Gently mix and incubate at RT for 15 min.
+*** Gently mix and incubate at RT for 15 min.
+*** Add to 293T cells by gently dripping into the media.  Incubate at 37°C overnight.
 *** For T175 scale accordingly
-**** NaCl 1629 uL
+a**** NaCl 1629 uL
 **** pCMV delta R8.2 8.14 μg
 **** pCMV-VSV-G 1.63 μg
 **** Target plasmid 8.14 μg
 **** TurboFect 65.14 ul
-*** Add to 293T cells by gently dripping into the media.  Incubate at 37°C overnight.
 ** Day 3
 *** In the morning, aspirate media from the 293T cells and replace with 4 mL appropriate target cell media (e.g., RPMI/10% for A549 cells).  Be careful not to disturb the 293T cells as they are loosely adherent.
 *** Plate target cells for infection the following day
