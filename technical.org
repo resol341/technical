@@ -962,7 +962,7 @@ Column purify after.
 *** pCMV delta R8.2 1 μg
 *** pCMV-VSV-G 0.2 μg
 *** Target plasmid 1 μg
-*** Add 8 uL TurboFect (Fermentas R0531).  Gently mix and incubate at RT for 15 min.
+*** Add 8 uL TurboFect (Fermentas R0531).
 *** Gently mix and incubate at RT for 15 min.
 *** Add to 293T cells by gently dripping into the media.  Incubate at 37°C overnight.
 *** For T175 scale accordingly
