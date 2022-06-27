@@ -866,7 +866,7 @@ Measure abs at 600 nm (and 700 nm)
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
 | Collagenase 2            |              3.2 |        176. |
-| Soybean Trysin Inhibitor |              0.2 |         11. |
+| Soybean Trysin Inhibitor |              0.2 |           a |
 | Elastase suspension (uL) |             0.75 |   1568.4411 |
 | Volume (mL)              |               55 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
@@ -956,12 +956,19 @@ Column purify after.
 ** Note, the protocol is for packaging pCDH-puro with pCMV delta R8.2 and pCMV-VSV-G
 ** Day 1
 *** Plate 7 x 10^5 293T cells in 4mL DMEM/10%FBS on a 60mm dish. Prepare one 60mm dish for each dish of target cells to be infected.
+**** 5.7 x 10^6 for T175 flask (40 mL)
 ** Day 2
 *** Begin transfection ~24h later.  For each transfection, place 200 uL sterile 150 mM NaCl into a 1.5 mL Eppendorf tube.
-*** pCMV delta R8.2 1 μg
-*** pCMV-VSV-G 0.2 μg
-*** Target plasmid 1 μg
-*** Add 16 uL TurboFect (Fermentas R0531).  Gently mix and incubate at RT for 15 min.
+*** pCMV delta R8.2 1 μg
+*** pCMV-VSV-G 0.2 μg
+*** Target plasmid 1 μg
+*** Add 8 uL TurboFect (Fermentas R0531).  Gently mix and incubate at RT for 15 min.
+*** For T175 scale accordingly
+**** NaCl 1629 uL
+**** pCMV delta R8.2 8.14 μg
+**** pCMV-VSV-G 1.63 μg
+**** Target plasmid 8.14 μg
+**** TurboFect 65.14 ul
 *** Add to 293T cells by gently dripping into the media.  Incubate at 37°C overnight.
 ** Day 3
 *** In the morning, aspirate media from the 293T cells and replace with 4 mL appropriate target cell media (e.g., RPMI/10% for A549 cells).  Be careful not to disturb the 293T cells as they are loosely adherent.
