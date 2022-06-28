@@ -966,15 +966,15 @@ Column purify after.
 *** Gently mix and incubate at RT for 15 min.
 *** Add to 293T cells by gently dripping into the media.  Incubate at 37°C overnight.
 *** For T175 scale accordingly
-a**** NaCl 1629 uL
+**** NaCl 1629 uL
 **** pCMV delta R8.2 8.14 μg
 **** pCMV-VSV-G 1.63 μg
 **** Target plasmid 8.14 μg
 **** TurboFect 65.14 ul
 ** Day 3
 *** In the morning, aspirate media from the 293T cells and replace with 4 mL appropriate target cell media (e.g., RPMI/10% for A549 cells).  Be careful not to disturb the 293T cells as they are loosely adherent.
-*** Plate target cells for infection the following day
-**** AdvSca1-SM cells 1*10^6 cells/10cm dish
+**** Scale up for T175: 33 mL per flask
+*** Plate target cells for infection the following day**** AdvSca1-SM cells 1*10^6 cells/10cm dish
 ** Day 4
 *** Prior to infection, pretreat target cells with polybrene (Sigma H9268).  500X stock (4 mg/mL) prepared in sterile water is stored at 4°C in deli case.  Add 2 uL of 500X stock per mL of target cell media (final concentration 8 ug/mL).  Return to incubator for 30-60 minutes.
 *** Pipet viral media from the 293T cells into 15 mL conical tubes.
