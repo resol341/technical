@@ -443,6 +443,9 @@ Take pictures.
 | Anti-Klf4                   | Santa Cruz | sc-166238 x | Mouse  | F-8        | HMR         | none        |                 2 |                2 |   1:1000 |
 | Anti-Actin, α-Smooth Muscle | Sigma      | C6198       | mouse  | 1A4        | HMR         | Cy3         |                   |                  |   1:2000 |
 | Anti-GFP antibody           | Abcam      | AB290       | Rabbit | Polyclonal | N/A         | none        |                 5 |                  |    1:200 |
+| Anti-CD34                   | Abcam      | ab8158      | Rat    | MEC 14.7   | Mouse       | none        |                   |                  |     1:50 |
+| Anti-SCARA5                 | rndsystems | MAB4754     | Rat    | monoclonal | Mouse       | none        |                   |                  |     1:20 |
+| Anti-Cxcr7                  | Abcam      | ab117836    | Rabbit | polyclonal | HMR         | none        |                   |                  |   1:1000 |
 |                             |            |             |        |            |             |             |                   |                  |          |
 * flow cytometry processing for cultured cells
 Trypsinize to detach the cells
