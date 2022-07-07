@@ -439,14 +439,15 @@ Take pictures.
   Block with 3% Horse serum in PBS 30 min
   Add anti GFP-FITC 1:200 in blocking buffer (300uL per slide)
 ** antibody dilutions
-| Antibody                    | Company    | Cat#        | Host   | Clone      | Specificity | conjugation | Stock Conc(mg/ml) | Work Conc(ug/ml) | Dilution |
-| Anti-Klf4                   | Santa Cruz | sc-166238 x | Mouse  | F-8        | HMR         | none        |                 2 |                2 |   1:1000 |
-| Anti-Actin, α-Smooth Muscle | Sigma      | C6198       | mouse  | 1A4        | HMR         | Cy3         |                   |                  |   1:2000 |
-| Anti-GFP antibody           | Abcam      | AB290       | Rabbit | Polyclonal | N/A         | none        |                 5 |                  |    1:200 |
-| Anti-CD34                   | Abcam      | ab8158      | Rat    | MEC 14.7   | Mouse       | none        |                   |                  |     1:50 |
-| Anti-SCARA5                 | rndsystems | MAB4754     | Rat    | monoclonal | Mouse       | none        |                   |                  |     1:20 |
-| Anti-Cxcr7                  | Abcam      | ab117836    | Rabbit | polyclonal | HMR         | none        |                   |                  |   1:1000 |
-|                             |            |             |        |            |             |             |                   |                  |          |
+| Antibody                    | Company     | Cat#        | Host   | Clone      | Specificity | conjugation | Stock Conc(mg/ml) | Work Conc(ug/ml) | Dilution |
+| Anti-Klf4                   | Santa Cruz  | sc-166238 x | Mouse  | F-8        | HMR         | none        |                 2 |                2 |   1:1000 |
+| Anti-Actin, α-Smooth Muscle | Sigma       | C6198       | mouse  | 1A4        | HMR         | Cy3         |                   |                  |   1:2000 |
+| Anti-GFP antibody           | Abcam       | AB290       | Rabbit | Polyclonal | N/A         | none        |                 5 |                  |    1:200 |
+| Anti-CD34                   | Abcam       | ab8158      | Rat    | MEC 14.7   | Mouse       | none        |                   |                  |     1:50 |
+| Anti-CD34                   | eBioscience | 14-0341-82  | Rat    | RAM34      | Mouse       | none        |                   |                  |    1:200 |
+| Anti-SCARA5                 | rndsystems  | MAB4754     | Rat    | monoclonal | Mouse       | none        |                   |                  |     1:20 |
+| Anti-Cxcr7                  | Abcam       | ab117836    | Rabbit | polyclonal | HMR         | none        |                   |                  |   1:1000 |
+|                             |             |             |        |            |             |             |                   |                  |          |
 * flow cytometry processing for cultured cells
 Trypsinize to detach the cells
 Wash the cells twice with cold FA3 buffer
@@ -868,10 +869,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        176. |
-| Soybean Trysin Inhibitor |              0.2 |           a |
-| Elastase suspension (uL) |             0.75 |   1568.4411 |
-| Volume (mL)              |               55 |             |
+| Collagenase 2            |              3.2 |         48. |
+| Soybean Trysin Inhibitor |              0.2 |          3. |
+| Elastase suspension (uL) |             0.75 |   427.75665 |
+| Volume (mL)              |               15 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
