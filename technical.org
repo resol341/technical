@@ -441,6 +441,7 @@ Take pictures.
 ** antibody dilutions
 | Antibody                    | Company     | Cat#        | Host   | Clone      | Specificity | conjugation | Stock Conc(mg/ml) | Work Conc(ug/ml) | Dilution |
 | Anti-Klf4                   | Santa Cruz  | sc-166238 x | Mouse  | F-8        | HMR         | none        |                 2 |                2 |   1:1000 |
+| Anti-Klf4                   | Abcam       | ab129473    | Rabbit | Polyclonal | HM          | none        |               0.8 |                1 |    1:800 |
 | Anti-Actin, α-Smooth Muscle | Sigma       | C6198       | mouse  | 1A4        | HMR         | Cy3         |                   |                  |   1:2000 |
 | Anti-GFP antibody           | Abcam       | AB290       | Rabbit | Polyclonal | N/A         | none        |                 5 |                  |    1:200 |
 | Anti-CD34                   | Abcam       | ab8158      | Rat    | MEC 14.7   | Mouse       | none        |                   |                  |     1:50 |
