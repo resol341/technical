@@ -979,7 +979,8 @@ Column purify after.
 ** Day 3
 *** In the morning, aspirate media from the 293T cells and replace with 4 mL appropriate target cell media (e.g., RPMI/10% for A549 cells).  Be careful not to disturb the 293T cells as they are loosely adherent.
 **** Scale up for T175: 33 mL per flask
-*** Plate target cells for infection the following day**** AdvSca1-SM cells 1*10^6 cells/10cm dish
+*** Plate target cells for infection the following day
+**** AdvSca1-SM cells 1*10^6 cells/10cm dish
 ** Day 4
 *** Prior to infection, pretreat target cells with polybrene (Sigma H9268).  500X stock (4 mg/mL) prepared in sterile water is stored at 4°C in deli case.  Add 2 uL of 500X stock per mL of target cell media (final concentration 8 ug/mL).  Return to incubator for 30-60 minutes.
 *** Pipet viral media from the 293T cells into 15 mL conical tubes.
@@ -994,6 +995,19 @@ Column purify after.
 *** Observe and expand resistant colonies as necessary
 *** Validate overexpression
 *** Create stock
+* Lentiviral media titration
+** Note: the protocol is modified based on Lenti-X™ qRT-PCR Titration Kit from takarabio.
+** Viral RNA extraction with trizol
+*** Before starting, prepare
+*** Mix 100ul of viral media with 1mL of trizol reagent, incubate 5’ at room temperature.
+*** Add 200 ul chloroform for every ml of TRIzol.  Shake the samples vigorously for 15” to mix. Incubate at room temp. for 2-3’.  Centrifuge samples for 15min at 12,000xg at 4 degree. (Centrifuging cold yields better phase separation).
+*** RNA is in the aqueous phase. Aqueous phase is the colorless upper phase which corresponds to about 60% of the volume of TRIzol used. (DNA and proteins are in the interphase and the organic phase).
+*** Transfer the aqueous phase to a fresh tube and precipitate the RNA by mixing with 0.5 ml of isopropanol for every ml of TRIzol used initially. Incubate at room temperature for 10’. Mix the tube by inverting and centrifuge for 10’ at 12, 000xg, at 4 degree.
+*** Remove the supernatant. Wash the RNA pellet with 1ml. 75% Ethanol for every ml TRIzol used. Mix by flicking and inverting the tube and centrifuge at 7500xg for 5’ at 4 degree.
+*** Remove the supernatant and dry the RNA by vacuum or air for 5-10’. Do not centrifuge when during under vacuum and do not overdry the RNA pellet. (When sufficiently dried, the pelet should appear whitish. If pelet is clear, it indicates that it has been overdried).
+*** Resuspend the RNA in 50 uL RNAase free MQ water. To completely redissolve the RNA pelet, incubate the tube at 60C for 10’ with occasional pipetting up and down in between.
+*** DNase I treatment
+**
 
 * Creation of Stable Cell Lines
 ** Determining antibiotic sensitivity
