@@ -998,17 +998,20 @@ Column purify after.
 * Lentiviral media titration
 ** Note: the protocol is modified based on Lenti-X™ qRT-PCR Titration Kit from takarabio.
 ** Viral RNA extraction with trizol
-*** Before starting, prepare
+*** Before starting, set heat block at 60 degree
 *** Mix 100ul of viral media with 1mL of trizol reagent, incubate 5’ at room temperature.
 *** Add 200 ul chloroform for every ml of TRIzol.  Shake the samples vigorously for 15” to mix. Incubate at room temp. for 2-3’.  Centrifuge samples for 15min at 12,000xg at 4 degree. (Centrifuging cold yields better phase separation).
 *** RNA is in the aqueous phase. Aqueous phase is the colorless upper phase which corresponds to about 60% of the volume of TRIzol used. (DNA and proteins are in the interphase and the organic phase).
 *** Transfer the aqueous phase to a fresh tube and precipitate the RNA by mixing with 0.5 ml of isopropanol for every ml of TRIzol used initially. Incubate at room temperature for 10’. Mix the tube by inverting and centrifuge for 10’ at 12, 000xg, at 4 degree.
 *** Remove the supernatant. Wash the RNA pellet with 1ml. 75% Ethanol for every ml TRIzol used. Mix by flicking and inverting the tube and centrifuge at 7500xg for 5’ at 4 degree.
 *** Remove the supernatant and dry the RNA by vacuum or air for 5-10’. Do not centrifuge when during under vacuum and do not overdry the RNA pellet. (When sufficiently dried, the pelet should appear whitish. If pelet is clear, it indicates that it has been overdried).
-*** Resuspend the RNA in 50 uL RNAase free MQ water. To completely redissolve the RNA pelet, incubate the tube at 60C for 10’ with occasional pipetting up and down in between.
-*** DNase I treatment
-**
-
+*** Resuspend the RNA in 50 uL RNAase free MQ water. To completely redissolve the RNA pelet, incubate the tube at 60C for 10’ with occasional pipetting up and down in between.
+*** DNase I treatment (Thermo, #EN0521)
+| RNA                 | 12.5 uL |
+| 10x reaction buffer | 2.5 uL  |
+| 50 mM EDTA          | 2.5 uL  |
+| DNaseI              | 7.5 uL  |
+**** incubate at 37 degree for 30min and 65 degree for 10 min
 * Creation of Stable Cell Lines
 ** Determining antibiotic sensitivity
 *** Plate cells at 0.1 million/well in 6-well plate.
