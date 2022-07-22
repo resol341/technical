@@ -1010,8 +1010,17 @@ Column purify after.
 | RNA                 | 12.5 uL |
 | 10x reaction buffer | 2.5 uL  |
 | 50 mM EDTA          | 2.5 uL  |
-| DNaseI              | 7.5 uL  |
+| DNaseI              | 2.5 uL  |
+| H2O                 | 5 uL    |
 **** incubate at 37 degree for 30min and 65 degree for 10 min
+** Revere transcription
+*** Try measure the RNA with nanodrop. The current batch has around 20-40 ng/uL concentration.
+*** For the RT reaction, use 12 uL from the DNaseI treated samples, 4uL of RT mix and 4 uL of H2O
+*** 2ul of RT reaction was diluted 10x (20uL) as 1x in qPCR (3uL was used in each reaction). 10x serial dilutions were performed. For the current batch, a standard (DNA) ranging from 5*10^4 copies/uL to 5 copies/uL fits the samples well.
+* In vivo lentivirus delivery
+** Protocol is based method described by [[https://www.sciencedirect.com/science/article/pii/S1534580721006821][Strappe et al 2005]] and [[https://www.sciencedirect.com/science/article/pii/S1534580721006821][Liu et al 2021]]
+** Pluronic F127 (Sigma, # P2443) was dissolved in PBS overnight at 4 °C on a roller to achieve concentrations of 20% (W/V). Once dissolved the solutions were stored at 4 °C.
+**
 * Creation of Stable Cell Lines
 ** Determining antibiotic sensitivity
 *** Plate cells at 0.1 million/well in 6-well plate.
