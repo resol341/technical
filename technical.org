@@ -310,12 +310,17 @@ To reach 100uM, 1:238.96 dilution
  For the solvent:
    57.5 uL of glacial acetic acid in 10mL of MQ, Add 10 mg BSA
 ** 5aza
-1:25 diultion (2+48ul) for 1000x working solution
-Typical treatment scheme.
-Plate in full serum 24 hrs.
-Low serum for 24 hrs
-5aza Pretreatment for 24 hrs
-PDGF+5aza redosing for 24 hrs
+*** in vitro
+**** 1:25 diultion (2+48ul) for 1000x working solution
+**** Typical treatment scheme.
+***** Plate in full serum 24 hrs.
+***** Low serum for 24 hrs
+***** 5aza Pretreatment for 24 hrs
+***** PDGF+5aza redosing for 24 hrs
+*** in vivo
+**** Target dose 2 mg/kg b.w. Inject 3 times (i.p.) per week.
+**** Dissolve powder directly in sterile saline at 0.5 mg/mL
+***** Prepare solution fresh for each injection
 ** JQ1
 *** In vitro dosing 1uM
 Note, cells do not tolerate JQ1 well with 0.1% serum, therefore 1% was used.
