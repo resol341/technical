@@ -309,9 +309,10 @@ To reach 100uM, 1:238.96 dilution
   working solution.
  For the solvent:
    57.5 uL of glacial acetic acid in 10mL of MQ, Add 10 mg BSA
-** 5aza
+** 5-azacytidine
 *** in vitro
-**** 1:25 diultion (2+48ul) for 1000x working solution
+**** Target final concentration 10 uM
+**** Stock concentration 10 mM (1000x) concentration in DMSO
 **** Typical treatment scheme.
 ***** Plate in full serum 24 hrs.
 ***** Low serum for 24 hrs
@@ -875,10 +876,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |         48. |
-| Soybean Trysin Inhibitor |              0.2 |          3. |
-| Elastase suspension (uL) |             0.75 |   427.75665 |
-| Volume (mL)              |               15 |             |
+| Collagenase 2            |              3.2 |         32. |
+| Soybean Trysin Inhibitor |              0.2 |          2. |
+| Elastase suspension (uL) |             0.75 |   285.17110 |
+| Volume (mL)              |               10 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
