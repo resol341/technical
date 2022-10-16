@@ -454,6 +454,8 @@ Take pictures.
 | Anti-CD34                   | eBioscience | 14-0341-82  | Rat    | RAM34      | Mouse       | none        |                   |                  |    1:200 |
 | Anti-SCARA5                 | rndsystems  | MAB4754     | Rat    | monoclonal | Mouse       | none        |                   |                  |     1:20 |
 | Anti-Cxcr7                  | Abcam       | ab117836    | Rabbit | polyclonal | HMR         | none        |                   |                  |   1:1000 |
+| Anti-PTEN                   | Millipore   | 04-409      | Mouse  | A2b1       | HMR         | none        |                   |                  |     1:50 |
+| Anti-SMMHC                  | Abcam       | Ab125884    | Rabbit | polyclonal | HM          | none        |               0.9 |              1.8 |    1:500 |
 |                             |             |             |        |            |             |             |                   |                  |          |
 * flow cytometry processing for cultured cells
 Trypsinize to detach the cells
