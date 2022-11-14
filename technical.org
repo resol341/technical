@@ -458,6 +458,7 @@ Take pictures.
 | Anti-PTEN                   | Millipore   | 04-409      | Rabbit | A2b1       | HMR         | none        |                   |                  |     1:50 |
 | Anti-SMMHC                  | Abcam       | Ab125884    | Rabbit | polyclonal | HM          | none        |               0.9 |              1.8 |    1:500 |
 | Anti-GLUT1                  | Abcam       | ab115730    | Rabbit | EPR3915    | HMR         | none        |             0.161 |                1 |    1:160 |
+| Anti-CD68                   | BioRad      | MCA1957     | Rat    | FA-11      | Mouse       | none        |                   |                  |     1:50 |
 |                             |             |             |        |            |             |             |                   |                  |          |
 * flow cytometry processing for cultured cells
 Trypsinize to detach the cells
