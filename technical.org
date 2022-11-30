@@ -273,7 +273,8 @@ OLARbreedingcore@ucdenver.edu
 | Anti-Klf4            | Invitrogen     | PA5-27440   | Rabbit | Polyclonal | 55 kda     |   1:1000 | no diff between KO WT         |   |
 | Anti-aSMA            | Abcam          | ab5694      | Rabbit |            | 42 kDa     |  1:60000 |                               |   |
 | Anti-HDAC1           | Cell Signaling | #34589      | Rabbit | D5C6U      | 62 kDa     |   1:1000 |                               |   |
-|                      |                |             |        |            |            |          |                               |   |
+| Anti-PKM2            | Cell Signaling | #4053       | Rabbit | D78A4      | 60 kDa     |   1:1000 |                               |   |
+| Anti-HIF1a           | Abcam          | ab179483    | Rabbit | EPR16897   | 110 kDa    |   1:1000 |                               |   |
 * Drug Concentrations
 ** EdU
 Carbosynth,  cat#: NE08701
