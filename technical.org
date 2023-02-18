@@ -385,6 +385,7 @@ Normal time line
 #+TBLFM: @2$4=(@8$2*@2$2)/(@2$3)::@3$4=(@8$2*@3$2)/(@3$3)::@4$4=(@8$2*@4$2)/(@4$3)::@5$4=(@8$2*1000*@5$2)/(@5$3)::@6$4=(@8$2*@6$2)/(@6$3)::@7$4=(@8$2*1000*@7$2)/(@7$3)::@8$4=@8$2-vsum(@2..@7)/1000
 *** Measure lysate concentration and calculate the maximum amount input
 ***
+* Methylation-Specific PCR
 * CA injury
 Use #6 strand for ligation.
 Do a single knot first, follow by one double knot
@@ -453,6 +454,7 @@ Take pictures.
 | Anti-Actin, α-Smooth Muscle | Sigma       | C6198       | mouse  | 1A4        | HMR         | Cy3         |                   |                  |   1:2000 |
 | Anti-GFP antibody           | Abcam       | AB290       | Rabbit | Polyclonal | N/A         | none        |                 5 |                  |    1:200 |
 | Anti-GFP antibody           | Abcam       | ab6662      | Goat   | Polyclonal | N/A         | FITC        |                   |                  |    1:200 |
+| Anti-tdTomato               | kerafast    | EST203      | Rat    | EST203     | N/A         | none        |                   |                  |    1:200 |
 | Anti-CD34                   | Abcam       | ab8158      | Rat    | MEC 14.7   | Mouse       | none        |                   |                  |     1:50 |
 | Anti-CD34                   | eBioscience | 14-0341-82  | Rat    | RAM34      | Mouse       | none        |                   |                  |    1:200 |
 | Anti-SCARA5                 | rndsystems  | MAB4754     | Rat    | monoclonal | Mouse       | none        |                   |                  |     1:20 |
@@ -885,10 +887,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        160. |
-| Soybean Trysin Inhibitor |              0.2 |         10. |
-| Elastase suspension (uL) |             0.75 |   1425.8555 |
-| Volume (mL)              |               50 |             |
+| Collagenase 2            |              3.2 |         64. |
+| Soybean Trysin Inhibitor |              0.2 |          4. |
+| Elastase suspension (uL) |             0.75 |   570.34221 |
+| Volume (mL)              |               20 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
