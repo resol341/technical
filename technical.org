@@ -448,24 +448,25 @@ Take pictures.
   Block with 3% Horse serum in PBS 30 min
   Add anti GFP-FITC 1:200 in blocking buffer (300uL per slide)
 ** antibody dilutions
-| Antibody                    | Company     | Cat#        | Host   | Clone      | Specificity | conjugation | Stock Conc(mg/ml) | Work Conc(ug/ml) | Dilution |
-| Anti-Klf4                   | Santa Cruz  | sc-166238 x | Mouse  | F-8        | HMR         | none        |                 2 |                2 |   1:1000 |
-| Anti-Klf4                   | Abcam       | ab129473    | Rabbit | Polyclonal | HM          | none        |               0.8 |                1 |    1:800 |
-| Anti-Actin, α-Smooth Muscle | Sigma       | C6198       | mouse  | 1A4        | HMR         | Cy3         |                   |                  |   1:2000 |
-| Anti-GFP antibody           | Abcam       | AB290       | Rabbit | Polyclonal | N/A         | none        |                 5 |                  |    1:200 |
-| Anti-GFP antibody           | Abcam       | ab6662      | Goat   | Polyclonal | N/A         | FITC        |                   |                  |    1:200 |
-| Anti-tdTomato               | kerafast    | EST203      | Rat    | EST203     | N/A         | none        |                   |                  |    1:200 |
-| Anti-CD34                   | Abcam       | ab8158      | Rat    | MEC 14.7   | Mouse       | none        |                   |                  |     1:50 |
-| Anti-CD34                   | eBioscience | 14-0341-82  | Rat    | RAM34      | Mouse       | none        |                   |                  |    1:200 |
-| Anti-SCARA5                 | rndsystems  | MAB4754     | Rat    | monoclonal | Mouse       | none        |                   |                  |     1:20 |
-| Anti-Cxcr7                  | Abcam       | ab117836    | Rabbit | polyclonal | HMR         | none        |                   |                  |   1:1000 |
-| Anti-PTEN                   | Millipore   | 04-409      | Rabbit | A2b1       | HMR         | none        |                   |                  |     1:50 |
-| Anti-SMMHC                  | Abcam       | Ab125884    | Rabbit | polyclonal | HM          | none        |               0.9 |              1.8 |    1:500 |
-| Anti-GLUT1                  | Abcam       | ab115730    | Rabbit | EPR3915    | HMR         | none        |             0.161 |                1 |    1:160 |
-| Anti-CD68                   | BioRad      | MCA1957     | Rat    | FA-11      | Mouse       | none        |                   |                  |     1:50 |
-| Anti-HIF1a                  | Abcam       | ab179483    | Rabbit | EPR16897   | HMR         | none        |                   |                  |    1:500 |
-| Anti-PKM2                   | CST         | #4053       | Rabbit |            | HMR         | none        |                   |                  |    1:100 |
-|                             |             |             |        |            |             |             |                   |                  |          |
+| Antibody                    | Company        | Cat#        | Host   | Clone      | Specificity | conjugation | Stock Conc(mg/ml) | Work Conc(ug/ml) | Dilution |
+| Anti-Klf4                   | Santa Cruz     | sc-166238 x | Mouse  | F-8        | HMR         | none        |                 2 |                2 |   1:1000 |
+| Anti-Klf4                   | Abcam          | ab129473    | Rabbit | Polyclonal | HM          | none        |               0.8 |                1 |    1:800 |
+| Anti-Actin, α-Smooth Muscle | Sigma          | C6198       | mouse  | 1A4        | HMR         | Cy3         |                   |                  |   1:2000 |
+| Anti-GFP antibody           | Abcam          | AB290       | Rabbit | Polyclonal | N/A         | none        |                 5 |                  |    1:200 |
+| Anti-GFP antibody           | Abcam          | ab6662      | Goat   | Polyclonal | N/A         | FITC        |                   |                  |    1:200 |
+| Anti-tdTomato               | kerafast       | EST203      | Rat    | EST203     | N/A         | none        |                   |                  |    1:200 |
+| Anti-CD34                   | Abcam          | ab8158      | Rat    | MEC 14.7   | Mouse       | none        |                   |                  |     1:50 |
+| Anti-CD34                   | eBioscience    | 14-0341-82  | Rat    | RAM34      | Mouse       | none        |                   |                  |    1:200 |
+| Anti-Ly-6A/E                | bd biosciences | 553333      | Rat    | E13-161.7  | Mouse       | none        |                   |                  |    1:100 |
+| Anti-SCARA5                 | rndsystems     | MAB4754     | Rat    | monoclonal | Mouse       | none        |                   |                  |     1:20 |
+| Anti-Cxcr7                  | Abcam          | ab117836    | Rabbit | polyclonal | HMR         | none        |                   |                  |   1:1000 |
+| Anti-PTEN                   | Millipore      | 04-409      | Rabbit | A2b1       | HMR         | none        |                   |                  |     1:50 |
+| Anti-SMMHC                  | Abcam          | Ab125884    | Rabbit | polyclonal | HM          | none        |               0.9 |              1.8 |    1:500 |
+| Anti-GLUT1                  | Abcam          | ab115730    | Rabbit | EPR3915    | HMR         | none        |             0.161 |                1 |    1:160 |
+| Anti-CD68                   | BioRad         | MCA1957     | Rat    | FA-11      | Mouse       | none        |                   |                  |     1:50 |
+| Anti-HIF1a                  | Abcam          | ab179483    | Rabbit | EPR16897   | HMR         | none        |                   |                  |    1:500 |
+| Anti-PKM2                   | CST            | #4053       | Rabbit |            | HMR         | none        |                   |                  |    1:100 |
+|                             |                |             |        |            |             |             |                   |                  |          |
 * flow cytometry processing for cultured cells
 Trypsinize to detach the cells
 Wash the cells twice with cold FA3 buffer
