@@ -223,6 +223,39 @@ OLARbreedingcore@ucdenver.edu
 *** Discard supernatant, dry the RNA with lid open for 10 min.
 *** Resuspend the RNA in nuclease free water, incubate at 60 degree for 10 min with occasional pipet mix
 
+* Biotin-labeled RNA pull-down
+** Reference: [[https://www.science.org/doi/10.1126/science.1192002][Long Noncoding RNA as Modular Scaffold of Histone Modification Complexes]]
+** Nuclei lysate preparation.
+*** Nuclear isolation buffer
+**** 1.28 M sucrose; 40 mM Tris-HCl pH 7.5; 20 mM MgCl2; 4% Triton X-100
+*** RIP buffer
+**** 150 mM KCl, 25 mM Tris pH 7.4, 0.5 mM DTT, 0.5% NP40, 1 mM PMSF and protease Inhibitor
+*** 10^7 cells are resuspended in 2mL PBS, 2 mL Nuclear isolation buffer with 6 mL of H2O, keep on ice for 20 min with frequent mixing.
+*** Pellet nuclei by centrifugation at 2500 G for 15 min (4 degree).
+*** Resuspend nuclear pellet in 1mL RIP buffer, homogenize wiht 15-30 strokes. Centrifugation at 13000 RPM for 10min to pellet debris and collect supernatant.
+** in vitro Biotin-RNA transcription
+*** Used AmpliScribe T7-Flash Transcription Kit (the biotin version is discontinued, need to find alternative).
+*** Follow the company protocol with the following change
+**** decrease the ATP, CTP and GTP to 1.5 uL (20 uL reaction) and add 1 uL Biotin-UTP (50mM) and 1 uL UTP
+*** ApaI was used to linearize pCDNA3.1 containining Meg3 sequence
+*** Purify the product using the Qiagen mini kit to remove DNA.
+**** Use the RNA cleanup protocol and divide the reaction between two columns
+*** Three micrograms of biotinylated RNA was heated to 90°C for 2 minutes, put on ice for 2 minutes, supplied with RNA structure buffer (10 mM Tris pH 7, 0.1 M KCl, 10 mM MgCl2), and then shifted to room temperature (RT) for 20 minutes to allow proper secondary structure formation.
+*** Folded RNA was then mixed with 1mg of nuclear extract in RIP buffer and incubated at RT for one hour.
+**** 5% of the used lysate should be saved as input control.
+*** Dynabeads preparation
+**** Cat # invitrogen 11205D
+**** Wash beeds (70uL for each sample), immobilize with using the DynaMag-2 Magnet
+***** Wash with 100 uL Solution A (0.1M NaOH, 0.05M NaCl) twice for 2min.
+***** Wash with 100 uL Solution B (0.1 M NaCl) once
+***** Resuspend the beeds in  equal volumes of Solution B and B&W buffer (2x 10mM TrisHcl pH 7.5, 1mM EDTA, 2M NaCl)
+****** The volume of B&W should be 1/2 of the lysate volume.
+*** Mix the RNA-lysate mix with the washed beeds, incuate for 30min at RT.
+*** Separate the beeds with magnet for 2-3min
+*** Wash 3 times with 1x B&W buffer
+*** To dissociate the IP from the beeds, add 19.5 uL of B&W, 3uL of 1M DTT, and 7.5 uL 4x sample loading buffer, boil for 5min.
+*** Separate the beeds with magnet and collect supernatant for WB analysis.
+
 * Western blotting
 ** Gel casting with Bio-rad
 *** Recipes for the gels
@@ -276,6 +309,7 @@ OLARbreedingcore@ucdenver.edu
 | Anti-PKM2            | Cell Signaling | #4053       | Rabbit | D78A4      | 60 kDa     |   1:1000 |                               |   |
 | Anti-HIF1a           | Abcam          | ab179483    | Rabbit | EPR16897   | 110 kDa    |   1:1000 |                               |   |
 | Anti-PTEN            | Cell Signaling | #9559       | Rabbit | 138G6      | 54 kDa     |   1:1000 |                               |   |
+| Anti-Ezh2            | Cell Signaling | 5246S       | Rabbit | D2C9       | 98         |   1:1000 |                               | ` |
 * Drug Concentrations
 ** EdU
 Carbosynth,  cat#: NE08701
@@ -888,10 +922,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |         64. |
-| Soybean Trysin Inhibitor |              0.2 |          4. |
-| Elastase suspension (uL) |             0.75 |   570.34221 |
-| Volume (mL)              |               20 |             |
+| Collagenase 2            |              3.2 |         32. |
+| Soybean Trysin Inhibitor |              0.2 |          2. |
+| Elastase suspension (uL) |             0.75 |   285.17110 |
+| Volume (mL)              |               10 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
