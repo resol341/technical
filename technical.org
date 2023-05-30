@@ -310,6 +310,7 @@ OLARbreedingcore@ucdenver.edu
 | Anti-HIF1a           | Abcam          | ab179483    | Rabbit | EPR16897   | 110 kDa    |   1:1000 |                               |   |
 | Anti-PTEN            | Cell Signaling | #9559       | Rabbit | 138G6      | 54 kDa     |   1:1000 |                               |   |
 | Anti-Ezh2            | Cell Signaling | 5246S       | Rabbit | D2C9       | 98         |   1:1000 |                               | ` |
+| Anti-Cxcr7           | Abcam          | ab117836    | Rabbit |            | 41 kDa     |   1:1000 |                               |   |
 * Drug Concentrations
 ** EdU
 Carbosynth,  cat#: NE08701
@@ -387,8 +388,11 @@ Normal time line
 *** The 1000x stock might be cloudy.
 ** DAPI
   Invitrogen D1306
-  Stock solution (-20 degree): 1 mg/mL in DI/MQ water
+  Stock solution (-20 degree): 1 mg/mL (2.86 mM) in DI/MQ water
   100x Working solution (Fridge): 1 ug/mL in DI/MQ water
+*** For IF staining
+**** Dilute 2.86 mM stock to 300uM: 10.49uL DAPI + 89.51uL PBS
+**** Dilute 300 uM intermediate solution 1:1000 in PBS to achieve working concentration.
 ** Propidium iodide (PI)
    Invitrogen P1304MP
    Stock solution (store at 4 degree, stable for 6 months): 1 mg/mL in DI/MQ water
