@@ -313,6 +313,9 @@ OLARbreedingcore@ucdenver.edu
 | Anti-Cxcr7           | Abcam          | ab117836    | Rabbit |            | 41 kDa     |   1:1000 | Not working for WB?           |
 | Anti-SMMHC           | Abcam          | ab125884    | Rabbit |            | 227 kDa    |   1:1000 |                               |
 | Anti-Calponin 1/2/3  | Santa Cruz     | sc-28545    | Rabbit |            | 33-36 kDa  |   1:1000 |                               |
+| Anti- Klf4           | Cell Signaling | #4038S      | Rabbit |            | 65 kDa     |   1:1000 |                               |
+| CXCR-7               | Abcam          | ab72100     | Rabbit |            | 42 kDa     |    1:200 | 4 - 6 µg/ml                   |
+
 * Drug Concentrations
 ** EdU
 Carbosynth,  cat#: NE08701
