@@ -268,6 +268,14 @@ OLARbreedingcore@ucdenver.edu
     | H2O (mL)                   |      6.1 |            9.8 |           8.2 |           6.8 |
     | TEMED (uL)                 |       10 |             20 |            20 |            20 |
     | 10% APS (uL)               |      100 |             64 |            64 |            64 |
+*** Recipes for 10x running buffer
+    | Reagents | Conc   | Weight |
+    |----------+--------+--------|
+    | glycine  | 192 mM | 72g    |
+    | Tris     | 25 mM  | 15.15g |
+    | SDS      |        | 5g     |
+    | H2O      |        | 500 mL |
+
 *** Recipes for 10x transfer buffer
     | Reagents | Conc   | Weight |
     |----------+--------+--------|
@@ -276,6 +284,7 @@ OLARbreedingcore@ucdenver.edu
     | H2O      |        | 500 mL |
 **** Ph should be ~8.3, Do not add acid or base to adjust PH.
 **** For 1x buffer, add 100uL of 10x, 200 uL of Methanol to 700 mL of H2O
+
 *** Recipes for TBS and wash buffers
 **** 10x TBS
      | Reagents | Weight |
@@ -291,31 +300,32 @@ OLARbreedingcore@ucdenver.edu
 *** Antibody buffer
     Dilute blocking buffer 1:10 in TBST
 *** Antibody concentrations
-| Antibody             | Company        | Cat#        | Host   | Clone      | MW         | Dilution | notes                         |
-|----------------------+----------------+-------------+--------+------------+------------+----------+-------------------------------|
-| Goat Anti-Mouse HRP  | jacksonimmuno  | 115-035-003 | Goat   |            |            |  1:10000 | Can try lower dilution        |
-| Goat Anti-rabbit HRP | Cell Signaling | #7074       | Goat   |            |            |   1:2000 |                               |
-| Donkey Anti-Goat HRP | Novex          | A16005      | Donkey |            |            |   1:5000 |                               |
-| Anti-β-Actin         | Sigma          | A5441       | Mouse  | AC-15      | 42 kDa     |  1:60000 |                               |
-| Anti-GAPDH           | millipore      | MAB374      | Mouse  | 6C5        | 38 kDa     |   1:4000 |                               |
-| Phospho-Smad2/3      | Cell Signaling | #8828       | Rabbit | D27F4      | 52, 60 kDa |   1:1000 |                               |
-| Anti-Smad7           | Santa Cruz     | sc-365846   | Mouse  | B-8        | 46 kDa     |    1:600 |                               |
-| Anti-KLF4            | R&D Systems    | AF3158      | Goat   |            | 55 kda     |   1:2000 | Some strong nonspecific bands |
-| Anti-Klf4            | Santa Cruz     | sc-393462 x | Mouse  | B-8        | 55 kda     |   1:6000 | Some strong nonspecific bands |
-| Anti-Klf4            | Santa Cruz     | sc-166238 x | Mouse  | F-8        | 55 kda     |   1:6000 |                               |
-| Anti-Klf4            | Invitrogen     | PA5-27440   | Rabbit | Polyclonal | 55 kda     |   1:1000 | no diff between KO WT         |
-| Anti-aSMA            | Abcam          | ab5694      | Rabbit |            | 42 kDa     |  1:60000 |                               |
-| Anti-HDAC1           | Cell Signaling | #34589      | Rabbit | D5C6U      | 62 kDa     |   1:1000 |                               |
-| Anti-PKM2            | Cell Signaling | #4053       | Rabbit | D78A4      | 60 kDa     |   1:1000 |                               |
-| Anti-HIF1a           | Abcam          | ab179483    | Rabbit | EPR16897   | 110 kDa    |   1:1000 |                               |
-| Anti-PTEN            | Cell Signaling | #9559       | Rabbit | 138G6      | 54 kDa     |   1:1000 |                               |
-| Anti-Ezh2            | Cell Signaling | 5246S       | Rabbit | D2C9       | 98         |   1:1000 |                               |
-| Anti-Cxcr7           | Abcam          | ab117836    | Rabbit |            | 41 kDa     |   1:1000 | Not working for WB?           |
-| Anti-SMMHC           | Abcam          | ab125884    | Rabbit |            | 227 kDa    |   1:1000 |                               |
-| Anti-Calponin 1/2/3  | Santa Cruz     | sc-28545    | Rabbit |            | 33-36 kDa  |   1:1000 |                               |
-| Anti- Klf4           | Cell Signaling | #4038S      | Rabbit |            | 65 kDa     |   1:1000 |                               |
-| CXCR-7               | Abcam          | ab72100     | Rabbit |            | 42 kDa     |    1:200 | 4 - 6 µg/ml                   |
-
+| Antibody                  | Company        | Cat#        | Host   | Clone      | MW         | Dilution | notes                         |
+|---------------------------+----------------+-------------+--------+------------+------------+----------+-------------------------------|
+| Goat Anti-Mouse HRP       | jacksonimmuno  | 115-035-003 | Goat   |            |            |  1:10000 | Can try lower dilution        |
+| Goat Anti-rabbit HRP      | Cell Signaling | #7074       | Goat   |            |            |   1:2000 |                               |
+| Donkey Anti-Goat HRP      | Novex          | A16005      | Donkey |            |            |   1:5000 |                               |
+| Anti-β-Actin              | Sigma          | A5441       | Mouse  | AC-15      | 42 kDa     |  1:60000 |                               |
+| Anti-GAPDH                | millipore      | MAB374      | Mouse  | 6C5        | 38 kDa     |   1:4000 |                               |
+| Phospho-Smad2/3           | Cell Signaling | #8828       | Rabbit | D27F4      | 52, 60 kDa |   1:1000 |                               |
+| Anti-Smad7                | Santa Cruz     | sc-365846   | Mouse  | B-8        | 46 kDa     |    1:600 |                               |
+| Anti-KLF4                 | R&D Systems    | AF3158      | Goat   |            | 55 kda     |   1:2000 | Some strong nonspecific bands |
+| Anti-Klf4                 | Santa Cruz     | sc-393462 x | Mouse  | B-8        | 55 kda     |   1:6000 | Some strong nonspecific bands |
+| Anti-Klf4                 | Santa Cruz     | sc-166238 x | Mouse  | F-8        | 55 kda     |   1:6000 |                               |
+| Anti-Klf4                 | Invitrogen     | PA5-27440   | Rabbit | Polyclonal | 55 kda     |   1:1000 | no diff between KO WT         |
+| Anti-aSMA                 | Abcam          | ab5694      | Rabbit |            | 42 kDa     |  1:60000 |                               |
+| Anti-HDAC1                | Cell Signaling | #34589      | Rabbit | D5C6U      | 62 kDa     |   1:1000 |                               |
+| Anti-PKM2                 | Cell Signaling | #4053       | Rabbit | D78A4      | 60 kDa     |   1:1000 |                               |
+| Anti-HIF1a                | Abcam          | ab179483    | Rabbit | EPR16897   | 110 kDa    |   1:1000 |                               |
+| Anti-PTEN                 | Cell Signaling | #9559       | Rabbit | 138G6      | 54 kDa     |   1:1000 |                               |
+| Anti-Ezh2                 | Cell Signaling | 5246S       | Rabbit | D2C9       | 98         |   1:1000 |                               |
+| Anti-Cxcr7                | Abcam          | ab117836    | Rabbit |            | 41 kDa     |   1:1000 | Not working for WB?           |
+| Anti-SMMHC                | Abcam          | ab125884    | Rabbit |            | 227 kDa    |   1:1000 |                               |
+| Anti-Calponin 1/2/3       | Santa Cruz     | sc-28545    | Rabbit |            | 33-36 kDa  |   1:1000 |                               |
+| Anti-Klf4                 | Cell Signaling | #4038S      | Rabbit |            | 65 kDa     |   1:1000 |                               |
+| Anti-CXCR-7               | Abcam          | ab72100     | Rabbit |            | 42 kDa     |    1:200 | 4 - 6 µg/ml                   |
+| Anti-Phospho-Akt (Ser473) | Cell Signaling | #4058       | Rabbit |            | 60 kDa     |   1:1000 |                               |
+| Anti-Fibronectin          | Abcam          | ab2413      | Rabbit |            |            |   1:1000 |                               |
 * Drug Concentrations
 ** EdU
 Carbosynth,  cat#: NE08701
@@ -509,7 +519,8 @@ Take pictures.
 | Anti-CD68                   | BioRad         | MCA1957     | Rat    | FA-11      | Mouse       | none        |                   |                  |     1:50 |
 | Anti-HIF1a                  | Abcam          | ab179483    | Rabbit | EPR16897   | HMR         | none        |                   |                  |    1:500 |
 | Anti-PKM2                   | CST            | #4053       | Rabbit |            | HMR         | none        |                   |                  |    1:100 |
-|                             |                |             |        |            |             |             |                   |                  |          |
+| Anti-Cxcr7                  | Abcam          | ab72100     | Rabbit |            | HM          | none        |                 1 |               10 |    1:100 |
+
 * flow cytometry processing for cultured cells
 Trypsinize to detach the cells
 Wash the cells twice with cold FA3 buffer
