@@ -276,15 +276,14 @@ OLARbreedingcore@ucdenver.edu
     | SDS      |        | 5g     |
     | H2O      |        | 500 mL |
 
-*** Recipes for 10x transfer buffer
-    | Reagents | Conc   | Weight |
-    |----------+--------+--------|
-    | glycine  | 192 mM | 72g    |
-    | Tris     | 25 mM  | 15.15g |
-    | H2O      |        | 500 mL |
-**** Ph should be ~8.3, Do not add acid or base to adjust PH.
+*** Recipes for 10x transfer buffer (Bjerrum Schafer-Nielsen)
+    | Reagents | Conc  | Weight  |
+    |----------+-------+---------|
+    | glycine  | 39 mM | 29.3g   |
+    | Tris     | 48 mM | 58.2g   |
+    | H2O      |       | 1000 mL |
+**** Ph should be ~9.2, Do not add acid or base to adjust PH.
 **** For 1x buffer, add 100uL of 10x, 200 uL of Methanol to 700 mL of H2O
-
 *** Recipes for TBS and wash buffers
 **** 10x TBS
      | Reagents | Weight |
@@ -294,7 +293,7 @@ OLARbreedingcore@ucdenver.edu
      | NaCl     | 88g    |
      | H2O      | to 1L  |
 ***** PH should be around 7.6
-***** Add Tween-20 to 0.2% and 0.1% in 1x TBS for the wash buffers
+***** Add Tween-20 to 0.1% in 1x TBS for the wash buffers
 *** Blocking buffer
      5% BSA in TBST
 *** Antibody buffer
@@ -406,8 +405,11 @@ Normal time line
   Stock solution (-20 degree): 1 mg/mL (2.86 mM) in DI/MQ water
   100x Working solution (Fridge): 1 ug/mL in DI/MQ water
 *** For IF staining
-**** Dilute 2.86 mM stock to 300uM: 10.49uL DAPI + 89.51uL PBS
+**** Dilute 2.86 mM stock to 300uM: 31.47uL DAPI + 268.53uL PBS
 **** Dilute 300 uM intermediate solution 1:1000 in PBS to achieve working concentration.
+**** 100 mL volue is needed for the glass container for staining.
+**** Stain for 5min in dark.
+**** Wash 2-3 times with PBS before mounting.
 ** Propidium iodide (PI)
    Invitrogen P1304MP
    Stock solution (store at 4 degree, stable for 6 months): 1 mg/mL in DI/MQ water
@@ -760,12 +762,12 @@ Keep at RT for up to 1 week.
 ** FA3 sorting buffer
 | Component    | Target Conc (mM) | Stock Conc (mM) | Stock Vol(ml) |
 |--------------+------------------+-----------------+---------------|
-| PBS          |               1x |             10x |            20 |
-| EDTA         |                1 |             500 |           0.4 |
-| HEPES(PH7.0) |               25 |            1000 |             5 |
-| FBS          |             100% |              1% |             2 |
+| PBS          |               1x |             10x |            30 |
+| EDTA         |                1 |             500 |           0.6 |
+| HEPES(PH7.0) |               25 |            1000 |           7.5 |
+| FBS          |             100% |              1% |             3 |
 |--------------+------------------+-----------------+---------------|
-| H2O          |            172.6 |       Total Vol |           200 |
+| H2O          |            258.9 |       Total Vol |           300 |
 
 #+TBLFM: @2$4=@6$4 / 10::@3$4=@6$4 * @3$2 / @3$3::@4$4=@6$4 * @4$2 / @4$3::@5$4=@6$4 / 100::@6$2=@6$4 - vsum(@2$4..@5$4)
 * ImageJ
@@ -942,10 +944,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |         32. |
-| Soybean Trysin Inhibitor |              0.2 |          2. |
-| Elastase suspension (uL) |             0.75 |   285.17110 |
-| Volume (mL)              |               10 |             |
+| Collagenase 2            |              3.2 |        192. |
+| Soybean Trysin Inhibitor |              0.2 |         12. |
+| Elastase suspension (uL) |             0.75 |   1711.0266 |
+| Volume (mL)              |               60 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
