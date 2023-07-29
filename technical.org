@@ -353,13 +353,12 @@ To reach 100uM, 1:238.96 dilution
 3+716.88
 1:1000 for final dose
 ** PDGF-BB
-  Millipore GF149
-  Note some lots were coming already reconstituted.
-  Reconstitute in 50ul sterile MQ to make 0.2mg/ml stock solution
-  Add 450ul 100mM Acetic Acid with 0.1% BSA to make 20ug/ml (1000x)
-  working solution.
- For the solvent:
-   57.5 uL of glacial acetic acid in 10mL of MQ, Add 10 mg BSA
+*** Millipore GF149
+*** Note some lots were coming already reconstituted.
+*** Reconstitute in 50ul sterile MQ to make 0.2mg/ml stock solution
+*** Add 450ul 100mM Acetic Acid with 0.1% BSA to make 20ug/ml (1000x) working solution.
+*** For the solvent:
+**** 57.5 uL of glacial acetic acid in 10mL of MQ, Add 10 mg BSA
 ** 5-azacytidine
 *** in vitro
 **** Target final concentration 10 uM
