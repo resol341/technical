@@ -3,37 +3,51 @@
 #+OPTIONS: \n:t
 #+OPTIONS: toc:nil
 * CyTOF
-Normalization (NormalizerR2013b_MacOSX)
-	Make a copy of original data. Rename if the file extension is FCS (all capital) to lower case .fcs
-	Select DVS Beads
-	Gate the beeds ("bright" one of on the right, distinguish from cells)
-	Hit Space, then Enter.
-	Select current file
-	Cutoff = 7
-	The normalized fcs should be in normed folder.
-Debarcode
-	Make copy of normalized fcs.
-	Create barcode key (.csv) accordingly.
-	Select key file with single cell debarcoder
-	Select FCS file.
-	Examine the separation by selecting Single Biaxial plot type and switching positive channels.
-	Save in Directory
-Use FlowJo to identify and export singlets (191Ir1 193Ir1) that were viable (195Pt2).
-Phenograph/cytofkit
-	R code
-		source("https://bioconductor.org/biocLite.R")
-		biocLite("cytofkit")
-		library("cytofkit")
-		cytofkit_GUI()
-	Select Raw FCS Directory, FCS_Files, Markers
-	Result Directory must be Desktop
-	Merge methods choose "min" to use the least number of events across all samples.
-	Transformation Methods "cytofAsinh"
-	Cluster Methods "Rphenograph"
-	visualization method: tSNE,
-	cellular progression: NULL
-	submit
-cytofkitShinyAPP()
+# for antibody panel with surface intracellular and nuclear proteins
+** Buffer prep
+*** Maxpar Cell Staining Buffer (request through flow core)
+**** About 12 mL needed per sample
+*** 10 µM cisplatin (2X concentration)
+**** Prepare a working solution of 10 µM cisplatin (2X concentration) by diluting the Cell-ID Cisplatin in Maxpar Cell Staining Buffer. For example, add 2 µL of 5 mM stock to 1 mL of Maxpar Cell Staining Buffer.
+*** Foxp3 Fixation/Permeabilization working solution
+**** 1 mL needed per sample
+*** 1X Permeabilization Buffer
+**** 8 mL needed per sample. Prepare using Maxpar Water from the 10x stock
+*** 1.6% FA solution (request through flow core)
+**** Prepare a fresh 1.6% formaldehyde (FA, 10x) solution from the 16% formaldehyde stock ampule. Use a 1 mL Norm-Ject latex-free syringe and compatible 0.1 µm syringe filter to filter the stock formaldehyde, and then dilute 1 part of the filtered stock formaldehyde with 9 parts Maxpar PBS.
+*** Intercalation solution (request through flow core)
+** Staining protocol (fresh tissue digest)
+*** Wash the cell pellet with 5 mL of Maxpar PBS.
+*** Cisplatin (live/dead)
+**** If staining culture cells:
+***** Wash the cell pellet with 1 mL serum free DMEM. Spin down at 300g 5min
+***** Resuspend the cells in 100 uL of serum free DMEM.
+***** Add 100 uL of 2x Cisplatin, mix well and incubate at room temperature for 5 minutes.
+**** If staining digested tissue
+***** Resuspend the pellet in 100 uL of Maxpar PBS
+***** Add 100 uL of 2x Cisplatin, mix well and incubate at room temperature for 5 minutes.
+**** Quench the staining by washing with 1mL Maxpar Cell Staining Buffer. Pellet at 300g 5min.
+**** Repeat wash with 1mL Maxpar Cell Staining Buffer. Pellet at 300g 5min
+**** Resuspend the pellet in 49 uL of Maxpar Cell Staining Buffer for surface staining
+*** Stain Cells With Surface Antibodies
+**** Add 1 uL of FC block and incubate at RT for 10 min
+**** Add 50 uL of the 2X surface antibody cocktail to each tube so the total staining volume is 100 uL
+**** Mix and incubate for 30min at room temperature on rocker.
+**** Wash twice with 2 mL Maxpar Cell Staining Buffer. Pellet at 300g 5min
+*** Stain Cells With Nuclear Antibodies
+**** Add 1 mL of Foxp3 Fixation/Permeabilization working solution. Pipet mix to fully disrupt the pellet
+**** Incubate for 30-60 minutes at 2-8°C.
+**** Wash with 2 mL of 1X Permeabilization Buffer, pellet at 800 x g for 5 min at room temperature. Discard the supernatant.
+**** Repeat the wash one more time
+**** Resuspend pellet in residual volume of 1X Permeabilization Buffer. This is typically 50 uL after decanting.
+**** Without washing, add 50 uL of 2x intracellular antibody cocktail
+**** Incubate for 1 hour at RT.
+**** Wash twice with 2 mL 1X Permeabilization Buffer. Pellet at 800g for 5min
+**** Resuspend cell thoroughly in residual volume by gently vortexing after final wash/aspiration.
+*** Fix Cells (Fresh Fix)
+**** Add 1 mL of the 1.6% FA solution to each tube and gently vortex to mix well.
+**** Incubate cells at room temperature for 10 min. Pellet at 800g for 5min
+
 * PCS9 AAV injection
 Target 1x10^11 virus genome/mouse via retro-orbital injection
 stock AAV8-D377Y-mPCSK9
@@ -307,6 +321,7 @@ OLARbreedingcore@ucdenver.edu
 | Anti-β-Actin              | Sigma          | A5441       | Mouse  | AC-15      | 42 kDa     |  1:60000 |                               |
 | Anti-GAPDH                | millipore      | MAB374      | Mouse  | 6C5        | 38 kDa     |   1:4000 |                               |
 | Phospho-Smad2/3           | Cell Signaling | #8828       | Rabbit | D27F4      | 52, 60 kDa |   1:1000 |                               |
+| Phospho-Erk1/2            | Cell Signaling | #4377       | Rabbit | 197G2      | 42, 44 kDa |   1:1000 |                               |
 | Anti-Smad7                | Santa Cruz     | sc-365846   | Mouse  | B-8        | 46 kDa     |    1:600 |                               |
 | Anti-KLF4                 | R&D Systems    | AF3158      | Goat   |            | 55 kda     |   1:2000 | Some strong nonspecific bands |
 | Anti-Klf4                 | Santa Cruz     | sc-393462 x | Mouse  | B-8        | 55 kda     |   1:6000 | Some strong nonspecific bands |
@@ -906,20 +921,20 @@ Measure abs at 600 nm (and 700 nm)
    1. EDTA buffer (20 mL per mouse)
 | Component   | TargConc (mM) | Stock Conc (M) | Stock Vol (mL) |
 |-------------+---------------+----------------+----------------|
-| NaCl        |           113 |           4.52 |            2.5 |
-| KCl         |             5 |              2 |           0.25 |
-| NaH2PO4     |           0.5 |            0.5 |            0.1 |
-| HEPES       |            10 |              1 |              1 |
-| EDTA        |             5 |            0.5 |             1. |
+| NaCl        |           113 |           4.52 |             5. |
+| KCl         |             5 |              2 |            0.5 |
+| NaH2PO4     |           0.5 |            0.5 |            0.2 |
+| HEPES       |            10 |              1 |              2 |
+| EDTA        |             5 |            0.5 |             2. |
 |-------------+---------------+----------------+----------------|
 | Component   | TargConc (mM) |             MW |    Weight (mg) |
 |-------------+---------------+----------------+----------------|
-| Glucose     |            10 |         180.16 |         180.16 |
-| BDM         |            10 |         101.11 |         101.11 |
-| Taurine     |            10 |         125.15 |         125.15 |
+| Glucose     |            10 |         180.16 |         360.32 |
+| BDM         |            10 |         101.11 |         202.22 |
+| Taurine     |            10 |         125.15 |          250.3 |
 |-------------+---------------+----------------+----------------|
-| TargVol(mL) |           100 |            H2O |           89.3 |
-| Ph to 7.8   |        approx |        1N NaOH |            0.5 |
+| TargVol(mL) |           200 |            H2O |         194.65 |
+| Ph to 7.8   |        approx |        1N NaOH |              1 |
 #+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
 
    2. Perfusion buffer (20 mL per mouse, accounting for Col and STOP)
@@ -937,21 +952,21 @@ Measure abs at 600 nm (and 700 nm)
 | BDM         |            10 |         101.11 |         101.11 |
 | Taurine     |            10 |         125.15 |         125.15 |
 |-------------+---------------+----------------+----------------|
-| TargVol(mL) |           100 |            H2O |           91.1 |
+| TargVol(mL) |           100  |            H2O |           91.1 |
 | Ph to 7.8   |        approx |        1N NaOH |            0.5 |
 #+TBLFM: $4=@11$2 - vsum(@2..@6) - @12$4::@2$4=(@11$2*@2$2)/(@2$3*1000)::@3$4=(@11$2*@3$2)/(@3$3*1000)::@4$4=(@11$2*@4$2)/(@4$3*1000)::@5$4=(@11$2*@5$2)/(@5$3*1000)::@6$4=(@11$2*@6$2)/(@6$3*1000)::@8$4=(@11$2 / 1000) * @8$2 * @8$3::@9$4=(@11$2 / 1000) * @9$2 * @9$3::@10$4=(@11$2 / 1000) * @10$2 * @10$3::@12$4=@11$2/200
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        192. |
-| Soybean Trysin Inhibitor |              0.2 |         12. |
-| Elastase suspension (uL) |             0.75 |   1711.0266 |
-| Volume (mL)              |               60 |             |
+| Collagenase 2            |              3.2 |        160. |
+| Soybean Trysin Inhibitor |              0.2 |         10. |
+| Elastase suspension (uL) |             0.75 |   1425.8555 |
+| Volume (mL)              |               50 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
 |-----------------------+--------------+--------|
-| FBS                   |            5 |      1 |
+| FBS                   |            5 |      1  |
 | perfusion Buffer (mL) |           20 |     19 |
 #+TBLFM: @2$3=@2$2*@3$2/100::@3$3=@3$2 - @2$3
 ** Mouse Pre-treatments
@@ -1035,6 +1050,7 @@ Column purify after.
 ** Day 1
 *** Plate 7 x 10^5 293T cells in 4mL DMEM/10%FBS on a 60mm dish. Prepare one 60mm dish for each dish of target cells to be infected.
 **** 5.7 x 10^6 for T175 flask (40 mL)
+**** 293T stocks are in liquid nitrogen tank # Rack3 C
 ** Day 2
 *** Begin transfection ~24h later.  For each transfection, place 200 uL sterile 150 mM NaCl into a 1.5 mL Eppendorf tube.
 *** pCMV delta R8.2 1 μg
