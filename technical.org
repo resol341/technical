@@ -8,7 +8,7 @@
 *** Maxpar Cell Staining Buffer (request through flow core)
 **** About 12 mL needed per sample
 *** 10 µM cisplatin (2X concentration)
-**** Prepare a working solution of 10 µM cisplatin (2X concentration) by diluting the Cell-ID Cisplatin in Maxpar Cell Staining Buffer. For example, add 2 µL of 5 mM stock to 1 mL of Maxpar Cell Staining Buffer.
+**** Prepare a working solution of 10 µM cisplatin (2X concentration) by diluting the Cell-ID Cisplatin in Maxpar PBS. For example, add 2 µL of 5 mM stock to 1 mL of Maxpar PBS.
 *** Foxp3 Fixation/Permeabilization working solution
 **** 1 mL needed per sample
 *** 1X Permeabilization Buffer
