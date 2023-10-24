@@ -2,7 +2,7 @@
 #+HTML_HEAD: <style type="text/css">body{ max-width:50%; }</style>
 #+OPTIONS: \n:t
 #+OPTIONS: toc:nil
-* CyTOF
+q* CyTOF
 # for antibody panel with surface intracellular and nuclear proteins
 ** Buffer prep
 *** Maxpar Cell Staining Buffer (request through flow core)
@@ -10,6 +10,7 @@
 *** 10 µM cisplatin (2X concentration)
 **** Prepare a working solution of 10 µM cisplatin (2X concentration) by diluting the Cell-ID Cisplatin in Maxpar PBS. For example, add 2 µL of 5 mM stock to 1 mL of Maxpar PBS.
 *** Foxp3 Fixation/Permeabilization working solution
+**** Mix 1 part of Foxp3 Fixation/Permeabilization Concentrate with 3 parts of Foxp3 Fixation/Permeabilization Diluent
 **** 1 mL needed per sample
 *** 1X Permeabilization Buffer
 **** 8 mL needed per sample. Prepare using Maxpar Water from the 10x stock
@@ -24,7 +25,8 @@
 ***** Resuspend the cells in 100 uL of serum free DMEM.
 ***** Add 100 uL of 2x Cisplatin, mix well and incubate at room temperature for 5 minutes.
 **** If staining digested tissue
-***** Resuspend the pellet in 100 uL of Maxpar PBS
+***** Wash the cell pellet with 2 mL of Maxpar PBS.
+***** Resuspend the pellet in 100 uL of Maxpar PBS.
 ***** Add 100 uL of 2x Cisplatin, mix well and incubate at room temperature for 5 minutes.
 **** Quench the staining by washing with 1mL Maxpar Cell Staining Buffer. Pellet at 300g 5min.
 **** Repeat wash with 1mL Maxpar Cell Staining Buffer. Pellet at 300g 5min
@@ -47,7 +49,9 @@
 *** Fix Cells (Fresh Fix)
 **** Add 1 mL of the 1.6% FA solution to each tube and gently vortex to mix well.
 **** Incubate cells at room temperature for 10 min. Pellet at 800g for 5min
-
+*** Stain Cells With Cell-ID Intercalator-Ir
+**** Add 1 mL of intercalation solution to each 1–3 million cell sample and gently vortex. Ensure that cells are well resuspended.
+**** Incubate the samples at room temperature for 1 hr or leave at 2–8 degree until analysis (48hrs - 96 hrs)
 * PCS9 AAV injection
 Target 1x10^11 virus genome/mouse via retro-orbital injection
 stock AAV8-D377Y-mPCSK9
@@ -374,6 +378,10 @@ To reach 100uM, 1:238.96 dilution
 *** Add 450ul 100mM Acetic Acid with 0.1% BSA to make 20ug/ml (1000x) working solution.
 *** For the solvent:
 **** 57.5 uL of glacial acetic acid in 10mL of MQ, Add 10 mg BSA
+** 2-DG
+*** Note: EMEM (10-009-CV) has 1000 mg/L glucose (6mM). 2-DG ranging from 1-100 mM has been shown to inhibit SMC proliferation. Testing 20 mM concentration. 15 mM has been used in FLIM experiment.
+*** 2-DG was desolved in H2O at 2M concentration (100x). 2M glucose will be used as control
+*** PTEN KD and control cells will be kept in 0;1% FBS media for 24 hours, then treated with glucose/2DG for 24 hours (qPCR) and 48 hours (WB).
 ** 5-azacytidine
 *** in vitro
 **** Target final concentration 10 uM
@@ -958,11 +966,11 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        160. |
-| Soybean Trysin Inhibitor |              0.2 |         10. |
-| Elastase suspension (uL) |             0.75 |   1425.8555 |
-| Volume (mL)              |               50 |             |
-#+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 26.3) * 1000
+| Collagenase 2            |              3.2 |         64. |
+| Soybean Trysin Inhibitor |              0.2 |          4. |
+| Elastase suspension (uL) |             0.75 |   588.23529 |
+| Volume (mL)              |               20 |             |
+#+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 25.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
 |-----------------------+--------------+--------|
