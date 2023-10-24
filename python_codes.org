@@ -1,6 +1,140 @@
-* annotate anndata based on eYFP gene expression
+* anndata manipulation
+** annotate anndata based on eYFP gene expression
 #+begin_src python
   adata_all.obs['eYFP_Transcript'] = 'Neg'
   adata_all_plus = adata_all[adata_all[: , 'eYFP'].X > 0.01, :]
   adata_all.obs.loc[adata_all_plus.obs.index.to_list(), 'eYFP_Transcript'] = 'Pos'
 #+end_src
+** add additional meta data to adata.obs based on sample names
+#+begin_src python
+samples_series = pd.Series(adata_all.obs['samples'].cat.categories.to_list())
+samples_series.index = samples_series
+samples_df = samples_series.str.split('_',expand=True)
+samples_df = samples_df[[1, 2, 4]]
+samples_df = samples_df.rename(columns={1: 'treatment', 2: 'injury', 4: 'eYFP_Fluorescence'})
+adata_all.obs['treatment'] = pd.Categorical(adata_all.obs['samples'].map(samples_df['treatment']))
+adata_all.obs['injury'] = pd.Categorical(adata_all.obs['samples'].map(samples_df['injury']))
+adata_all.obs['eYFP_Fluorescence'] = pd.Categorical(adata_all.obs['samples'].map(samples_df['eYFP_Fluorescence']))
+#+end_src
+** rename and reorder obs slots
+#+begin_src python
+adata_exp1.rename_categories('samples', ['AngII_2W', 'Saline_2W'])
+adata_exp1.obs['samples'] = adata_exp1.obs['samples'].cat.reorder_categories(['Saline_2W', 'AngII_2W'])
+#+end_src
+** Merge clusters
+#+begin_src python
+    # merge some similar cell types
+  cluster_list = adata_arcsinh_live.obs['clusters'].cat.categories.to_list()
+  old_to_new_dict = {}
+  for cluster in cluster_list:
+      try:
+          sf = cluster.split('_')[1]
+          if sf == 'tdT':
+              old_to_new_dict[cluster] = cluster.split('_')[0] + '_tdT_Pos'
+          else:
+              old_to_new_dict[cluster] = cluster.split('_')[0]
+      except IndexError:
+          old_to_new_dict[cluster] = cluster.split('_')[0]
+  old_to_new_dict['Th17'] = 'TC'
+  old_to_new_dict['Th2'] = 'TC'
+  old_to_new_dict['Treg'] = 'TC'
+  adata_arcsinh_live.obs['clusters_general'] = (
+  adata_arcsinh_live.obs['clusters']
+  .map(old_to_new_dict)
+  .astype('category')
+  )
+#+end_src
+** plot marker genes of the clusters
+#+begin_src python
+  sc.tl.rank_genes_groups(
+      adata_exp1, groupby="clusters", method="wilcoxon", key_added="dea_clusters"
+  )
+  sc.tl.filter_rank_genes_groups(
+      adata_exp1,
+      min_in_group_fraction=0.2,
+      max_out_group_fraction=0.2,
+      key="dea_clusters",
+      key_added="dea_clusters_filtered",
+  )
+  sc.pl.rank_genes_groups_dotplot(
+      adata_exp1,
+      groupby="clusters",
+      standard_scale="var",
+      n_genes=5,
+      key="dea_clusters_filtered",
+      dendrogram = False
+  )
+#+end_src
+** composition analysis
+#+begin_src python
+  frq_df = sc_toolbox.tools.relative_frequency_per_cluster(adata_yfpp, group_by='samples', xlabel='clusters', condition=None)
+  sc_toolbox.plot.cluster_composition_stacked_barplot(frq_df, xlabel='samples', figsize=(3, 7), width=0.8,
+                                                     order= ['WT_Saline_Uninj_YFP_Pos', 'WT_Saline_Inj_YFP_Pos','WT_5aza_Uninj_YFP_Pos', 'WT_5aza_Inj_YFP_Pos','iKO_Saline_Uninj_YFP_Pos', 'iKO_Saline_Inj_YFP_Pos','iKO_5aza_Uninj_YFP_Pos', 'iKO_5aza_Inj_YFP_Pos'],
+                                                     error_bar=None, label_size=15, tick_size=13, capsize=None, margins=(0.02, 0.04), colors=adata_yfpp.uns["clusters_colors"].tolist(), save=None)
+#+end_src
+* Some useful functions
+** function to create replicates in the samples (prepare anndata for pseduobulk)
+#+begin_src python
+  def aggregate_and_filter(
+      adata,
+      donor_key="samples",
+      rep_key='samples_reps',
+      replicates_per_patient=4,
+  ):
+      # check which donors to keep according to the number of cells specified with NUM_OF_CELL_PER_DONOR
+      size_by_donor = adata.obs.groupby([donor_key]).size()
+      donors_to_drop = [
+          donor
+          for donor in size_by_donor.index
+          if size_by_donor[donor] <= NUM_OF_CELL_PER_DONOR
+      ]
+      if len(donors_to_drop) > 0:
+          print("Dropping the following samples:")
+          print(donors_to_drop)
+      adata.obs[rep_key] = 'reps'
+      adata.obs[donor_key] = adata.obs[donor_key].astype("category")
+      for i, donor in enumerate(donors := adata.obs[donor_key].cat.categories):
+          print(f"\tProcessing donor {i+1} out of {len(donors)}...", end="\r")
+          if donor not in donors_to_drop:
+              adata_donor = adata[adata.obs[donor_key] == donor]
+              # create replicates for each donor
+              indices = list(adata_donor.obs_names)
+              random.shuffle(indices)
+              indices = np.array_split(np.array(indices), replicates_per_patient)
+              for i, rep_idx in enumerate(indices):
+                  adata.obs.loc[rep_idx, rep_key] = donor + '_' + str(i)
+      print("\n")
+      adata.obs[rep_key] = adata.obs[rep_key].astype("category")
+      return adata
+#+end_src
+** Infer enrichment with ora using significant deg
+#+begin_src python
+  def infer_enrichment(dea_df, pathway, cut_off):
+      down_genes = dea_df[(dea_df['padj'] < 0.05)&(dea_df['log2FoldChange'] <= -abs(cut_off))]
+      up_genes = dea_df[(dea_df['padj'] < 0.05)&(dea_df['log2FoldChange'] >= abs(cut_off))]
+
+      # Run ora
+      down_enr_pvals = dc.get_ora_df(
+                                df=down_genes,
+                                net=pathway,
+                                source='geneset',
+                                target='genesymbol'
+                                )
+      down_enr_pvals_filter = down_enr_pvals[down_enr_pvals['FDR p-value'] < 0.05]
+      down_enr_pvals_filter = down_enr_pvals_filter.sort_values(by=['Combined score'], ascending=False)
+      print('number of enriched pathways (down)): '+str(len(down_enr_pvals_filter)))
+
+      up_enr_pvals = dc.get_ora_df(
+                                df=up_genes,
+                                net=pathway,
+                                source='geneset',
+                                target='genesymbol'
+                                )
+      up_enr_pvals_filter = up_enr_pvals[up_enr_pvals['FDR p-value'] < 0.05]
+      up_enr_pvals_filter = up_enr_pvals_filter.sort_values(by=['Combined score'], ascending=False)
+      print('number of enriched pathways (up)): '+str(len(up_enr_pvals_filter)))
+
+      return down_enr_pvals_filter, up_enr_pvals_filter
+#+end_src
+**
+**
