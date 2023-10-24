@@ -1,0 +1,6 @@
+* annotate anndata based on eYFP gene expression
+#+begin_src python
+  adata_all.obs['eYFP_Transcript'] = 'Neg'
+  adata_all_plus = adata_all[adata_all[: , 'eYFP'].X > 0.01, :]
+  adata_all.obs.loc[adata_all_plus.obs.index.to_list(), 'eYFP_Transcript'] = 'Pos'
+#+end_src
