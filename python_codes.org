@@ -75,6 +75,8 @@ adata_exp1.obs['samples'] = adata_exp1.obs['samples'].cat.reorder_categories(['S
 * Some useful functions
 ** function to create replicates in the samples (prepare anndata for pseduobulk)
 #+begin_src python
+  NUM_OF_CELL_PER_DONOR = 30
+
   def aggregate_and_filter(
       adata,
       donor_key="samples",
