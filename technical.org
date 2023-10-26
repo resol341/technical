@@ -2,7 +2,7 @@
 #+HTML_HEAD: <style type="text/css">body{ max-width:50%; }</style>
 #+OPTIONS: \n:t
 #+OPTIONS: toc:nil
-q* CyTOF
+* CyTOF
 # for antibody panel with surface intracellular and nuclear proteins
 ** Buffer prep
 *** Maxpar Cell Staining Buffer (request through flow core)
@@ -1058,7 +1058,7 @@ Column purify after.
 ** Day 1
 *** Plate 7 x 10^5 293T cells in 4mL DMEM/10%FBS on a 60mm dish. Prepare one 60mm dish for each dish of target cells to be infected.
 **** 5.7 x 10^6 for T175 flask (40 mL)
-**** 293T stocks are in liquid nitrogen tank # Rack3 C
+**** 293T stocks are in liquid nitrogen tank #2 Rack3 C
 ** Day 2
 *** Begin transfection ~24h later.  For each transfection, place 200 uL sterile 150 mM NaCl into a 1.5 mL Eppendorf tube.
 *** pCMV delta R8.2 1 μg
@@ -1161,7 +1161,14 @@ Column purify after.
 *** Generally, a confluent 6-well well can be passed into 1x 100mm dishes (P1), and then to 6x 100mm dishes (P2).
 *** One confluent 100cm dishe can be divided into two cryovials for long term storage.
 *** [[https://www.atcc.org/products/all/PCS-999-027.aspx#cultureconditions][Ref]]
+* Cell stocks in liquid nitrogen tanks
+** SMC WT Tank2 6G
+** SMC PTEN KD Tank2 4B
+** AdvSca1-SM Tank2 4D
+** 293T Tank2 3C
 * Kidney and Cardiac tissue for spatial transcriptomics
+
+
 ** Note: this is just a overview of the 10x protocol, follow the original protocol for more details.
 ** Fixation, staining and imaging
 *** Prepare the following items before start
