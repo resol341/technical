@@ -344,6 +344,10 @@ OLARbreedingcore@ucdenver.edu
 | Anti-CXCR-7               | Abcam          | ab72100     | Rabbit |            | 42 kDa     |    1:200 | 4 - 6 µg/ml                   |
 | Anti-Phospho-Akt (Ser473) | Cell Signaling | #4058       | Rabbit |            | 60 kDa     |   1:1000 |                               |
 | Anti-Fibronectin          | Abcam          | ab2413      | Rabbit |            |            |   1:1000 |                               |
+| Anti-PTEN                 | Cell Signaling | 14642S      | Mouse  | D3Q6G      | 54 kDa     |   1:1000 |                               |
+| Anti-Phosphoserine        | Invitrogen     | MA1-91608   | Mouse  | 3C171      | NA         |    1:500 |                               |
+| Anti-Dnmt1                | Abcam          | ab188453    | Rabbit | EPR18453   | 183 kDa    |   1:1000 |                               |
+| Anti-AKT                  | Cell Signaling | 9272        | Rabbit |            | 60 kDa     |   1:1000 |                               |
 * Drug Concentrations
 ** EdU
 Carbosynth,  cat#: NE08701
