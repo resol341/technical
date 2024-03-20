@@ -422,6 +422,10 @@ Normal time line
 *** dissolve at 100 mM concentration in DMSO (200,000x stock)
 *** Dilute 1:200 in media with 0.1% FBS and use as 1000x stock (0.5 uM final concentration).
 *** The 1000x stock might be cloudy.
+** Simvastatin in vivo delivery
+*** Based on [[https://www.ahajournals.org/doi/10.1161/01.atv.21.1.115][this paper]]
+*** prepare methyl cellulose gel
+****
 ** DAPI
   Invitrogen D1306
   Stock solution (-20 degree): 1 mg/mL (2.86 mM) in DI/MQ water
@@ -966,10 +970,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |         64. |
-| Soybean Trysin Inhibitor |              0.2 |          4. |
-| Elastase suspension (uL) |             0.75 |   588.23529 |
-| Volume (mL)              |               20 |             |
+| Collagenase 2            |              3.2 |        288. |
+| Soybean Trysin Inhibitor |              0.2 |         18. |
+| Elastase suspension (uL) |             0.75 |   2647.0588 |
+| Volume (mL)              |               90 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 25.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
@@ -1162,7 +1166,7 @@ Column purify after.
 *** One confluent 100cm dishe can be divided into two cryovials for long term storage.
 *** [[https://www.atcc.org/products/all/PCS-999-027.aspx#cultureconditions][Ref]]
 * Cell stocks in liquid nitrogen tanks
-** SMC WT Tank2 6G
+** SMC WT Tank1 6G
 ** SMC PTEN KD Tank2 4B
 ** AdvSca1-SM Tank2 4D
 ** 293T Tank2 3C
