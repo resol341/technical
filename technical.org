@@ -552,6 +552,7 @@ Take pictures.
 | Anti-HIF1a                  | Abcam          | ab179483    | Rabbit | EPR16897   | HMR         | none        |                   |                  |    1:500 |
 | Anti-PKM2                   | CST            | #4053       | Rabbit |            | HMR         | none        |                   |                  |    1:100 |
 | Anti-Cxcr7                  | Abcam          | ab72100     | Rabbit |            | HM          | none        |                 1 |               10 |    1:100 |
+| Anti-Dnmt1                  | Abcam          | ab188453    | Rabbit | EPR18453   | HMR         | none        |                   |                  |    1:200 |
 
 * flow cytometry processing for cultured cells
 Trypsinize to detach the cells
