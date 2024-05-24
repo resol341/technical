@@ -6,9 +6,15 @@
 # for antibody panel with surface intracellular and nuclear proteins
 ** Buffer prep
 *** Maxpar Cell Staining Buffer (request through flow core)
-**** About 12 mL needed per sample
+**** About 17 mL needed per sample
 *** 10 µM cisplatin (2X concentration)
 **** Prepare a working solution of 10 µM cisplatin (2X concentration) by diluting the Cell-ID Cisplatin in Maxpar PBS. For example, add 2 µL of 5 mM stock to 1 mL of Maxpar PBS.
+*** Fix I Buffer
+**** 100 uL per sample
+**** Prepared by mixing 1 part MaxPar Fix I with 4 parts Maxpar PBS.
+*** Barcode Perm Buffer
+**** 2 mL per barcode sample
+**** 10x stock, dilute to 1x using PBS
 *** Foxp3 Fixation/Permeabilization working solution
 **** Mix 1 part of Foxp3 Fixation/Permeabilization Concentrate with 3 parts of Foxp3 Fixation/Permeabilization Diluent
 **** 1 mL needed per sample
@@ -30,10 +36,20 @@
 ***** Add 100 uL of 2x Cisplatin, mix well and incubate at room temperature for 5 minutes.
 **** Quench the staining by washing with 1mL Maxpar Cell Staining Buffer. Pellet at 300g 5min.
 **** Repeat wash with 1mL Maxpar Cell Staining Buffer. Pellet at 300g 5min
-**** Resuspend the pellet in 49 uL of Maxpar Cell Staining Buffer for surface staining
+**** Cell pellets are ready for fixation and barcoding
+*** Barcoding
+**** Resuspend cell samples completely in 100uL of 1X Fix I Buffer and
+incubate for 10 min at room temperature.
+**** After 10 min, add 900 ul Cell Staining Buffer and spin at 800G for 5 min.
+**** Resuspend cells in 1mL 1x Barcode Perm Buffer, centrifuge at 800g for 5min, aspirate supernatant, mix pellet
+**** Resuspend pellet in 800 uL of 1x Barcode Perm Buffer
+**** Resuspend each barcode in 100 uL of 1x Barcode Perm Buffer and transfer into samples. Mix thoroughly for uniform barcode staining. Record the barcode ID for each sample
+**** Incubate at RT for 30 min. Mix after 15 min.
+**** Centrifuge samples at 800g for 5min. Wash the samples twice with 2 mL Cell Staining Buffer. Pellet at 800g 5min.
+**** Resuspend the pellet in 50 uL of Maxpar Cell Staining Buffer. Pool samples for surface staining.
 *** Stain Cells With Surface Antibodies
-**** Add 1 uL of FC block and incubate at RT for 10 min
-**** Add 50 uL of the 2X surface antibody cocktail to each tube so the total staining volume is 100 uL
+**** Add 1 uL of FC block (per sample) and incubate at RT for 10 min
+**** Add 50 uL of the 2X surface antibody cocktail (per sample).
 **** Mix and incubate for 30min at room temperature on rocker.
 **** Wash twice with 2 mL Maxpar Cell Staining Buffer. Pellet at 300g 5min
 *** Stain Cells With Nuclear Antibodies
@@ -977,10 +993,10 @@ Measure abs at 600 nm (and 700 nm)
    3. Collagenase buffer (10 mL per mouse) in perfusion buffer. Prepare right before procedure, warm to 37 degree
 | Component                | TargConc (mg/mL) | Weight (mg) |
 |--------------------------+------------------+-------------|
-| Collagenase 2            |              3.2 |        288. |
-| Soybean Trysin Inhibitor |              0.2 |         18. |
-| Elastase suspension (uL) |             0.75 |   2647.0588 |
-| Volume (mL)              |               90 |             |
+| Collagenase 2            |              3.2 |         32. |
+| Soybean Trysin Inhibitor |              0.2 |          2. |
+| Elastase suspension (uL) |             0.75 |   294.11765 |
+| Volume (mL)              |               10 |             |
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 25.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
