@@ -367,6 +367,7 @@ OLARbreedingcore@ucdenver.edu
 | Anti-Dnmt1                | Cell Signaling | 5032S       | Rabbit | D63A6      | 200 kDa    |   1:1000 |                               |
 | Anti-Tet2                 | Abcam          | ab124297    | Rabbit |            | 223 kDa    |    1:250 |                               |
 | Anti-Dnmt1                | Invitrogen     | MA5-16169   | Mouse  | 60B1220.1  | 183 kDa    |   1:1000 |                               |
+| Anti-Lamin A/C            | Cell Signaling | #2032       | Rabbit | Polyclonal | 28, 70     |   1:1000 |                               |
 * Drug Concentrations
 ** EdU
 Carbosynth,  cat#: NE08701
