@@ -419,6 +419,10 @@ To reach 100uM, 1:238.96 dilution
 **** Target dose 2 mg/kg b.w. Inject 3 times (i.p.) per week.
 **** Dissolve powder directly in sterile saline at 0.5 mg/mL
 ***** Prepare solution fresh for each injection
+** MG132
+*** Stock solution 10mM in DMSO (Sigma #M7449)
+*** Target concentration: 10 uM (1000x).
+*** 1 hour pretreatment before 5aza.
 ** JQ1
 *** In vitro dosing 1uM
 Note, cells do not tolerate JQ1 well with 0.1% serum, therefore 1% was used.
@@ -998,7 +1002,7 @@ Measure abs at 600 nm (and 700 nm)
 | Collagenase 2            |              3.2 |         32. |
 | Soybean Trysin Inhibitor |              0.2 |          2. |
 | Elastase suspension (uL) |             0.75 |   294.11765 |
-| Volume (mL)              |               10 |             |
+| Volume (mL)              |               10 |             |q
 #+TBLFM: @2$3=$2 * @5$2::@3$3=$2 * @5$2::@4$3=(($2 * @5$2) / 25.5) * 1000
    4. Stop buffer (5 mL per mouse)
 | Component             | TargConc (%) | volumn |
