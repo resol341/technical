@@ -17,9 +17,28 @@ adata_all.obs['injury'] = pd.Categorical(adata_all.obs['samples'].map(samples_df
 adata_all.obs['eYFP_Fluorescence'] = pd.Categorical(adata_all.obs['samples'].map(samples_df['eYFP_Fluorescence']))
 #+end_src
 ** rename and reorder obs slots
+*** Using a list of names
 #+begin_src python
 adata_exp1.rename_categories('samples', ['AngII_2W', 'Saline_2W'])
 adata_exp1.obs['samples'] = adata_exp1.obs['samples'].cat.reorder_categories(['Saline_2W', 'AngII_2W'])
+#+end_src
+*** Using a dict mapping the old and new names
+#+begin_src python
+# create a dictionary to map cluster to annotation label
+cluster2annotation = {
+    "0": "Monocytes",
+    "1": "NK",
+    "2": "T-cell",
+    "3": "Dendritic",
+    "4": "Dendritic",
+    "5": "Plasma",
+    "6": "B-cell",
+    "7": "Dendritic",
+    "8": "Other",
+}
+
+# add a new `.obs` column called `cell type` by mapping clusters to annotation using pandas `map` function
+pbmc.obs["cell type"] = pbmc.obs["clusters"].map(cluster2annotation).astype("category")
 #+end_src
 ** Merge clusters
 #+begin_src python
